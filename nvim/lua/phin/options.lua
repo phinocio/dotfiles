@@ -1,4 +1,3 @@
--- vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -18,7 +17,7 @@ vim.opt.mouse = 'a' -- enable mouse for all modes
 
 vim.opt.termguicolors = true
 
-vim.opt.spell = true
+vim.opt.spell = false
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
