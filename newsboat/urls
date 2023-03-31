@@ -1,0 +1,25 @@
+"query:Aggregators:tags # \"aggregators\""
+https://www.reddit.com/r/technology.rss "Reddit" "aggregators" "tech" "~/r/technology"
+https://hnrss.org/frontpage?link=comments "HN" "aggregators" "tech" "~Hacker News frontpage"
+
+"query:Tech:tags # \"tech\""
+https://www.bleepingcomputer.com/feed/ "News" "tech" "~Bleeping Computer"
+https://feeds.arstechnica.com/arstechnica/gaming "News" "tech" "~Ars Technica Gaming"
+https://feeds.arstechnica.com/arstechnica/gadgets "News" "tech" "~Ars Technica Gadgets"
+https://feeds.arstechnica.com/arstechnica/technology-lab "News" "tech" "~Ars Technica Tech Lab"
+https://garymarcus.substack.com/feed "Blog" "ai" "~The Road to AI We Can Trust - Gary Marcus"
+
+
+"query:Infosec:tags # \"infosec\""
+https://krebsonsecurity.com/feed/ "Blog" "infosec" "tech" "~Krebs on Security"
+# https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=_JohnHammond&noretweet=on&nopinned=on&nopic=on&format=Atom "Twitter" "infosec" "tech" "~John Hammond"
+# https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=SwiftOnSecurity&noretweet=on&nopinned=on&nopic=on&format=Atom "Twitter" "infosec" "tech" "~SwiftOnSecurity"
+
+"query:Update Feeds:tags # \"Updates\""
+https://feed.laravel-news.com/ "Updates" "tech" "laravel" "~Laravel News"
+https://archlinux.org/feeds/news/ "Updates" "tech" "linux" "~Arch Linux News"
+https://opnsense.org/blog/feed "Updates" "tech" "tools" "~OPNsense Updates"
+https://status.proton.me/history.atom "Updates" "tech" "~Proton Service Incident History"
+
+"query:Pokemon:tags # \"pokemon\""
+https://rss-bridge.org/bridge01/?action=display&bridge=TwitterBridge&context=By+username&u=SerebiiNet&norep=on&noretweet=on&nopinned=on&nopic=on&format=Atom "Twitter" "pokemon" "gaming" "~Serebii - Pokemon News"
