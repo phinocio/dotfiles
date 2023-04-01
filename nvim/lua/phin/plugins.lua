@@ -32,6 +32,12 @@ use({
 		config = function()
 			vim.cmd('colorscheme tokyonight-moon')
 
+			-- Make the cursor line background invisible
+			vim.api.nvim_set_hl(0, 'CursorLineBg', {
+					fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+					bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+				})
+
 			vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#2F313C' })
 
 			vim.api.nvim_set_hl(0, 'StatusLineNonText', {
@@ -180,22 +186,64 @@ use({
 
 -- Git integration.
 use({
-  'lewis6991/gitsigns.nvim',
-  config = function()
-    require('gitsigns').setup()
-    vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
-    vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
-    vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
-    vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
-    vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
-    vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
-  end,
-})
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('gitsigns').setup({ current_line_blame = true })
+			vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
+			vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
+			vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
+			vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
+			vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+			vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
+		end,
+	})
 
 -- Git commands.
 use({
-  'tpope/vim-fugitive',
-  requires = 'tpope/vim-rhubarb',
+		'tpope/vim-fugitive',
+		requires = 'tpope/vim-rhubarb',
+	})
+
+--- Floating terminal.
+use({
+		'voldikss/vim-floaterm',
+		config = function()
+			vim.g.floaterm_width = 0.8
+			vim.g.floaterm_height = 0.8
+			vim.keymap.set('n', '<F1>', ':FloatermToggle<CR>')
+			vim.keymap.set('t', '<F1>', '<C-\\><C-n>:FloatermToggle<CR>')
+			vim.cmd([[
+				highlight link Floaterm CursorLine
+	  highlight link FloatermBorder CursorLineBg
+	]])
+  end
+})
+
+-- Improved syntax highlighting
+use({
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			require('nvim-treesitter.install').update({ with_sync = true })
+		end,
+		requires = {
+			'JoosepAlviste/nvim-ts-context-commentstring',
+			'nvim-treesitter/nvim-treesitter-textobjects',
+		},
+		config = function()
+			require('phin/plugins/treesitter')
+		end,
+	})
+
+-- Language Server Protocol.
+use({
+  'neovim/nvim-lspconfig',
+  requires = {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+  },
+  config = function()
+    require('phin/plugins/lspconfig')
+  end,
 })
 
 -- Automatically set up your configuration after cloning packer.nvim
