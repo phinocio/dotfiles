@@ -22,3 +22,7 @@ ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+mkdir -p $HOME/.config/picom
+rm -rf $HOME/.config/picom/picom.conf
+ln -s $DOTFILES/picom/picom.conf $HOME/.config/picom/picom.conf
