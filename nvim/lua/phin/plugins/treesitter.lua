@@ -1,6 +1,7 @@
 require('nvim-treesitter.configs').setup({
-		prefer_git = true,
-	ensure_installed = 'all',
+	ensure_installed = { 'help', 'c', 'lua', 'php', 'javascript', 'typescript'},
+	sync_install = false,
+	auto_install = true,
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = true,
