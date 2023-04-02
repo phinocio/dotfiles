@@ -117,22 +117,14 @@ use({
 	})
 
 -- Split arrays and methods onto multiple lines, or join them back up.
-use({
-		'AndrewRadev/splitjoin.vim',
-		config = function()
-			vim.g.splitjoin_html_attributes_bracket_on_new_line = 1
-			vim.g.splitjoin_trailing_comma = 1
-			vim.g.splitjoin_php_method_chain_full = 1
-		end,
-	})
-
--- Automatically fix indentation when pasting code.
-use({
-		'sickill/vim-pasta',
-		config = function()
-			vim.g.pasta_disabled_filetypes = { 'fugitive' }
-		end,
-	})
+-- use({
+-- 		'AndrewRadev/splitjoin.vim',
+-- 		config = function()
+-- 			vim.g.splitjoin_html_attributes_bracket_on_new_line = 1
+-- 			vim.g.splitjoin_trailing_comma = 1
+-- 			vim.g.splitjoin_php_method_chain_full = 1
+-- 		end,
+-- 	})
 
 -- Fuzzy finder
 use({
@@ -156,7 +148,6 @@ use({
 			require('phin/plugins/nvim-tree')
 		end,
 	})
-
 
 -- Lualine status line
 use({
@@ -216,12 +207,15 @@ use({
 				highlight link Floaterm CursorLine
 	  highlight link FloatermBorder CursorLineBg
 	]])
-  end
-})
+		end
+	})
 
 -- Improved syntax highlighting
 use({
-		'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			require('nvim-treesitter.install').update({ with_sync = true })
+		end,
 		requires = {
 			'JoosepAlviste/nvim-ts-context-commentstring',
 			'nvim-treesitter/nvim-treesitter-textobjects',
@@ -233,21 +227,46 @@ use({
 
 -- Language Server Protocol.
 use({
-  'neovim/nvim-lspconfig',
-  requires = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-  },
-  config = function()
-    require('phin/plugins/lspconfig')
-  end,
-})
+		'neovim/nvim-lspconfig',
+		requires = {
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+			'b0o/schemastore.nvim',
+			'jose-elias-alvarez/null-ls.nvim',
+			'jayp0521/mason-null-ls.nvim',
+		},
+		config = function()
+			require('phin/plugins/lspconfig')
+		end,
+	})
+
+-- Completion
+use({
+		'hrsh7th/nvim-cmp',
+		requires = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
+			'onsails/lspkind-nvim',
+		},
+		config = function()
+			require('phin/plugins/cmp')
+		end,
+	})
+
+
+
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
 if packer_bootstrap then
 	require('packer').sync()
 end
+
+
 
 vim.cmd([[
 augroup packer_user_config
