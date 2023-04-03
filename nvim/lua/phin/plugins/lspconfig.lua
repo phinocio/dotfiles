@@ -69,13 +69,13 @@ require('null-ls').setup({
   sources = {
     require('null-ls').builtins.diagnostics.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
+        return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json' })
       end,
     }),
     require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
     require('null-ls').builtins.formatting.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
+        return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json' })
       end,
     }),
     require('null-ls').builtins.formatting.prettierd,
@@ -86,7 +86,7 @@ require('mason-null-ls').setup({ automatic_installation = true })
 
 -- Diagnostic configuration
 vim.diagnostic.config({
-		virtual_text = false,
+		virtual_text = true,
 		float = {
 			source = true,
 		}

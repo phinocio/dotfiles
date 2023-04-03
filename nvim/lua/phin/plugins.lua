@@ -26,26 +26,11 @@ local use = require('packer').use
 -- Packer can manage itself.
 use('wbthomason/packer.nvim')
 
--- TokyoNight Theme!
+-- Catppuccin Theme!
 use({
-		'folke/tokyonight.nvim',
+		'catppuccin/nvim',
 		config = function()
-			vim.cmd('colorscheme tokyonight-moon')
-
-			-- Make the cursor line background invisible
-			vim.api.nvim_set_hl(0, 'CursorLineBg', {
-					fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
-					bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
-				})
-
-			vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#2F313C' })
-
-			vim.api.nvim_set_hl(0, 'StatusLineNonText', {
-					fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
-					bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
-				})
-
-			vim.api.nvim_set_hl(0, 'IndentBlankLineChar', {fg = '#2F313C'})
+			require('phin/plugins/catppuccin')
 		end,
 	})
 
@@ -161,7 +146,7 @@ use({
 use({
 		'akinsho/bufferline.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
-		after = 'tokyonight.nvim',
+		after = 'catppuccin',
 		config = function()
 			require('phin/plugins/bufferline')
 		end,
