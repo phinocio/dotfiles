@@ -32,6 +32,7 @@ use({
 		config = function()
 			require('phin/plugins/catppuccin')
 		end,
+		as = 'catppuccin'
 	})
 
 -- Commenting support.
@@ -242,8 +243,32 @@ use({
 		end,
 	})
 
+-- PHP Refactoring Tools
+use({
+		'phpactor/phpactor',
+		ft = 'php',
+		run = 'composer install --no-dev --optimize-autoloader',
+		config = function()
+			vim.keymap.set('n', '<Leader>pm', ':PhpactorContextMenu<CR>')
+			vim.keymap.set('n', '<Leader>pn', ':PhpactorClassNew<CR>')
+		end,
+	})
 
+-- Project configuration
+use({
+		'tpope/vim-projectionist',
+		requires = 'tpope/vim-dispatch',
+		config = function()
+			require('phin/plugins/projectionist')
+		end,
+	})
 
+use({
+		'vim-test/vim-test',
+		config = function()
+			require('phin/plugins/vim-test')
+		end,
+	})
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins

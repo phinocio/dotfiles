@@ -2036,7 +2036,7 @@ map kitty_mod+down resize_window shorter 3
 map kitty_mod+home resize_window Reset
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
 

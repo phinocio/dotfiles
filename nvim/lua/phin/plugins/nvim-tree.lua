@@ -13,6 +13,7 @@ require('nvim-tree').setup({
 			enable = true,
 		},
 	},
+	hijack_cursor = true,
 })
 
 vim.keymap.set('n', '<Leader>n', ':NvimTreeFindFileToggle<CR>')
