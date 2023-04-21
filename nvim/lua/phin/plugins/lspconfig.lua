@@ -69,7 +69,7 @@ require('null-ls').setup({
   sources = {
     require('null-ls').builtins.diagnostics.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json' })
+        return utils.root_has_file({ '.eslintrc.js', '.eslintrc.json', '.eslintrc.cjs' })
       end,
     }),
     require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),

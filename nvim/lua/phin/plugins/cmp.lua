@@ -40,7 +40,7 @@ cmp.setup({
 			['<CR>'] = cmp.mapping.confirm({ select = true }),
 		},
 sources = {
-	{ name = 'nvim_lsp' },
+	{ name = 'nvim_lsp', group_index = 1, max_item_count = 30  },
 	{ name = 'nvim_lsp_signature_help' },
 	{ name = 'luasnip' },
 	{ name = 'buffer' },

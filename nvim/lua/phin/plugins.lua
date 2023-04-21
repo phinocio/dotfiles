@@ -48,7 +48,7 @@ use('tpope/vim-eunuch')
 use('tpope/vim-unimpaired')
 
 -- Indent autodetection supporting editorconfig
-use('tpope/vim-sleuth')
+-- use('tpope/vim-sleuth')
 
 -- Allow plugins to enable repeating of commands
 use('tpope/vim-repeat')
@@ -126,7 +126,7 @@ use({
 		end,
 	})
 
--- File tree sidebar
+-- -- File tree sidebar
 use({
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -135,7 +135,7 @@ use({
 		end,
 	})
 
--- Lualine status line
+-- -- Lualine status line
 use({
 		'nvim-lualine/lualine.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
@@ -144,14 +144,14 @@ use({
 		end,
 	})
 
-use({
-		'akinsho/bufferline.nvim',
-		requires = 'kyazdani42/nvim-web-devicons',
-		after = 'catppuccin',
-		config = function()
-			require('phin/plugins/bufferline')
-		end,
-	})
+-- use({
+-- 		'akinsho/bufferline.nvim',
+-- 		requires = 'kyazdani42/nvim-web-devicons',
+-- 		after = 'catppuccin',
+-- 		config = function()
+-- 			require('phin/plugins/bufferline')
+-- 		end,
+-- 	})
 
 -- Display indentation lines.
 use({
