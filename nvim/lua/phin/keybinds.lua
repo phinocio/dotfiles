@@ -47,7 +47,7 @@ vim.keymap.set('n', '<C-s>', ':up<CR>')
 
 -- Center cursor when page up/down-ing
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u', '<C-u>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
