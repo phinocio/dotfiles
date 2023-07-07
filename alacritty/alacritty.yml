@@ -1,0 +1,37 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  opacity: 0.95
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: Cascadia Code
+    style: Regular
+  bold:
+    family: Cascadia Code
+    style: Bold
+  italic:
+    family: Cascadia Code
+    style: Italic
+  bold_italic:
+    family: Cascadia Code
+    style: BoldItalic
+
+  size: 14.0
+  offset:
+    #  x: 0
+    y: 8
+
+draw_bold_text_with_bright_colors: true
+
+cursor:
+  style:
+    shape: Block
+
+import:
+  - ~/.config/alacritty/themes/dracula.yml

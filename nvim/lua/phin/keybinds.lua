@@ -1,49 +1,13 @@
--- Space as leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Remap h and l to backspace/space respectively so they wrap lines
-vim.keymap.set('n', 'l', '<Space>')
-vim.keymap.set('n', 'h', '<Backspace>')
-
--- When text is wrappeed, move by terminal rows instead of actual rows
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
-
--- Reselect visual after indenting
-vim.keymap.set('v', '<', '<gv')
-vim.keymap.set('v', '>', '>gv')
-
--- Maintain the cursor position when yanking a visual selection.
--- http://ddrscott.github.io/blog/2016/yank-without-jank/
-vim.keymap.set('v', 'y', 'myy`y')
-
--- Still quit on typos
-vim.keymap.set('n', 'q:', ':q')
-
--- Paste replace visual selection without copying it.
-vim.keymap.set('v', 'p', '"_dP')
-
--- Easy insertion of a trailing ; or , from insert mode.
--- vim.keymap.set('i', ';;', '<Esc>A;')
--- vim.keymap.set('i', ',,', '<Esc>A,')
-
--- Quickly clear search highlighting.
-vim.keymap.set('n', '<Leader>k', ':nohlsearch<CR>')
-
--- Open the current file in the default program (on Mac this should just be just `open`).
-vim.keymap.set('n', '<Leader>x', ':!xdg-open %<CR><CR>')
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Move lines up and down.
-vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
-vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
-vim.keymap.set('n', '<A-j>', ':move .+1<CR>==')
-vim.keymap.set('n', '<A-k>', ':move .-2<CR>==')
-vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Ctrl+S for save
-vim.keymap.set('n', '<C-s>', ':up<CR>')
+-- Make cursor stay in place when combining below line into current one.
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- Center cursor when page up/down-ing
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -51,3 +15,14 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Paste replace visual selection without copying it.
+vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Reselect visual after indenting
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+
+vim.keymap.set("n", "Q", "<nop>")
+
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
