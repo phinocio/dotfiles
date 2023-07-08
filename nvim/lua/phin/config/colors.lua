@@ -1,26 +1,30 @@
-require("catppuccin").setup({
+local status_ok_catppuccin, catppuccin = pcall(require, "catppuccin")
+if not status_ok_catppuccin then
+	return
+end
+
+catppuccin.setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
 		dark = "mocha",
 	},
-	transparent_background = true, -- disables setting the background color.
-	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+	transparent_background = true,
+	show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+	term_colors = false,
 	dim_inactive = {
-		enabled = false, -- dims the background color of inactive window
+		enabled = false,
 		shade = "dark",
-		percentage = 0.15, -- percentage of the shade to apply to the inactive window
+		percentage = 0.15,
 	},
 	no_italic = false, -- Force no italic
 	no_bold = false, -- Force no bold
-	no_underline = false, -- Force no underline
-	styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-		comments = { "italic" }, -- Change the style of comments
+	styles = {
+		comments = { "italic" },
 		conditionals = { "italic" },
 		loops = {},
 		functions = {},
-		keywords = {},
+		keywords = { "italic" },
 		strings = {},
 		variables = {},
 		numbers = {},
@@ -32,7 +36,23 @@ require("catppuccin").setup({
 	color_overrides = {},
 	custom_highlights = function(colors)
 		return {
-			LineNr = { fg = colors.overlay1 },
+			TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
+			TelescopePromptPrefix = { bg = colors.surface0 },
+			TelescopePromptNormal = { bg = colors.surface0 },
+			TelescopePromptBorder = { bg = colors.mantle, fg = colors.mantle },
+
+			TelescopeResultsTitle = { fg = colors.mantle },
+			TelescopeResultsNormal = { bg = colors.mantle },
+			TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+
+			TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
+			TelescopePreviewNormal = { bg = colors.mantle },
+			TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+
+			TelescopeBorder = { default = true, fg = "#ffffff", bg = "#FFFFFF" },
+
+			NvimTreeIndentMarker = { fg = "#30323E" },
+			IndentBlanklineChar = { fg = "#30323E" },
 		}
 	end,
 	integrations = {
@@ -43,10 +63,28 @@ require("catppuccin").setup({
 		notify = false,
 		mini = false,
 		-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+		native_lsp = {
+			enabled = true,
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+			},
+			underlines = {
+				errors = { "undercurl" },
+				hints = { "undercurl" },
+				warnings = { "undercurl" },
+				information = { "undercurl" },
+			},
+		},
 	},
 })
 
-local dracula = require("dracula")
+local status_ok_dracula, dracula = pcall(require, "dracula")
+if not status_ok_dracula then
+	return
+end
 dracula.setup({
 	-- customize dracula color palette
 	colors = {
@@ -84,7 +122,27 @@ dracula.setup({
 	-- set italic comment
 	italic_comment = true, -- default false
 	-- overrides the default highlights with table see `:h synIDattr`
-	overrides = {},
+	overrides = function(colors)
+		return {
+			TelescopePromptTitle = { bg = colors.pink, fg = colors.fg },
+			TelescopePromptPrefix = { bg = colors.bg },
+			TelescopePromptNormal = { bg = colors.bg },
+			TelescopePromptBorder = { bg = colors.bg, fg = colors.purple },
+
+			TelescopeResultsTitle = { fg = colors.fg },
+			TelescopeResultsNormal = { bg = colors.bg },
+			TelescopeResultsBorder = { bg = colors.bg, fg = colors.purple },
+
+			TelescopePreviewTitle = { bg = colors.green, fg = colors.fg },
+			TelescopePreviewNormal = { bg = colors.bg },
+			TelescopePreviewBorder = { bg = colors.bg, fg = colors.purple },
+
+			TelescopeBorder = { default = true, fg = colors.fg, bg = colors.bg },
+
+			-- NvimTreeIndentMarker = { fg = "#30323E" },
+			IndentBlanklineChar = { fg = colors.fg },
+		}
+	end,
 	-- You can use overrides as table like this
 	-- overrides = {
 	--   NonText = { fg = "white" }, -- set NonText fg to white
@@ -100,7 +158,7 @@ dracula.setup({
 })
 
 function ColorMyPencils(color)
-	color = color or "dracula"
+	color = color or "catppuccin"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
