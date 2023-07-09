@@ -103,17 +103,23 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
-keymap("n", "<leader>f", [[<cmd>lua require('telescope.builtin').find_files()<CR>]], opts)
+keymap("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<CR>]], opts)
 keymap(
 	"n",
-	"<leader>F",
+	"<leader>fF",
 	[[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]],
 	opts
 )
-keymap("n", "<leader>b", [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
-keymap("n", "<leader>g", [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], opts)
-keymap("n", "<leader>h", [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], opts)
-keymap("n", "<leader>s", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+keymap("n", "<leader>fb", [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
+keymap("n", "<leader>fg", [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], opts)
+keymap("n", "<leader>fh", [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], opts)
+keymap("n", "<leader>fs", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- folke/todo-comments
+keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts);
+keymap("n", "<leader>tr", "<cmd>TroubleToggle<cr>", opts);
+
+keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", opts);

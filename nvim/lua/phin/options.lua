@@ -12,7 +12,7 @@ local options = {
 	hlsearch = false,
 	ignorecase = true,
 	list = true, -- enable the below listchars
-	listchars = { tab = "▸ ", trail = "·", nbsp = "·" },
+	listchars = { tab = "▸ ", trail = "·", nbsp = "·", eol = "↴" },
 	mouse = "a", -- enable mouse for all modes
 	nu = true,
 	number = true,

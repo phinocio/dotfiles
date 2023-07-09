@@ -49,7 +49,12 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 	use("christoomey/vim-tmux-navigator")
 	use("folke/trouble.nvim")
+	use("folke/todo-comments.nvim")
 	use("laytan/cloak.nvim")
+	use("folke/which-key.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("NvChad/nvim-colorizer.lua")
+
 
 	-- Colorschemes
 	use({ "catppuccin/nvim", as = "catppuccin" })
