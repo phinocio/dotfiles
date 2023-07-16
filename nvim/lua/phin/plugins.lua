@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("NvChad/nvim-colorizer.lua")
+	use("tpope/vim-sleuth")
 
 
 	-- Colorschemes
