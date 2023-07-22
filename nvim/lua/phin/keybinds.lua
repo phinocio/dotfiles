@@ -53,6 +53,10 @@ keymap("n", "N", "Nzzzv", opts)
 -- Q is cursed apparently
 keymap("n", "Q", "<nop>", opts)
 
+-- DONT KILL MY CLIPBOARD DAMNIT
+keymap("n", "d", '"_d', opts);
+keymap("n", "dd", '"_dd', opts);
+
 -- Use LSP to format files
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
 
@@ -77,12 +81,15 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
--- Paste replace visual selection without copying it.
+-- Paste replace visual selection without copying it. Also yeets register because reasons.
 keymap("v", "p", '"_dP', opts)
 
 -- Maintain the cursor position when yanking a visual selection.
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 keymap("v", "y", "myy`y", opts)
+
+-- DONT KILL MY CLIPBOARD DAMNIT
+keymap("v", "d", '"_d', opts);
 
 -- ########## Visual Block ##########
 
@@ -90,6 +97,9 @@ keymap("v", "y", "myy`y", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<leader>p", [["_dP]], opts)
+
+-- DONT KILL MY CLIPBOARD DAMNIT
+keymap("x", "d", '"_d', opts);
 
 -- ########## Terminal ##########
 
