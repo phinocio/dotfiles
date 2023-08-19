@@ -133,3 +133,6 @@ keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts);
 keymap("n", "<leader>tr", "<cmd>TroubleToggle<cr>", opts);
 
 keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", opts);
+
+-- Python
+keymap('n', '<leader>pr', ":w <bar> exec '!python3 '.shellescape('%')<CR>", opts);
