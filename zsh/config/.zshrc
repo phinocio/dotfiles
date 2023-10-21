@@ -1,5 +1,5 @@
 # Phin .zshrc file
-# Last updated - 2023-06-17
+# Last updated - 2023-10-19
 
 # Check if the distro is arch linux
 distro=$((uname -r | grep -Eq "arch") && echo "arch" || echo "n")
@@ -11,7 +11,7 @@ export KEYTIMEOUT=1
 
 # History settings
 HISTFILE="$ZSH_CACHE_DIR/history.zsh"
-HISTSIZE=100000
+HISTSIZE=100_000
 SAVEHIST=$HISTSIZE
 HISTCONTROL=ignoreboth:erasedups
 HISTTIMEFORMAT="%F %T: "
@@ -27,7 +27,7 @@ setopt HIST_IGNORE_ALL_DUPS
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # zstyle ':completion:*' insert-unambiguous true
 
-# Completion 
+# Completion
 autoload -Uz compinit && compinit -d $XDG_CACHE_HOME/.zcompdump-$ZSH_VERSION
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -49,12 +49,12 @@ function zsh_source_file() {
 # Plugins
 function zsh_add_plugin() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
+    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
         zsh_source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
         echo "Cloning missing plugins..."
-		git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+	git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
         zsh_source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_source_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     fi
@@ -79,7 +79,7 @@ if [[ "$distro" == "arch" ]]; then
     source $ZDOTDIR/aliases-arch.zsh
 else
     source $ZDOTDIR/aliases-debian.zsh
-fi 
+fi
 
 # Rehash bins. Move this to its own file later
 zshcache_time="$(date +%s%N)"

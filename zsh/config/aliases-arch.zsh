@@ -55,7 +55,7 @@ alias fixdiscord="sudo $EDITOR /opt/discord/resources/build_info.json"
 alias zshen="$VISUAL ~/.zshenv"
 alias zshu="source $ZDOTDIR/.zshrc"
 alias zshrc="$VISUAL $ZDOTDIR/.zshrc"
-alias zshal="$VISUAL $ZDOTDIR/aliases.zsh"
+alias zshal="$VISUAL $ZDOTDIR/aliases-arch.zsh"
 
 # Docker aliases
 alias pandock=\
