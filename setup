@@ -33,4 +33,7 @@ ln -s $DOTFILES/alacritty $XDG_CONFIG_HOME/alacritty
 rm -rf $XDG_CONFIG_HOME/zsh
 mkdir -p $ZSH_CACHE_DIR
 ln -s $DOTFILES/zsh/config $XDG_CONFIG_HOME/zsh
-ln -s $DOTFILES/zsh/.zshenv $HOME/.zshenv
+
+if [ ! -L $HOME/.zshenv ]; then
+    ln -s $DOTFILES/zsh/.zshenv $HOME/.zshenv
+fi

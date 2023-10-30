@@ -12,6 +12,7 @@ alias wget="wget --hsts-file=$XDG_CACHE_HOME/.wget-hist"
 alias ip="ip -c"
 # alias ssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
 alias part="php artisan"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias vim="nvim"
 alias hist="history -i"
 alias tree="tree -C -F"

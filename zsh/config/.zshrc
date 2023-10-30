@@ -144,5 +144,7 @@ fzf-locate-widget() {
 zle     -N    fzf-locate-widget
 bindkey '\ei' fzf-locate-widget
 
+eval "$(direnv hook zsh)"
+
 # Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
 repo-elephant | lolcat
