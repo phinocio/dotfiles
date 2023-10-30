@@ -35,65 +35,76 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- -- configure lua server (with special settings)
--- lspconfig["lua_ls"].setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	settings = { -- custom settings for lua
--- 		Lua = {
--- 			-- make the language server recognize "vim" global
--- 			diagnostics = {
--- 				globals = { "vim" },
--- 			},
--- 			workspace = {
--- 				-- make language server aware of runtime files
--- 				library = {
--- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
--- 					[vim.fn.stdpath("config") .. "/lua"] = true,
--- 				},
--- 				checkThirdParty = false,
--- 			},
--- 			telemetry = {
--- 				enable = false,
--- 			},
--- 		},
--- 	},
--- })
-
-local default_setup = function(server)
-	lspconfig[server].setup({})
-end
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls" },
-	handlers = {
-		default_setup,
-		lua_ls = function()
-			require("lspconfig").lua_ls.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						-- make the language server recognize "vim" global
-						diagnostics = {
-							globals = { "vim" },
-						},
-						workspace = {
-							-- make language server aware of runtime files
-							library = {
-								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-								[vim.fn.stdpath("config") .. "/lua"] = true,
-							},
-							checkThirdParty = false,
-						},
-						telemetry = {
-							enable = false,
-						},
-					},
+-- configure lua server (with special settings)
+lspconfig["lua_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = { -- custom settings for lua
+		Lua = {
+			-- make the language server recognize "vim" global
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				-- make language server aware of runtime files
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
 				},
-			})
-		end,
+				checkThirdParty = false,
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
 	},
 })
+
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- local default_setup = function(server)
+-- 	lspconfig[server].setup({})
+-- end
+-- require("mason-lspconfig").setup({
+-- 	ensure_installed = { "lua_ls", "gopls" },
+-- 	handlers = {
+-- 		default_setup,
+-- 		lua_ls = function()
+-- 			require("lspconfig").lua_ls.setup({
+-- 				on_attach = on_attach,
+-- 				capabilities = capabilities,
+-- 				settings = {
+-- 					Lua = {
+-- 						-- make the language server recognize "vim" global
+-- 						diagnostics = {
+-- 							globals = { "vim" },
+-- 						},
+-- 						workspace = {
+-- 							-- make language server aware of runtime files
+-- 							library = {
+-- 								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+-- 								[vim.fn.stdpath("config") .. "/lua"] = true,
+-- 							},
+-- 							checkThirdParty = false,
+-- 						},
+-- 						telemetry = {
+-- 							enable = false,
+-- 						},
+-- 					},
+-- 				},
+-- 			})
+-- 		end,
+-- 		gopls = function()
+-- 			require("lspconfig").gopls.setup({
+-- 				on_attach = on_attach,
+-- 				capabilities = capabilities,
+-- 			})
+-- 		end,
+-- 	},
+-- })
 
 -- bufmap(
 -- 	"n",

@@ -23,6 +23,7 @@ local options = {
 	signcolumn = "yes:2",
 	smartcase = true,
 	smartindent = true,
+	smarttab = true,
 	softtabstop = 4,
 	spell = false,
 	splitbelow = true,
