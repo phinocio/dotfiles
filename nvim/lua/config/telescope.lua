@@ -19,7 +19,7 @@ vim.cmd([[
 telescope.setup({
 	defaults = {
 
-		path_display = { "smart" },
+		path_display = { "truncate" },
 		prompt_prefix = "   ",
 		selection_caret = " ",
 		layout_config = {
