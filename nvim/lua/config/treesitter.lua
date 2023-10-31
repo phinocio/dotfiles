@@ -3,7 +3,7 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
 	ensure_installed = {
 		"go",
-		"javscript",
+		"javascript",
 		"json",
 		"lua",
 		"markdown",

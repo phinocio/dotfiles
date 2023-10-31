@@ -14,8 +14,8 @@ mason.setup({
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"lua_ls",
 		"gopls",
+		"lua_ls",
 		"tailwindcss",
 	},
 	automatic_installation = true,
@@ -23,11 +23,12 @@ mason_lspconfig.setup({
 
 mason_tool_installer.setup({
 	ensure_installed = {
-		"prettier",
-		"stylua",
-		"isort",
 		"black",
-		"pylint",
 		"eslint_d",
+		"isort",
+		"goimports",
+		"prettierd",
+		"pylint",
+		"stylua",
 	},
 })

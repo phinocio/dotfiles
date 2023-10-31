@@ -29,7 +29,10 @@ lualine.setup({
 			{ "diagnostics", sources = { "nvim_diagnostic" } },
 		},
 		lualine_c = { "filename" },
-		lualine_x = { { lazy_status.updates, cond = lazy_status.has_updates }, { "encoding", "fileformat", "filetype" } },
+		lualine_x = {
+			{ lazy_status.updates, cond = lazy_status.has_updates },
+			{ "encoding", "fileformat", "filetype" },
+		},
 		lualine_y = {
 			'(vim.bo.expandtab and "␠ " or "⇥ ") .. " " .. vim.bo.shiftwidth',
 		},
@@ -49,5 +52,5 @@ lualine.setup({
 	tabline = {},
 	winbar = {},
 	inactive_winbar = {},
-	extensions = {},
+	extensions = { "nvim-tree" },
 })

@@ -63,61 +63,13 @@ lspconfig["lua_ls"].setup({
 lspconfig["gopls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+			},
+		},
+	},
 })
-
--- local default_setup = function(server)
--- 	lspconfig[server].setup({})
--- end
--- require("mason-lspconfig").setup({
--- 	ensure_installed = { "lua_ls", "gopls" },
--- 	handlers = {
--- 		default_setup,
--- 		lua_ls = function()
--- 			require("lspconfig").lua_ls.setup({
--- 				on_attach = on_attach,
--- 				capabilities = capabilities,
--- 				settings = {
--- 					Lua = {
--- 						-- make the language server recognize "vim" global
--- 						diagnostics = {
--- 							globals = { "vim" },
--- 						},
--- 						workspace = {
--- 							-- make language server aware of runtime files
--- 							library = {
--- 								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
--- 								[vim.fn.stdpath("config") .. "/lua"] = true,
--- 							},
--- 							checkThirdParty = false,
--- 						},
--- 						telemetry = {
--- 							enable = false,
--- 						},
--- 					},
--- 				},
--- 			})
--- 		end,
--- 		gopls = function()
--- 			require("lspconfig").gopls.setup({
--- 				on_attach = on_attach,
--- 				capabilities = capabilities,
--- 			})
--- 		end,
--- 	},
--- })
-
--- bufmap(
--- 	"n",
--- 	"<leader>vds",
--- 	require("telescope.builtin").lsp_document_symbols,
--- 	{ desc = "List symbols in current document" }
--- )
--- bufmap(
--- 	"n",
--- 	"<leader>vws",
--- 	require("telescope.builtin").lsp_dynamic_workspace_symbols,
--- 	{ desc = "List symbols in current workspace" }
--- )
--- bufmap("n", "<leader>vd", vim.diagnostic.open_float, { desc = "Open floating diagnostic" })
--- bufmap("n", "<leader>vrr", require("telescope.builtin").lsp_references, { desc = "Show references" })
--- bufmap("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "Signature help" })
