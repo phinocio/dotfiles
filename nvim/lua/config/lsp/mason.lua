@@ -12,6 +12,7 @@ mason.setup({
 	},
 })
 
+-- Configure LSPs to install
 mason_lspconfig.setup({
 	ensure_installed = {
 		"gopls",
@@ -21,6 +22,7 @@ mason_lspconfig.setup({
 	automatic_installation = true,
 })
 
+-- Configure linters and formatters to install
 mason_tool_installer.setup({
 	ensure_installed = {
 		"black",
