@@ -17,6 +17,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
+# GPG needs this on Endeavour laptop
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 typeset -U path
 path=($path ~/.local/bin)
 path=($path ~/.config/composer/vendor/bin)
