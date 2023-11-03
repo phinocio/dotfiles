@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
 	local map = function(mode, keys, func, opts)
 		local options = { buffer = bufnr, noremap = false, silent = true }
 		if opts then
@@ -25,6 +25,11 @@ local on_attach = function(_, bufnr)
 	bufmap("n", "K", vim.lsp.buf.hover, { desc = "Hover definition" })
 	bufmap("n", "<leader>lf", vim.lsp.buf.format, { desc = "LSP format code" })
 	bufmap("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+
+	-- Client Specific keybinds
+	if client.name == "powershell_es" then
+		bufmap("n", "<leader>pr", ":term pwsh %<CR>", { desc = "Run current pwsh script" })
+	end
 end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -60,16 +65,26 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
-lspconfig["gopls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		gopls = {
-			completeUnimported = true,
-			usePlaceholders = true,
-			analyses = {
-				unusedparams = true,
+if vim.fn.executable("go") == 1 then
+	lspconfig["gopls"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			gopls = {
+				completeUnimported = true,
+				usePlaceholders = true,
+				analyses = {
+					unusedparams = true,
+				},
 			},
 		},
-	},
-})
+	})
+end
+
+if vim.fn.executable("pwsh") == 1 then
+	lspconfig["powershell_es"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/",
+	})
+end
