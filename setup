@@ -2,37 +2,41 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-rm -rf $XDG_CONFIG_HOME/kitty
-ln -s $DOTFILES/kitty $XDG_CONFIG_HOME/kitty
+if [ ! -L $HOME/.zshenv ]; then
+    ln -s $DOTFILES/zsh/.zshenv $HOME/.zshenv
+fi
 
-rm -rf $XDG_CONFIG_HOME/conky
-ln -s $DOTFILES/conky $XDG_CONFIG_HOME/conky
+rm -rf $HOME/.config/zsh
+mkdir -p $ZSH_CACHE_DIR
+ln -s $DOTFILES/zsh/config $HOME/.config/zsh
 
-rm -rf $XDG_CONFIG_HOME/newsboat
-ln -s $DOTFILES/newsboat $XDG_CONFIG_HOME/newsboat
+rm -rf $HOME/.config/kitty
+ln -s $DOTFILES/kitty $HOME/.config/kitty
 
-mkdir -p $XDG_CONFIG_HOME/tmux
-rm -rf $XDG_CONFIG_HOME/tmux/tmux.conf
-ln -s $DOTFILES/tmux/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
+rm -rf $HOME/.config/conky
+ln -s $DOTFILES/conky $HOME/.config/conky
+
+rm -rf $HOME/.config/newsboat
+ln -s $DOTFILES/newsboat $HOME/.config/newsboat
+
+mkdir -p $HOME/.config/tmux
+rm -rf $HOME/.config/tmux/tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
 
 mkdir -p $HOME/.local/bin
 
 rm -rf $HOME/.local/bin/t
 ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
 
-rm -rf $XDG_CONFIG_HOME/nvim
-ln -s $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
 
-rm -rf $XDG_CONFIG_HOME/phpactor
-ln -s $DOTFILES/phpactor $XDG_CONFIG_HOME/phpactor
+rm -rf $HOME/.config/phpactor
+ln -s $DOTFILES/phpactor $HOME/.config/phpactor
 
-rm -rf $XDG_CONFIG_HOME/alacritty
-ln -s $DOTFILES/alacritty $XDG_CONFIG_HOME/alacritty
+rm -rf $HOME/.config/alacritty
+ln -s $DOTFILES/alacritty $HOME/.config/alacritty
 
-rm -rf $XDG_CONFIG_HOME/zsh
-mkdir -p $ZSH_CACHE_DIR
-ln -s $DOTFILES/zsh/config $XDG_CONFIG_HOME/zsh
-
-if [ ! -L $HOME/.zshenv ]; then
-    ln -s $DOTFILES/zsh/.zshenv $HOME/.zshenv
-fi
+# Sensitive things get put in here, so only copy, no symlink
+mkdir -p $HOME/.config/gnupg
+cp ./gnupg/gpg-agent.conf $HOME/.config/gnupg/gpg-agent.conf
