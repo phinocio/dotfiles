@@ -1064,7 +1064,7 @@ tab_bar_style powerline
 
 #: The foreground and background colors.
 
-background_opacity 0.10
+background_opacity 1.00
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2385,6 +2385,6 @@ map kitty_mod+home resize_window Reset
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Latte
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
