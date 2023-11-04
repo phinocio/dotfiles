@@ -16,6 +16,7 @@ conform.setup({
 		typescriptreact = { "prettierd" },
 		yaml = { "prettierd" },
 	},
+
 	format_on_save = {
 		lsp_fallback = true,
 		async = false,

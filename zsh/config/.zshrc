@@ -60,12 +60,12 @@ function zsh_add_plugin() {
     fi
 }
 
+# nvm plugin
+zsh_add_plugin "lukechilds/zsh-nvm"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 # zsh_add_plugin "zdharma-continuum/fast-syntax-highlighting"
 
-# nvm plugin
-zsh_add_plugin "lukechilds/zsh-nvm"
 
 # zsh-syntax-highlighting settings
 zle_highlight=('paste:none')

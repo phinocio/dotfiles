@@ -1,16 +1,6 @@
-local keymap = function(mode, keys, func, opts)
-	local options = { noremap = true, silent = false }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, keys, func, options)
-end
+local todo_comments = require("todo-comments")
 
-keymap("n", "<leader>tt", ":TodoTelescope keywords=TODO<CR>", { desc = "[Todo] Show todos" })
-keymap("n", "<leader>ta", ":TodoTelescope<CR>", { desc = "[Todo] Show all todo comments" })
-keymap("n", "<leader>tf", ":TodoTelescope keywords=FIX<CR>", { desc = "[Todo] Show all fix comments" })
-
-return {
+todo_comments.setup({
 	signs = true, -- show icons in the signs column
 	sign_priority = 8, -- sign priority
 	-- keywords recognized as todo comments
@@ -73,4 +63,16 @@ return {
 		pattern = [[\b(KEYWORDS):]], -- ripgrep regex
 		-- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
 	},
-}
+})
+
+local keymap = function(mode, keys, func, opts)
+	local options = { noremap = true, silent = false }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, keys, func, options)
+end
+
+keymap("n", "<leader>tt", ":TodoTelescope keywords=TODO<CR>", { desc = "[Todo] Show todos" })
+keymap("n", "<leader>ta", ":TodoTelescope<CR>", { desc = "[Todo] Show all todo comments" })
+keymap("n", "<leader>tf", ":TodoTelescope keywords=FIX<CR>", { desc = "[Todo] Show all fix comments" })

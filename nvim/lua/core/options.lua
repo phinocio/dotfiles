@@ -1,5 +1,6 @@
 -- Adapted from https://github.com/LunarVim/Neovim-from-scratch
 
+-- Set in nvim-tree config
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
@@ -14,7 +15,6 @@ local options = {
 	list = true, -- enable the below listchars
 	listchars = { tab = "▸ ", trail = "·", nbsp = "·", eol = "↴" },
 	mouse = "a", -- enable mouse for all modes
-	nu = true,
 	number = true,
 	relativenumber = true,
 	scrolloff = 16,
@@ -31,6 +31,7 @@ local options = {
 	swapfile = false,
 	tabstop = 4,
 	termguicolors = true,
+	timeoutlen = 750,
 	title = true,
 	undodir = os.getenv("HOME") .. "/.cache/nvim/undodir",
 	undofile = true, -- persistent undo
