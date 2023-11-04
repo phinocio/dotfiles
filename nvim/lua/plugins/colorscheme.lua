@@ -17,10 +17,22 @@ return {
 			vim.cmd("colorscheme catppuccin")
 		end,
 	},
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			require("config.tokyonight")
+			-- vim.cmd("colorscheme tokyonight")
+		end,
+	},
+	{
+		"navarasu/onedark.nvim",
+		priority = 1000,
+		config = function()
+			require("config.onedark")
+			-- vim.cmd("colorscheme onedark")
+		end,
+	},
 }
