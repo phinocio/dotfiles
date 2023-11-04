@@ -145,14 +145,13 @@ telescope.setup({
 
 -- Shorten function name
 
-local map = function(mode, keys, func, opts)
+local keymap = function(mode, keys, func, opts)
 	local options = { noremap = true, silent = false }
 	if opts then
 		options = vim.tbl_extend("force", options, opts)
 	end
 	vim.api.nvim_set_keymap(mode, keys, func, options)
 end
-local keymap = map
 
 keymap("n", "<leader>ff", [[<cmd>lua require('telescope.builtin').find_files()<CR>]], { desc = "[Tele] find files" })
 keymap(

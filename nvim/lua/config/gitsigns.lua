@@ -25,7 +25,7 @@ gitsigns.setup({
 		ignore_whitespace = false,
 	},
 	current_line_blame_formatter_opts = {
-		relative_time = false,
+		relative_time = true,
 	},
 	sign_priority = 6,
 	update_debounce = 100,
