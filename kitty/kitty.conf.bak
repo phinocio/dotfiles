@@ -2385,6 +2385,6 @@ map kitty_mod+home resize_window Reset
 
 
 # BEGIN_KITTY_THEME
-# Dracula
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
