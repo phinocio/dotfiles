@@ -1,22 +1,21 @@
 -- Adapted from https://github.com/LunarVim/Neovim-from-scratch
 
-local opts = { noremap = true, silent = false }
+-- local {desc=""} = { noremap = true, silent = false }
 
-local term_opts = { silent = true }
+-- local term_{desc=""} = { silent = true }
 
 -- Shorten function name
--- local map = function(mode, keys, func, opts)
--- 	local options = { noremap = true, silent = false }
--- 	if opts then
--- 		options = vim.tbl_extend("force", options, opts)
--- 	end
--- 	vim.api.nvim_set_keymap(mode, keys, func, options)
--- end
--- local keymap = map
-local keymap = vim.api.nvim_set_keymap
+local keymap = function(mode, keys, func, opts)
+	local options = { noremap = true, silent = false }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, keys, func, options)
+end
+-- local keymap = vim.api.nvim_set_keymap
 
 -- Space as leader
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<Nop>", { desc = "Space leader" })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -31,98 +30,98 @@ vim.g.maplocalleader = " "
 -- ########## Normal ##########
 
 -- Open netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
 
 -- Make cursor stay in place when combining below line into current one.
-keymap("n", "J", "mzJ`z", opts)
+keymap("n", "J", "mzJ`z", { desc = "" })
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", { desc = "" })
+-- keymap("n", "<C-j>", "<C-w>j", { desc = "" })
+-- keymap("n", "<C-k>", "<C-w>k", { desc = "" })
+-- keymap("n", "<C-l>", "<C-w>l", { desc = "" })
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize +2<CR>", { desc = "Resize h +2" })
+keymap("n", "<C-Down>", ":resize -2<CR>", { desc = "Resize h -2" })
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Resize v -2" })
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Resize v +2" })
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bd", ":bdelete<CR> :bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
+keymap("n", "<S-h>", ":bprevious<CR>", { desc = "Prev buffer" })
+keymap("n", "<leader>bd", ":bdelete<CR> :bprevious<CR>", { desc = "Del buffer and goto prev" })
 
 -- Center cursor when page up/down-ing
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
+keymap("n", "<C-d>", "<C-d>zz", { desc = "Page down and center" })
+keymap("n", "<C-u>", "<C-u>zz", { desc = "Page up and center" })
+keymap("n", "n", "nzzzv", { desc = "Next result and center" })
+keymap("n", "N", "Nzzzv", { desc = "Prev result and center" })
 
 -- Q is cursed apparently
-keymap("n", "Q", "<nop>", opts)
+keymap("n", "Q", "<nop>", { desc = "ban Q" })
 
 -- DONT KILL MY CLIPBOARD DAMNIT
-keymap("n", "d", '"_d', opts)
-keymap("n", "dd", '"_dd', opts)
+keymap("n", "d", '"_d', { desc = "Delete preserve clipboard" })
+keymap("n", "dd", '"_dd', { desc = "Delete preserve clipboard" })
 
 -- ########## Insert ##########
 
 -- Move text up and down
-keymap("i", "<A-j>", "<Esc>:move .+1<CR>==gi", opts)
-keymap("i", "<A-k>", "<Esc>:move .-2<CR>==gi", opts)
+keymap("i", "<A-j>", "<Esc>:move .+1<CR>==gi", { desc = "Move line down (visual)" })
+keymap("i", "<A-k>", "<Esc>:move .-2<CR>==gi", { desc = "Move line up (visual)" })
 
 -- Easy insertion of a trailing ; or , from insert mode.
--- keymap('i', ';;', '<Esc>A;')
--- keymap('i', ',,', '<Esc>A,')
+keymap("i", ";;", "<Esc>A;")
+keymap("i", ",,", "<Esc>A,")
 
 -- ########## Visual ##########
 
 -- Reselect visual after indenting
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", { desc = "Untab selection" })
+keymap("v", ">", ">gv", { desc = "Tab selection" })
 
 -- Move text up and down
 -- Move lines up and down.
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected line up" })
+keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected line down" })
 
 -- Paste replace visual selection without copying it. Also yeets register because reasons.
-keymap("v", "p", '"_dP', opts)
+keymap("v", "p", '"_dP', { desc = "Paste without copy" })
 
 -- Maintain the cursor position when yanking a visual selection.
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
-keymap("v", "y", "myy`y", opts)
+keymap("v", "y", "myy`y", { desc = "Yank - keep cusor pos" })
 
 -- DONT KILL MY CLIPBOARD DAMNIT
-keymap("v", "d", '"_d', opts)
+keymap("v", "d", '"_d', { desc = "Delete and preserve clipboard" })
 
 -- ########## Visual Block ##########
 
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<leader>p", [["_dP]], opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", { desc = "Move selection up" })
+keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selection down" })
+keymap("x", "<leader>p", [["_dP]], { desc = "Delete selection" })
 
 -- DONT KILL MY CLIPBOARD DAMNIT
-keymap("x", "d", '"_d', opts)
+keymap("x", "d", '"_d', { desc = "Delete and preserve clipboard" })
 
 -- ########## Terminal ##########
 
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = false, silent = true, desc = "[Term] Move left" })
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = false, silent = true, desc = "[Term] Move right" })
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = false, silent = true, desc = "[Term] Move up" })
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = false, silent = true, desc = "[Term] Move down" })
 
 -- -- Nvimtree
--- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", {desc=""})
 
 -- -- folke/todo-comments
--- keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", opts)
--- keymap("n", "<leader>tr", "<cmd>TroubleToggle<cr>", opts)
+-- keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", {desc=""})
+-- keymap("n", "<leader>tr", "<cmd>TroubleToggle<cr>", {desc=""})
 
--- keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", opts)
+-- keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", {desc=""})
 
 -- -- Python
--- keymap("n", "<leader>pr", ":w <bar> exec '!python3 '.shellescape('%')<CR>", opts)
+-- keymap("n", "<leader>pr", ":w <bar> exec '!python3 '.shellescape('%')<CR>", {desc=""})
