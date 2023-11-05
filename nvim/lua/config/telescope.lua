@@ -102,6 +102,14 @@ telescope.setup({
 			layout_config = {
 				width = 80,
 			},
+			mappings = {
+				i = {
+					["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+				},
+				n = {
+					["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+				},
+			},
 		},
 		oldfiles = {
 			prompt_title = "History",

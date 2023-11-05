@@ -121,7 +121,5 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = false, silent = true, desc
 -- keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", {desc=""})
 -- keymap("n", "<leader>tr", "<cmd>TroubleToggle<cr>", {desc=""})
 
--- keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", {desc=""})
-
 -- -- Python
 -- keymap("n", "<leader>pr", ":w <bar> exec '!python3 '.shellescape('%')<CR>", {desc=""})

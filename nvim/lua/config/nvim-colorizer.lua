@@ -27,3 +27,13 @@ colorizer.setup({
 	-- all the sub-options of filetypes apply to buftypes
 	buftypes = {},
 })
+
+local keymap = function(mode, keys, func, opts)
+	local options = { noremap = true, silent = false }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, keys, func, options)
+end
+
+keymap("n", "<leader>ct", "<cmd>ColorizerToggle<cr>", { desc = "[Colorizer] Toggle colors" })

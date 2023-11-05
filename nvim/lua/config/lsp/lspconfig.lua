@@ -88,3 +88,29 @@ if vim.fn.executable("pwsh") == 1 then
 		bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/",
 	})
 end
+
+if vim.fn.executable("python") == 1 then
+	lspconfig["pyright"].setup({
+		capabilities = (function()
+			capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+			return capabilities
+		end)(),
+		on_attach = on_attach,
+		settings = {
+			python = {
+				analysis = {
+					typeCheckingMode = "off",
+				},
+			},
+		},
+	})
+end
+
+-- if vim.fn.executable("python") == 1 then
+-- 	lspconfig["jedi_language_server"].setup({
+-- 		capabilities = capabilities,
+-- 		on_attach = on_attach,
+-- 		settings = {},
+-- 	})
+-- end
