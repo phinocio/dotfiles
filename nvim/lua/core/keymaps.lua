@@ -72,8 +72,8 @@ keymap("i", "<A-j>", "<Esc>:move .+1<CR>==gi", { desc = "Move line down (visual)
 keymap("i", "<A-k>", "<Esc>:move .-2<CR>==gi", { desc = "Move line up (visual)" })
 
 -- Easy insertion of a trailing ; or , from insert mode.
-keymap("i", ";;", "<Esc>A;")
-keymap("i", ",,", "<Esc>A,")
+-- keymap("i", ";;", "<Esc>A;")
+-- keymap("i", ",,", "<Esc>A,")
 
 -- ########## Visual ##########
 

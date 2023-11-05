@@ -67,4 +67,3 @@ alias dc="docker-compose"
 alias dock="docker"
 
 # Note taking
-note() {NOTE_DIR="$HOME/Documents/Notes"; NOTE_NAME="$1"; TIMESTAMP="$(date +%Y-%m-%d_%H:%M)"; cd "${NOTE_DIR}" && nvim "${NOTE_DIR}/${TIMESTAMP}-${NOTE_NAME}.md" && cd - ;}

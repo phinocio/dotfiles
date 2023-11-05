@@ -5,6 +5,7 @@
 -- vim.g.loaded_netrwPlugin = 1
 
 local options = {
+	-- autochdir = true,
 	backup = true, -- creates a backup file
 	clipboard = "unnamedplus", -- use system clipboard
 	completeopt = "menuone,longest,preview",

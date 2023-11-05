@@ -40,3 +40,6 @@ ln -s $DOTFILES/alacritty $HOME/.config/alacritty
 # Sensitive things get put in here, so only copy, no symlink
 mkdir -p $HOME/.config/gnupg
 cp ./gnupg/gpg-agent.conf $HOME/.config/gnupg/gpg-agent.conf
+
+# Create notes dir
+mkdir -p $HOME/Documents/Notes

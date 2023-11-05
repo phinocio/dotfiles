@@ -35,12 +35,14 @@ export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+export PROJECTS_DIR=$HOME/Projects
 export PROJECTS_WEB=$HOME/Projects/Websites
 export PROJECTS_API=$HOME/Projects/APIs
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+export NOTES_DIR="$HOME/Documents/Notes"
 
 if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	# Bat config
@@ -49,8 +51,9 @@ if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	export MANROFFOPT="-c"
 fi
 
-. "$XDG_DATA_HOME/cargo/env"
-
+if command -v cargo >/dev/null; then
+	. "$XDG_DATA_HOME/cargo/env"
+fi
 
 # nvm config
 export NVM_COMPLETION=true
