@@ -134,6 +134,7 @@ fcd() {
 		cd $HOME/$dir
 	fi
 }
+bindkey -s "^P" "fcd^M"
 
 # Make use of tmux-sessionizer
 bindkey -s "^F" "tmux-sessionizer^M"

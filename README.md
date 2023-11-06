@@ -8,10 +8,10 @@ Biggest thing here is my neovim config, which the prettier config is in part use
 
 Basically just things I need/want to install on a new system in a single place I can reference.
 
--   delta
 -   eza
 -   fd
 -   fzf
+-   git-delta
 -   kitty/alacritty
 -   neovim
 -   ripgrep
