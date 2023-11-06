@@ -22,16 +22,15 @@ ln -s $DOTFILES/newsboat $HOME/.config/newsboat
 rm -rf $HOME/.config/tmux/tmux.conf
 mkdir -p $HOME/.config/tmux/plugins
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
+ln -s $DOTFILES/tmux/.tmux-cht-languages $HOME/.config/tmux/.tmux-cht-languages
+ln -s $DOTFILES/tmux/.tmux-cht-commands $HOME/.config/tmux/.tmux-cht-commands
 
 if [[ ! -d $HOME/.config/tmux/plugins/tpm ]]; then
 	git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
 fi
 
-mkdir -p $HOME/.local/bin
-
-if [[ ! -L $HOME/.local/bin/tmux-sessionizer ]]; then
-	ln -s $DOTFILES/scripts/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
-fi
+rm -rf $HOME/.local/bin
+ln -s $DOTFILES/scripts $HOME/.local/bin
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim

@@ -16,7 +16,7 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias vim="nvim"
 alias hist="history -i"
 alias tree="tree -C -F"
-alias cat="bat"
+alias cat="bat --paging=never --plain"
 # alias nvim="kitty --detach -o window_padding_width=0 nvim"
 alias :q="exit"
 
