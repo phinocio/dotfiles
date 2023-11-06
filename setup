@@ -19,8 +19,13 @@ ln -s $DOTFILES/conky $HOME/.config/conky
 rm -rf $HOME/.config/newsboat
 ln -s $DOTFILES/newsboat $HOME/.config/newsboat
 
-rm -rf $HOME/.config/tmux
-ln -s $DOTFILES/tmux $HOME/.config/tmux
+rm -rf $HOME/.config/tmux/tmux.conf
+mkdir -p $HOME/.config/tmux/plugins
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
+
+if [[ ! -d $HOME/.config/tmux/plugins/tpm ]]; then
+	git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
+fi
 
 mkdir -p $HOME/.local/bin
 
