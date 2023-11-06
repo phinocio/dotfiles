@@ -7,7 +7,7 @@ if [ ! -L $HOME/.zshenv ]; then
 fi
 
 rm -rf $HOME/.config/zsh
-mkdir -p $ZSH_CACHE_DIR
+mkdir -p $HOME/.cache/zsh
 ln -s $DOTFILES/zsh/config $HOME/.config/zsh
 
 rm -rf $HOME/.config/kitty
@@ -19,14 +19,14 @@ ln -s $DOTFILES/conky $HOME/.config/conky
 rm -rf $HOME/.config/newsboat
 ln -s $DOTFILES/newsboat $HOME/.config/newsboat
 
-# Only symlink the config because I don't need the plugins
-mkdir -p $HOME/.config/tmux
-rm -rf $HOME/.config/tmux/tmux.conf
-ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
+rm -rf $HOME/.config/tmux
+ln -s $DOTFILES/tmux $HOME/.config/tmux
 
 mkdir -p $HOME/.local/bin
-rm -rf $HOME/.local/bin/t
-ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
+
+if [[ ! -L $HOME/.local/bin/tmux-sessionizer ]]; then
+	ln -s $DOTFILES/scripts/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
+fi
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
@@ -36,6 +36,9 @@ ln -s $DOTFILES/phpactor $HOME/.config/phpactor
 
 rm -rf $HOME/.config/alacritty
 ln -s $DOTFILES/alacritty $HOME/.config/alacritty
+
+rm -rf $HOME/.config/bat
+ln -s $DOTFILES/bat $HOME/.config/bat
 
 # Sensitive things get put in here, so only copy, no symlink
 mkdir -p $HOME/.config/gnupg
@@ -49,3 +52,9 @@ mkdir -p $HOME/Documents/Notes
 # $PRETTIERD_DEFAULT_CONFIG env var
 rm -rf $HOME/.config/prettier
 ln -s $DOTFILES/prettier $HOME/.config/prettier
+
+# Projects dir
+mkdir -p $HOME/Projects
+if [[ ! -L $HOME/Projects/.editorconfig ]]; then
+	ln -s $DOTFILES/.editorconfig $HOME/Projects/.editorconfig
+fi

@@ -108,14 +108,13 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 
 _fzf_compgen_path() { fd --type f . "$1" } # set default path for completion
 _fzf_compgen_dir() { fd --type d . "$1" }
-# bindkey "^F" fzf-cd-widget
 
 se() { fd -tf . ~/.local/bin | fzf --preview 'bat -p --color=always {}' --bind 'enter:become(nvim {})' ;} # edit a script from .local/bin
 ce() { fd -tf -H -d 2 . ~/.config | fzf --preview 'bat -p --color=always {}' --bind 'enter:become(nvim -c "set autochdir" {})' ;} # edit a config file
 xo() { file=$(fd -tf . ~ | fzf) && xdg-open "$file" ;} # xdg-open a file
 ed() { fd -tf . ~ |  fzf --preview 'bat -p --color=always {}' --bind 'enter:become(nvim {})' ;} # xdg-open a file
 
-# Catppucin-machiato
+# Catppucin-macchiato
 # export FZF_DEFAULT_OPTS=" \
 # --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 # --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -129,13 +128,14 @@ export FZF_DEFAULT_OPTS=" \
     --color=marker:#ff79c6,spinner:#ffb86c,header:#ff79c6"
 
 
-fzf-cd-projects() {
-	dir="$(fd --type d -d 2 . $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'Open a Project...')";
-	if [[ -n $dir ]]; then
-		cd $HOME/$dir
-	fi
-}
-bindkey -s "^F" "fzf-cd-projects^M"
+# fzf-cd-projects() {
+# 	dir="$(fd --type d -d 2 . $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'Open a Project...')";
+# 	if [[ -n $dir ]]; then
+# 		cd $HOME/$dir
+# 	fi
+# }
+# Make use of tmux-sessionizer
+bindkey -s "^F" "tmux-sessionizer^M"
 
 note() {
 	if [ $# -eq 0 ]; then
