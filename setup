@@ -20,6 +20,8 @@ rm -rf $HOME/.config/newsboat
 ln -s $DOTFILES/newsboat $HOME/.config/newsboat
 
 rm -rf $HOME/.config/tmux/tmux.conf
+rm -rf $HOME/.config/tmux/.tmux-cht-languages
+rm -rf $HOME/.config/tmux/.tmux-cht-commands
 mkdir -p $HOME/.config/tmux/plugins
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
 ln -s $DOTFILES/tmux/.tmux-cht-languages $HOME/.config/tmux/.tmux-cht-languages
