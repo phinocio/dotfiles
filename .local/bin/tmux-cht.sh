@@ -2,7 +2,7 @@
 
 # Yet another thing stolen from ThePrimeagen
 
-selected=`cat $XDG_CONFIG_HOME/tmux/.tmux-cht-languages $XDG_CONFIG_HOME/tmux/.tmux-cht-commands | fzf`
+selected=`cat $XDG_CONFIG_HOME/tmux/.tmux-cht-languages $XDG_CONFIG_HOME/tmux/.tmux-cht-commands | sort |  fzf`
 if [[ -z $selected ]]; then
     exit 0
 fi

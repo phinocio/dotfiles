@@ -1,4 +1,8 @@
+awk
 cp
 docker
+find
 ls
 rm
+sed
+xargs

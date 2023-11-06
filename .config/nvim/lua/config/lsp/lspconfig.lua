@@ -28,7 +28,10 @@ local on_attach = function(client, bufnr)
 
 	-- Client Specific keybinds
 	if client.name == "powershell_es" then
-		bufmap("n", "<leader>pr", ":term pwsh %<CR>", { desc = "Run current pwsh script" })
+		bufmap("n", "<leader>pr", ":!pwsh %<CR>", { desc = "Run current pwsh script" })
+	end
+	if client.name == "pyright" then
+		bufmap("n", "<leader>pr", ":!python %<CR>", { desc = "Run current file as python script" })
 	end
 end
 local capabilities = cmp_nvim_lsp.default_capabilities()

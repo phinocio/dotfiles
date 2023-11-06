@@ -16,6 +16,7 @@ Basically just things I need/want to install on a new system in a single place I
 -   neovim
 -   ripgrep
 -   tree
+-   xsel
 -   zsh
 
 # References
