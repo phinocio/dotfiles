@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Yet another thing stolen from ThePrimeagen
+
 selected=`cat $XDG_CONFIG_HOME/tmux/.tmux-cht-languages $XDG_CONFIG_HOME/tmux/.tmux-cht-commands | fzf`
 if [[ -z $selected ]]; then
     exit 0
