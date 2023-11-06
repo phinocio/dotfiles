@@ -19,12 +19,12 @@ ln -s $DOTFILES/conky $HOME/.config/conky
 rm -rf $HOME/.config/newsboat
 ln -s $DOTFILES/newsboat $HOME/.config/newsboat
 
+# Only symlink the config because I don't need the plugins
 mkdir -p $HOME/.config/tmux
 rm -rf $HOME/.config/tmux/tmux.conf
 ln -s $DOTFILES/tmux/tmux.conf $HOME/.config/tmux/tmux.conf
 
 mkdir -p $HOME/.local/bin
-
 rm -rf $HOME/.local/bin/t
 ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
 
@@ -39,7 +39,13 @@ ln -s $DOTFILES/alacritty $HOME/.config/alacritty
 
 # Sensitive things get put in here, so only copy, no symlink
 mkdir -p $HOME/.config/gnupg
-cp ./gnupg/gpg-agent.conf $HOME/.config/gnupg/gpg-agent.conf
+cp $DOTFILES/gnupg/gpg-agent.conf $HOME/.config/gnupg/gpg-agent.conf
 
 # Create notes dir
 mkdir -p $HOME/Documents/Notes
+
+# Default global prettier config for use
+# with prettierd in neovim by setting
+# $PRETTIERD_DEFAULT_CONFIG env var
+rm -rf $HOME/.config/prettier
+ln -s $DOTFILES/prettier $HOME/.config/prettier
