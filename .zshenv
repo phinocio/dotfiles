@@ -56,9 +56,9 @@ if command -v cargo >/dev/null; then
 fi
 
 # nvm config
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=false
-export NVM_DIR=$XDG_CONFIG_HOME/nvm
+# export NVM_COMPLETION=true
+# export NVM_LAZY_LOAD=false
+# export NVM_DIR=$XDG_CONFIG_HOME/nvm
 
 # Prettier default config for prettierd
 export PRETTIERD_DEFAULT_CONFIG=$XDG_CONFIG_HOME/prettier/.prettierrc.json
