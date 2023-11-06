@@ -1,3 +1,4 @@
 *.bak*
 packer_compiled.lua
-zsh/config/plugins/
+*/**/plugins
+!.config/nvim/lua//plugins
