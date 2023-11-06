@@ -34,7 +34,7 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 # Ruby
 if command -v ruby >/dev/null; then
 	export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-	export PATH="$PATH:$GEM_HOME/bin"
+	path=($path $GEM_HOME/bin)
 fi
 
 # OpenJDK
