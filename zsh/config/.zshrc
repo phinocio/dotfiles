@@ -128,12 +128,13 @@ export FZF_DEFAULT_OPTS=" \
     --color=marker:#ff79c6,spinner:#ffb86c,header:#ff79c6"
 
 
-# fzf-cd-projects() {
-# 	dir="$(fd --type d -d 2 . $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'Open a Project...')";
-# 	if [[ -n $dir ]]; then
-# 		cd $HOME/$dir
-# 	fi
-# }
+fcd() {
+	dir="$(fd --type d -d 2 . $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'Open a Project...')";
+	if [[ -n $dir ]]; then
+		cd $HOME/$dir
+	fi
+}
+
 # Make use of tmux-sessionizer
 bindkey -s "^F" "tmux-sessionizer^M"
 
