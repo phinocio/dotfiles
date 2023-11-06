@@ -2,7 +2,19 @@
 
 My dotfiles for various programs. Some aren't in use atm (alacritty, newsboat, phpactor).
 
-Biggest thing here is my neovim config, which the prettier config is in part used with (via PRETTIERD_DEFAULT_CONFIG env var and `prettierd`)
+Biggest thing here is my neovim config, which the prettier config is in part used with (via `PRETTIERD_DEFAULT_CONFIG` env var and `prettierd`)
+
+# Depenencies
+
+Basically just things I need/want to install on a new system in a single place I can reference.
+
+-   exa
+-   fd
+-   fzf
+-   kitty/alacritty
+-   neovim
+-   ripgrep
+-   zsh
 
 # References
 
