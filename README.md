@@ -7,5 +7,7 @@ Biggest thing here is my neovim config, which the prettier config is in part use
 # References
 
 [https://laracasts.com/series/neovim-as-a-php-ide](https://laracasts.com/series/neovim-as-a-php-ide)
+
 [https://github.com/laracasts/laracasts-dotfiles](https://github.com/laracasts/laracasts-dotfiles)
+
 [ThePrimeagen](https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R)
