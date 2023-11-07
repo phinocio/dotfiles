@@ -21,6 +21,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Misc setopt settings
 # setopt MENUCOMPLETE
+setopt AUTOCD
 
 # Completions
 # autoload -Uz compinit; compinit -d $ZSH_CACHE_DIR/zcompdump-$ZSH_VERSION
