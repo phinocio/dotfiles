@@ -69,7 +69,7 @@ keymap("n", "dd", '"_dd', { desc = "Delete preserve clipboard" })
 keymap("n", "<leader>mx", ":!chmod +x %<CR>", { desc = "Make current file executable" })
 
 -- Use tmux-sessionizer to navigate elsewhere
-keymap("n", "<C-f>", "<cmd>!tmux neww tmux-sessionizer<CR>", { desc = "Open tmux sessionizer" })
+keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Open tmux sessionizer" })
 
 -- Source current file
 keymap("n", "<leader><leader>", "<cmd>so %<CR>", { desc = "Source current file" })

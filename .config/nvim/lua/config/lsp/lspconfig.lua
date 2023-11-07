@@ -33,6 +33,16 @@ local on_attach = function(client, bufnr)
 	if client.name == "pyright" then
 		bufmap("n", "<leader>pr", ":!python %<CR>", { desc = "Run current file as python script" })
 	end
+
+	if client.name == "tsserver" then
+		bufmap("n", "<leader>pr", ":!node %<CR>", { desc = "Run current file as node script" })
+		bufmap(
+			"n",
+			"<leader>pi",
+			"<cmd>silent !tmux neww -d npm install<CR>",
+			{ desc = "Install packages in background window" }
+		)
+	end
 end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -114,5 +124,17 @@ if vim.fn.executable("ansible") == 1 then
 	lspconfig["ansiblels"].setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+	})
+end
+
+if vim.fn.executable("node") == 1 then
+	lspconfig["tsserver"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		init_options = {
+			preferences = {
+				disableSuggestions = true,
+			},
+		},
 	})
 end

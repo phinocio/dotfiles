@@ -21,6 +21,7 @@ mason_lspconfig.setup({
 		"powershell_es",
 		"pyright",
 		"tailwindcss",
+		"tsserver",
 	},
 	automatic_installation = true,
 })
