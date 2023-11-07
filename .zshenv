@@ -67,8 +67,12 @@ if command -v cargo >/dev/null; then
 fi
 
 # Misc
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
+export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
+export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
+export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc
 export LESSHISTFILE=$XDG_CACHE_HOME/lesshst
-export GNUPGHOME=$XDG_CONFIG_HOME/gnupg
-export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"

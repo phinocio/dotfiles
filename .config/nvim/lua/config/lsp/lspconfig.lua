@@ -110,10 +110,9 @@ if vim.fn.executable("python") == 1 then
 	})
 end
 
--- if vim.fn.executable("python") == 1 then
--- 	lspconfig["jedi_language_server"].setup({
--- 		capabilities = capabilities,
--- 		on_attach = on_attach,
--- 		settings = {},
--- 	})
--- end
+if vim.fn.executable("ansible") == 1 then
+	lspconfig["ansiblels"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+end

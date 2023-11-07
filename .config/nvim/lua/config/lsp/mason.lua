@@ -15,6 +15,7 @@ mason.setup({
 -- Configure LSPs to install
 mason_lspconfig.setup({
 	ensure_installed = {
+		"ansiblels",
 		"gopls",
 		"lua_ls",
 		"powershell_es",
@@ -27,6 +28,7 @@ mason_lspconfig.setup({
 -- Configure linters and formatters to install
 mason_tool_installer.setup({
 	ensure_installed = {
+		"ansible-lint",
 		"black",
 		"eslint_d",
 		"goimports",
