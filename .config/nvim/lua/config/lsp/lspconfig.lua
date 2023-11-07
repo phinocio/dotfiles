@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
 		bufmap(
 			"n",
 			"<leader>pi",
-			"<cmd>silent !tmux neww -d npm install<CR>",
+			"<cmd>silent !tmux neww -n npm; tmux send-keys 'npm install' Enter; tmux last-window<CR>",
 			{ desc = "Install packages in background window" }
 		)
 	end
