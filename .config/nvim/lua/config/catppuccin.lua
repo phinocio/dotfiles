@@ -53,6 +53,7 @@ catppuccin.setup({
 			LineNrAbove = { fg = colors.surface2 },
 			LineNr = { fg = colors.lavender },
 			LineNrBelow = { fg = colors.surface2 },
+			NormalFloat = { bg = colors.surface0 },
 		}
 	end,
 	integrations = {
