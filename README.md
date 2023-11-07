@@ -14,6 +14,7 @@ Basically just things I need/want to install on a new system in a single place I
 -   fzf
 -   git-delta
 -   kitty/alacritty
+-   lazygit
 -   neovim
 -   ripgrep
 -   tree
