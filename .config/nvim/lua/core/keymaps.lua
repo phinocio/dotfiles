@@ -65,6 +65,9 @@ keymap("n", "Q", "<nop>", { desc = "ban Q" })
 keymap("n", "d", '"_d', { desc = "Delete preserve clipboard" })
 keymap("n", "dd", '"_dd', { desc = "Delete preserve clipboard" })
 
+-- Make current file executable
+keymap("n", "<leader>mx", ":!chmod +x %<CR>", { desc = "Make current file executable" })
+
 -- ########## Insert ##########
 
 -- Move text up and down

@@ -2,6 +2,7 @@ awk
 cp
 docker
 find
+git
 ls
 rm
 sed

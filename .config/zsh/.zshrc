@@ -129,7 +129,7 @@ export FZF_DEFAULT_OPTS=" \
 
 
 fcd() {
-	dir="$(fd -H --type d -d 2 . ~/ $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'CD to a Directory...')";
+	dir="$(fd -H --type d -d 2 . ~/ $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'cd to a Directory...')";
 	if [[ -n $dir ]]; then
 		cd $HOME/$dir
 	fi
