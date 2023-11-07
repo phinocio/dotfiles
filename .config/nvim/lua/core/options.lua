@@ -8,6 +8,7 @@ local options = {
 	-- autochdir = true,
 	backup = true, -- creates a backup file
 	clipboard = "unnamedplus", -- use system clipboard
+	-- colorcolumn = "120",
 	completeopt = "menuone,longest,preview",
 	confirm = true, -- ask for confirmation instead of erroring
 	expandtab = false, -- tabs > spaces
