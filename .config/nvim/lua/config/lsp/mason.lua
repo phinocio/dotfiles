@@ -17,12 +17,14 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"ansiblels",
 		"gopls",
+		"jedi_language_server",
+		"jsonls",
 		"lua_ls",
 		"powershell_es",
-		"pyright",
 		"rust_analyzer",
 		"tailwindcss",
 		"tsserver",
+		"yamlls",
 	},
 	automatic_installation = true,
 })

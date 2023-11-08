@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
 	if client.name == "powershell_es" then
 		bufmap("n", "<leader>pr", ":!pwsh %<CR>", { desc = "Run current pwsh script" })
 	end
-	if client.name == "pyright" then
+	if client.name == "pylsp" then
 		bufmap("n", "<leader>pr", ":!python %<CR>", { desc = "Run current file as python script" })
 	end
 
@@ -78,6 +78,37 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
+-- Jsonls should always be active
+lspconfig["jsonls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
+
+-- Yamlls should also always be active
+lspconfig["yamlls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		redhat = { telemetry = { enabled = false } },
+		yaml = {
+			-- b0o/SchemaStore config for yamlls
+			schemaStore = {
+				-- You must disable built-in schemaStore support if you want to use
+				-- this plugin and its advanced options like `ignore`.
+				enable = false,
+				-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+				url = "",
+			},
+			schemas = require("schemastore").yaml.schemas(),
+		},
+	},
+})
 if vim.fn.executable("go") == 1 then
 	lspconfig["gopls"].setup({
 		capabilities = capabilities,
@@ -99,20 +130,25 @@ if vim.fn.executable("pwsh") == 1 then
 end
 
 if vim.fn.executable("python") == 1 then
-	lspconfig["pyright"].setup({
-		capabilities = (function()
-			capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-			return capabilities
-		end)(),
+	-- lspconfig["pyright"].setup({
+	-- 	capabilities = (function()
+	-- 		capabilities = vim.lsp.protocol.make_client_capabilities()
+	-- 		capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+	-- 		return capabilities
+	-- 	end)(),
+	-- 	on_attach = on_attach,
+	-- 	settings = {
+	-- 		python = {
+	-- 			analysis = {
+	-- 				typeCheckingMode = "off",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- })
+	-- })
+	lspconfig["jedi_language_server"].setup({
+		capabilities = capabilities,
 		on_attach = on_attach,
-		settings = {
-			python = {
-				analysis = {
-					typeCheckingMode = "off",
-				},
-			},
-		},
 	})
 end
 
