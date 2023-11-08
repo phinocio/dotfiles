@@ -62,9 +62,7 @@ fi
 # Rust/only set if cargo binary is present
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 export CARGO_HOME=$XDG_DATA_HOME/cargo
-if command -v cargo >/dev/null; then
-	. "$XDG_DATA_HOME/cargo/env"
-fi
+. "/home/alice/.local/share/cargo/env"
 
 # Misc
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
