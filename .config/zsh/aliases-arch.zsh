@@ -39,6 +39,7 @@ alias pacum="sudo systemctl start reflector.service"
 alias ga="git add"
 alias gc="git commit -S"
 alias gst="git status"
+alias clone="git clone"
 
 # Common config files I edit
 alias ekitty="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"

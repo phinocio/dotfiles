@@ -3,7 +3,7 @@ local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
 		css = { "prettierd" },
-		go = { "gofumpt", "goimports" },
+		go = { "gofumpt" },
 		html = { "prettierd" },
 		javascript = { "prettierd" },
 		javascriptreact = { "prettierd" },

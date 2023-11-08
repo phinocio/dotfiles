@@ -34,7 +34,6 @@ mason_tool_installer.setup({
 		"black",
 		"eslint_d",
 		"gofumpt",
-		"goimports",
 		"isort",
 		"mypy",
 		"prettierd",
