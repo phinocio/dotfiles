@@ -1,4 +1,4 @@
 *.bak*
 packer_compiled.lua
 */**/plugins
-!.config/nvim/lua//plugins
+!.config/nvim/lua/plugins

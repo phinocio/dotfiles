@@ -31,7 +31,9 @@ lualine.setup({
 		lualine_c = { "filename" },
 		lualine_x = {
 			{ lazy_status.updates, cond = lazy_status.has_updates },
-			{ "encoding", "fileformat", "filetype" },
+			"encoding",
+			"fileformat",
+			"filetype",
 		},
 		lualine_y = {
 			'(vim.bo.expandtab and "␠ " or "⇥ ") .. " " .. vim.bo.shiftwidth',
