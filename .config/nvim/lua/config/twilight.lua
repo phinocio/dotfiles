@@ -1,4 +1,6 @@
-return {
+local twilight = require("twilight")
+
+twilight.setup({
 	dimming = {
 		alpha = 0.25, -- amount of dimming
 		-- we try to get the foreground from the highlight groups or fallback color
@@ -17,4 +19,14 @@ return {
 		"if_statement",
 	},
 	exclude = {}, -- exclude these filetypes
-}
+})
+
+local keymap = function(mode, keys, func, opts)
+	local options = { noremap = true, silent = false }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, keys, func, options)
+end
+
+keymap("n", "<leader>tw", "<cmd>Twilight<CR>", { desc = "Toggle Twilight" })

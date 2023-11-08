@@ -1,6 +1,6 @@
 return {
 	"folke/twilight.nvim",
-	opts = {
-		require("config.twilight"),
-	},
+	config = function()
+		require("config.twilight")
+	end,
 }

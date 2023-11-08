@@ -52,3 +52,32 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
+
+----------------------
+---- AUTOCOMMANDS ----
+----------------------
+
+-- Define autocommands with Lua APIs
+local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+
+-- Enable spell checker for certain file types
+autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.txt", "*.md", "*.tex" },
+	command = "set spell",
+})
+
+-- Set conceal for markdown
+autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.md" },
+	command = "set conceallevel=2",
+})
+
+-- Highlight on yank
+augroup("YankHighlight", { clear = true })
+autocmd("TextYankPost", {
+	group = "YankHighlight",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "500" })
+	end,
+})
