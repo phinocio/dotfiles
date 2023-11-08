@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd -H --type d -d 2 . $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | fzf --preview 'tree -C $HOME/{} | head -n 50')
+    selected=$(fd -H --type d -d 2 . $HOME $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf --preview 'tree -C $HOME/{} | head -n 50')
 fi
 
 if [[ -z $selected ]]; then

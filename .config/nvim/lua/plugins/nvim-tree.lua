@@ -1,5 +1,5 @@
 return {
-	enabled = false,
+	enabled = true,
 	"nvim-tree/nvim-tree.lua",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
