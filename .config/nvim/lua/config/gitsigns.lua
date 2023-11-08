@@ -9,7 +9,7 @@ gitsigns.setup({
 		changedelete = { hl = "GitChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
 	},
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+	numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
 	linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 	word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 	watch_gitdir = {
@@ -90,10 +90,10 @@ gitsigns.setup({
 			gs.blame_line({ full = true })
 		end, { desc = "[Git] Blame line" })
 		keymap("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "[Git] Toggle line blame" })
-		keymap("n", "<leader>hd", gs.diffthis, { desc = "[Git] Diff this" })
-		keymap("n", "<leader>hD", function()
-			gs.diffthis("~")
-		end, { desc = "[Git] Diff this (all?)" })
+		-- keymap("n", "<leader>hd", gs.diffthis, { desc = "[Git] Diff this" })
+		-- keymap("n", "<leader>hD", function()
+		-- 	gs.diffthis("~")
+		-- end, { desc = "[Git] Diff this (all?)" })
 		keymap("n", "<leader>td", gs.toggle_deleted, { desc = "[Git] Toggle deleted" })
 
 		-- Text object
