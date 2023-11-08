@@ -85,11 +85,6 @@ if vim.fn.executable("go") == 1 then
 		settings = {
 			gopls = {
 				gofumpt = true,
-				completeUnimported = true,
-				usePlaceholders = true,
-				analyses = {
-					unusedparams = true,
-				},
 			},
 		},
 	})
