@@ -1,8 +1,3 @@
-# Sometimes has issues to force it via alias
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
 # General command aliases
 alias cp="cp -i -v"											# verbose cp with confirmation
 alias mv="mv -i -v"											# verbose mv with confirmation
@@ -21,12 +16,12 @@ alias cat="bat --paging=never --plain"
 alias :q="exit"
 
 # File and folder listing
-alias ls="exa -lghF --icons --group-directories-first"
-alias lsg="exa -lghF --icons --group-directories-first --git --git-ignore"
-alias lst="exa -lghFT --icons --group-directories-first --git-ignore"
-alias ll="exa -laghF --icons --group-directories-first"
-alias llg="exa -laghF --icons --group-directories-first --git --git-ignore"
-alias llt="exa -laghFT --icons --group-directories-first --git-ignore"
+alias ls="eza -lghF --icons --group-directories-first"
+alias lsg="eza -lghF --icons --group-directories-first --git --git-ignore"
+alias lst="eza -lghFT --icons --group-directories-first --git-ignore"
+alias ll="eza -laghF --icons --group-directories-first"
+alias llg="eza -laghF --icons --group-directories-first --git --git-ignore"
+alias llt="eza -laghFT --icons --group-directories-first --git-ignore"
 
 # Arch packages stuff
 alias yayi="yay -S"
@@ -42,21 +37,18 @@ alias pacum="sudo systemctl start reflector.service"
 # Git commands
 alias ga="git add"
 alias gc="git commit -S"
-
-# Project CDing
-alias lol="cd $PROJECTS_WEB/loadorderlibrary"
-alias lolapi="cd $PROJECTS_API/loadorderlibrary-api"
+alias gst="git status"
 
 # Common config files I edit
-alias ekitty="$VISUAL $XDG_CONFIG_HOME/kitty/kitty.conf"
-alias econky="$VISUAL $XDG_CONFIG_HOME/conky/conky.conf"
+alias ekitty="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
+alias econky="$EDITOR $XDG_CONFIG_HOME/conky/conky.conf"
 alias fixdiscord="sudo $EDITOR /opt/discord/resources/build_info.json"
 
 # zsh editing and updating
-alias zshen="$VISUAL ~/.zshenv"
+alias zshen="$EDITOR ~/.zshenv"
 alias zshu="source $ZDOTDIR/.zshrc"
-alias zshrc="$VISUAL $ZDOTDIR/.zshrc"
-alias zshal="$VISUAL $ZDOTDIR/aliases-arch.zsh"
+alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
+alias zshal="$EDITOR $ZDOTDIR/aliases-arch.zsh"
 
 # Docker aliases
 alias pandock=\
@@ -66,4 +58,3 @@ alias pandock=\
 alias dc="docker-compose"
 alias dock="docker"
 
-# Note taking
