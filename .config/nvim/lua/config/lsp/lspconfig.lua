@@ -84,6 +84,7 @@ if vim.fn.executable("go") == 1 then
 		on_attach = on_attach,
 		settings = {
 			gopls = {
+				gofumpt = true,
 				completeUnimported = true,
 				usePlaceholders = true,
 				analyses = {
@@ -136,5 +137,12 @@ if vim.fn.executable("node") == 1 then
 				disableSuggestions = true,
 			},
 		},
+	})
+end
+
+if vim.fn.executable("rustup") == 1 then
+	lspconfig["rust_analyzer"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
 	})
 end
