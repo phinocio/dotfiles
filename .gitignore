@@ -3,3 +3,4 @@ packer_compiled.lua
 */**/plugins
 !.config/nvim/lua/plugins
 lazy-lock.json
+.config/lazygit/state.yml
