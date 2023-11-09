@@ -75,7 +75,7 @@ keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Op
 keymap("n", "<leader><leader>", "<cmd>so %<CR>", { desc = "Source current file" })
 
 -- Git related keymaps
-keymap("n", "<leader>gs", "<cmd>silent !tmux neww lazygit<CR>", { desc = "Open lazygit in a new tmux window" })
+keymap("n", "<leader>lg", "<cmd>silent !tmux neww lazygit<CR>", { desc = "Open lazygit in a new tmux window" })
 -- ########## Insert ##########
 
 -- Move text up and down
