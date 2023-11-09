@@ -40,6 +40,7 @@ alias ga="git add"
 alias gc="git commit -S"
 alias gst="git status"
 alias clone="git clone"
+alias lg="lazygit"
 
 # Common config files I edit
 alias ekitty="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
