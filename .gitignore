@@ -4,3 +4,5 @@ packer_compiled.lua
 !.config/nvim/lua/plugins
 lazy-lock.json
 .config/lazygit/state.yml
+.local/bin/FreeFileSync
+.local/bin/freefilesync
