@@ -11,6 +11,7 @@ local options = {
 	-- colorcolumn = "120",
 	completeopt = "menuone,longest,preview",
 	confirm = true, -- ask for confirmation instead of erroring
+	-- cursorline = true,
 	expandtab = false, -- tabs > spaces
 	hlsearch = false,
 	ignorecase = true,
@@ -78,6 +79,6 @@ augroup("YankHighlight", { clear = true })
 autocmd("TextYankPost", {
 	group = "YankHighlight",
 	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "500" })
+		vim.highlight.on_yank({ higroup = "CursorLine", timeout = "500" })
 	end,
 })
