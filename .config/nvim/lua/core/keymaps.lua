@@ -61,10 +61,6 @@ keymap("n", "N", "Nzzzv", { desc = "Prev result and center" })
 -- Q is cursed apparently
 keymap("n", "Q", "<nop>", { desc = "ban Q" })
 
--- DONT KILL MY CLIPBOARD DAMNIT
-keymap("n", "d", '"_d', { desc = "Delete preserve clipboard" })
-keymap("n", "dd", '"_dd', { desc = "Delete preserve clipboard" })
-
 -- Make current file executable
 keymap("n", "<leader>mx", ":!chmod +x %<CR>", { desc = "Make current file executable" })
 
@@ -79,8 +75,8 @@ keymap("n", "<leader>lg", "<cmd>silent !tmux neww lazygit<CR>", { desc = "Open l
 -- ########## Insert ##########
 
 -- Move text up and down
-keymap("i", "<A-j>", "<Esc>:move .+1<CR>==gi", { desc = "Move line down (visual)" })
-keymap("i", "<A-k>", "<Esc>:move .-2<CR>==gi", { desc = "Move line up (visual)" })
+keymap("i", "<a-j>", "<esc>:move .+1<cr>==gi", { desc = "move line down (visual)" })
+keymap("i", "<a-k>", "<esc>:move .-2<cr>==gi", { desc = "move line up (visual)" })
 
 -- Easy insertion of a trailing ; or , from insert mode.
 -- keymap("i", ";;", "<Esc>A;")
@@ -98,14 +94,14 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected line up" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected line down" })
 
 -- Paste replace visual selection without copying it. Also yeets register because reasons.
-keymap("v", "p", '"_dP', { desc = "Paste without copy" })
+keymap("v", "p", '"_dp', { desc = "Paste without copy" })
 
 -- Maintain the cursor position when yanking a visual selection.
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 keymap("v", "y", "myy`y", { desc = "Yank - keep cusor pos" })
 
 -- DONT KILL MY CLIPBOARD DAMNIT
-keymap("v", "d", '"_d', { desc = "Delete and preserve clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- ########## Visual Block ##########
 
@@ -115,7 +111,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", { desc = "Move selection down" })
 keymap("x", "<leader>p", [["_dP]], { desc = "Delete selection" })
 
 -- DONT KILL MY CLIPBOARD DAMNIT
-keymap("x", "d", '"_d', { desc = "Delete and preserve clipboard" })
+-- keymap("x", "d", '"_d', { desc = "Delete and preserve clipboard" })
 
 -- ########## Terminal ##########
 
