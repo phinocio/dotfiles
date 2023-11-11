@@ -3,8 +3,9 @@
 -- Set in nvim-tree config
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
-
+-- changed agains
 local options = {
+	autoread = true,
 	-- autochdir = true,
 	backup = true, -- creates a backup file
 	clipboard = "unnamedplus", -- use system clipboard
@@ -69,10 +70,23 @@ autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 -- Set conceal for markdown
-autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.md" },
-	command = "set conceallevel=2",
+-- autocmd({ "BufRead", "BufNewFile" }, {
+-- 	pattern = { "*.md" },
+-- 	command = "set conceallevel=2",
+-- })
+
+-- If try to reload buffers on events
+-- From: https://stackoverflow.com/a/74230727
+autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
 })
+--
+-- autocmd({ "FileChangedShellPost" }, {
+-- 	command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
+-- })
+-- autocmd FileChangedShellPost *
+--         \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 -- Highlight on yank
 augroup("YankHighlight", { clear = true })
