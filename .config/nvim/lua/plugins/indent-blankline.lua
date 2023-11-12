@@ -1,4 +1,5 @@
 return {
+	enabled = true,
 	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
 	config = function()
