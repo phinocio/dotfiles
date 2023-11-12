@@ -21,7 +21,6 @@ Basically just things I need/want to install on a new system in a single place I
 -   ripgrep
 -   trash-cli
 -   tree
--   ueberzug
 -   xsel
 -   zsh
 
