@@ -21,6 +21,7 @@ Basically just things I need/want to install on a new system in a single place I
 -   trash-cli
 -   tree
 -   xsel
+-   ueberzug
 -   zsh
 
 # References
