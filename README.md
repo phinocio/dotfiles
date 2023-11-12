@@ -8,6 +8,7 @@ Biggest thing here is my neovim config, which the prettier config is in part use
 
 Basically just things I need/want to install on a new system in a single place I can reference.
 
+-   bat
 -   direnv (for use with nix flakes)
 -   eza
 -   fd
@@ -18,7 +19,6 @@ Basically just things I need/want to install on a new system in a single place I
 -   lazygit
 -   neovim
 -   pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
--   rifle (requires installing ranger)
 -   ripgrep
 -   trash-cli
 -   tree
