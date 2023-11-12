@@ -135,3 +135,12 @@ oil.setup({
 		},
 	},
 })
+
+local keymap = function(mode, keys, func, opts)
+	local options = { noremap = true, silent = false }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, keys, func, options)
+end
+keymap("n", "<leader>pv", "<cmd>Oil<CR>", { desc = "Open oil file explorer" })
