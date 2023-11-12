@@ -72,9 +72,6 @@ cmd extract ${{
   esac
 }}
 
-# cmd mkdir %mkdir "$@"
-# map a push :mkdir<space>
-
 cmd mkdirfile ${{
 	if [[ $1 =~ ^.*/$ ]]; then
 		mkdir -p $1
@@ -83,7 +80,16 @@ cmd mkdirfile ${{
 	fi
 }}
 
-cmd open $set -f; rifle -p 0 "$fx"
+# cmd open $set -f; rifle -p 0 "$fx"
+# open text files in $EDITOR and xdg-open for everything else
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$$EDITOR \$fx";;
+		# image/*) imgview $fx;;
+		# video/*) umpv $fx;;
+		*) xdg-open $fx;;
+	esac
+}}
 
 # Change dir inside of lf by using fzf
 cmd fzf_jump ${{

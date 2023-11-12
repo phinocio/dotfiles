@@ -66,7 +66,7 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 -- Enable spell checker for certain file types
 autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = { "*.txt", "*.md", "*.tex" },
-	command = "set spell",
+	command = "setlocal spell",
 })
 
 -- Set conceal for markdown
