@@ -23,7 +23,7 @@ alias lst="eza -lghFT --icons --group-directories-first --git-ignore"
 alias ll="eza -laghF --icons --group-directories-first"
 alias llg="eza -laghF --icons --group-directories-first --git --git-ignore"
 alias llt="eza -laghFT --icons --group-directories-first --git-ignore"
-alias lf="kitty lf"
+alias lf="lfpv"
 
 # Arch packages stuff
 alias yayi="yay -S"

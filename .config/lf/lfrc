@@ -3,7 +3,7 @@
 # Based off:
 # - https://github.com/ericmurphyxyz/dotfiles/blob/master/.config/lf/lfrc
 # - https://github.com/adolfgatonegro/dotfiles/blob/master/.config/lf/lfrc
-# - https://github.com/gokcehan/lf/wiki
+# - https://github.com/gokcehan/lf
 
 # Interpreter for shell commands
 set shell zsh
@@ -20,12 +20,12 @@ set info size
 set ratios 1:3
 set scrolloff 10
 set cursorpreviewfmt ""
-
 # Previews, using kitty with pistol as a fallback
-set previewer ~/.config/lf/lf_kitty_preview
-set cleaner ~/.config/lf/lf_kitty_clean
-# set previewer ~/.config/lf/previewer.sh
-# set cleaner ~/.config/lf/clear_img.sh
+
+# set previewer ~/.config/lf/lf_kitty_preview
+# set cleaner ~/.config/lf/lf_kitty_clean
+set previewer ~/.config/lf/previewer.sh
+set cleaner ~/.config/lf/clear_img.sh
 
 # Use eza for showing info at bottom left
 cmd on-select &{{
