@@ -11,7 +11,6 @@ set shellopts '-euy'
 set ifs "\n"
 
 # Basic Settings
-set calcdirsize
 set dircounts
 set hidden true
 set icons true
