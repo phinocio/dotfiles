@@ -8,8 +8,8 @@ Biggest thing here is my neovim config, which the prettier config is in part use
 
 Basically just things I need/want to install on a new system in a single place I can reference.
 
--   eza
 -   direnv (for use with nix flakes)
+-   eza
 -   fd
 -   fzf
 -   git-delta
@@ -17,11 +17,12 @@ Basically just things I need/want to install on a new system in a single place I
 -   lazygit
 -   neovim
 -   pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
+-   rifle
 -   ripgrep
 -   trash-cli
 -   tree
--   xsel
 -   ueberzug
+-   xsel
 -   zsh
 
 # References
