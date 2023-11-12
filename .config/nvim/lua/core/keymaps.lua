@@ -120,3 +120,10 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = false, silent = true, desc
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = false, silent = true, desc = "[Term] Move right" })
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = false, silent = true, desc = "[Term] Move up" })
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = false, silent = true, desc = "[Term] Move down" })
+
+-- Useful hotkeys I want to group together instead
+-- of group in respective mode section
+
+-- CREATE GISTS --
+keymap("n", "<leader>cg", "<cmd>!gh gist create %<CR>", { desc = "Create gist of current file" })
+keymap("v", "<leader>cg", "<cmd>'<,'>w !gh gist create -<CR>", { desc = "Create gist of current selection" })
