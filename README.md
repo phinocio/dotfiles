@@ -11,6 +11,7 @@ Basically just things I need/want to install on a new system in a single place I
 -   direnv (for use with nix flakes)
 -   eza
 -   fd
+-   ffmpegthumbnailer
 -   fzf
 -   git-delta
 -   kitty/alacritty
