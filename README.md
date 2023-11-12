@@ -16,7 +16,9 @@ Basically just things I need/want to install on a new system in a single place I
 -   kitty/alacritty
 -   lazygit
 -   neovim
+-   pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
 -   ripgrep
+-   trash-cli
 -   tree
 -   xsel
 -   zsh
