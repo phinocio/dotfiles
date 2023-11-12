@@ -17,7 +17,7 @@ Basically just things I need/want to install on a new system in a single place I
 -   lazygit
 -   neovim
 -   pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
--   rifle
+-   rifle (requires installing ranger)
 -   ripgrep
 -   trash-cli
 -   tree
