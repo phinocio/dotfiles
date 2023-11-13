@@ -3,8 +3,8 @@
 alias cp="rsync -av --info=progress2"						# Use rsync for cp
 alias mv="mv -i -v"											# verbose mv with confirmation
 # alias mv="rsync -av --info=progress2 --remove-source-files" # Use rsync for mv as well
-# alias rm="rm -I -v"											# verbose rm with confirmation
-alias rm="trash-put -v"											# Use trash-cli for trashing instead of deleting
+alias rm="rm -I -v"											# verbose rm with confirmation
+# alias rm="trash-put -v"											# Use trash-cli for trashing instead of deleting
 alias grep="grep --color"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/.wget-hist"
 alias ip="ip -c"
