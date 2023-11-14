@@ -2,9 +2,7 @@
 # alias cp="cp -i -v"											# verbose cp with confirmation
 alias cp="rsync -av --info=progress2"						# Use rsync for cp
 alias mv="mv -i -v"											# verbose mv with confirmation
-# alias mv="rsync -av --info=progress2 --remove-source-files" # Use rsync for mv as well
 alias rm="rm -I -v"											# verbose rm with confirmation
-# alias rm="trash-put -v"											# Use trash-cli for trashing instead of deleting
 alias grep="grep --color"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/.wget-hist"
 alias ip="ip -c"
@@ -16,7 +14,6 @@ alias hist="history -i"
 # alias tree="tree -C -F"
 alias tree="eza --icons --group-directories-first --tree"
 alias cat="bat --paging=never --plain"
-# alias nvim="kitty --detach -o window_padding_width=0 nvim"
 alias :q="exit"
 
 # File and folder listing
