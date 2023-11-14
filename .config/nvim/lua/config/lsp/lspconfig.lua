@@ -163,11 +163,11 @@ if vim.fn.executable("node") == 1 then
 	lspconfig["tsserver"].setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		init_options = {
-			preferences = {
-				disableSuggestions = true,
-			},
-		},
+		-- init_options = {
+		-- 	preferences = {
+		-- 		disableSuggestions = true,
+		-- 	},
+		-- },
 	})
 end
 
