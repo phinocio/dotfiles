@@ -26,6 +26,7 @@ export NOTES_DIR="$HOME/Documents/Notes"
 typeset -U path
 path=($path ~/.local/bin)
 path=($path ~/.config/composer/vendor/bin)
+path=($path ~/.local/share/go/bin)
 
 # zsh
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
