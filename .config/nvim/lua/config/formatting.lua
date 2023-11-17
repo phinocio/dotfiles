@@ -4,7 +4,7 @@ conform.setup({
 	formatters_by_ft = {
 		css = { "prettierd" },
 		go = { "gofumpt" },
-		html = { "prettierd" },
+		-- html = { "prettierd" },
 		javascript = { "prettierd" },
 		javascriptreact = { "prettierd" },
 		json = { "prettierd" },
