@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
 	if client.name == "powershell_es" then
 		bufmap("n", "<leader>pr", ":term pwsh %<CR>", { desc = "Run current pwsh script" })
 	end
-	if client.name == "pylsp" then
+	if client.name == "pyright" then
 		bufmap("n", "<leader>pr", ":!python %<CR>", { desc = "Run current file as python script" })
 	end
 
@@ -130,26 +130,25 @@ if vim.fn.executable("pwsh") == 1 then
 end
 
 if vim.fn.executable("python") == 1 then
-	-- lspconfig["pyright"].setup({
-	-- 	capabilities = (function()
-	-- 		capabilities = vim.lsp.protocol.make_client_capabilities()
-	-- 		capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-	-- 		return capabilities
-	-- 	end)(),
-	-- 	on_attach = on_attach,
-	-- 	settings = {
-	-- 		python = {
-	-- 			analysis = {
-	-- 				typeCheckingMode = "off",
-	-- 			},
-	-- 		},
-	-- 	},
-	-- })
-	-- })
-	lspconfig["jedi_language_server"].setup({
-		capabilities = capabilities,
+	lspconfig["pyright"].setup({
+		capabilities = (function()
+			capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+			return capabilities
+		end)(),
 		on_attach = on_attach,
+		settings = {
+			python = {
+				analysis = {
+					typeCheckingMode = "off",
+				},
+			},
+		},
 	})
+	-- lspconfig["jedi_language_server"].setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- })
 end
 
 if vim.fn.executable("ansible") == 1 then

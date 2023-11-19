@@ -17,8 +17,8 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"ansiblels",
 		"gopls",
-		"jedi_language_server",
 		"jsonls",
+		"pyright",
 		"lua_ls",
 		"powershell_es",
 		"rust_analyzer",
