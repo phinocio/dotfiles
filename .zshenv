@@ -78,4 +78,4 @@ export LESSHISTFILE=$XDG_CACHE_HOME/lesshst
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export RANGER_LOAD_DEFAULT_RC=false
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
