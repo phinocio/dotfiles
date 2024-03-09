@@ -4,7 +4,7 @@ conform.setup({
 	formatters_by_ft = {
 		css = { "prettierd" },
 		go = { "gofumpt" },
-		-- html = { "prettierd" },
+		html = { "prettierd" },
 		javascript = { "prettierd" },
 		javascriptreact = { "prettierd" },
 		json = { "prettierd" },
@@ -22,6 +22,7 @@ conform.setup({
 		async = false,
 		timeout_ms = 500,
 	},
+	log_level = vim.log.levels.DEBUG,
 })
 
 local map = function(mode, keys, func, opts)

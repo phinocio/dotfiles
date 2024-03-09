@@ -168,6 +168,10 @@ if vim.fn.executable("node") == 1 then
 		-- 	},
 		-- },
 	})
+	lspconfig["svelte"].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
 end
 
 if vim.fn.executable("rustup") == 1 then

@@ -79,3 +79,6 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export RANGER_LOAD_DEFAULT_RC=false
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
