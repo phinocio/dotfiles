@@ -30,8 +30,9 @@ autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
 -- Highlight on yank
 augroup("YankHighlight", { clear = true })
 autocmd("TextYankPost", {
+	desc = "Highlight when yanking text",
 	group = "YankHighlight",
 	callback = function()
-		vim.highlight.on_yank({ higroup = "CursorLine", timeout = "500" })
+		vim.highlight.on_yank()
 	end,
 })

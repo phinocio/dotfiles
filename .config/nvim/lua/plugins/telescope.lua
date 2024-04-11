@@ -3,8 +3,15 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			config = function()
+				require("telescope").load_extension("fzf")
+			end,
+		},
 	},
-
+	verison = false,
 	opts = {
 		defaults = {
 			path_display = { "truncate" },
@@ -40,11 +47,27 @@ return {
 			},
 		},
 	},
-
 	keys = {
-		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "[Tele] Find files" },
-		{ "<leader>fF", "<cmd>Telescope find_files no_ignore=true<cr>", desc = "[Tele] Find all files" },
-		{ "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "[Tele] Git files" },
-		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "[Tele] Find buffer" },
+		{ "<leader>pf", "<cmd>Telescope git_files<CR>", desc = "[Tele] Find git files" },
+		{ "<leader>pF", "<cmd>Telescope find_files no_ignore=true<CR>", desc = "[Tele] Find all files" },
+		{ "<leader>pg", "<cmd>Telescope live_grep<CR>", desc = "[Tele] Grep files" },
+		{ "<leader>pb", "<cmd>Telescope buffers<CR>", desc = "[Tele] Find buffer" },
+		{ "<leader>ph", "<cmd>Telescope help_tags<CR>", desc = "[Tele] Search help" },
+		{
+			"<leader>pws",
+			function()
+				local word = vim.fn.expand("<cword>")
+				require("telescope.builtin").grep_string({ search = word })
+			end,
+			desc = "Search project for word under cursor",
+		},
+		{
+			"<leader>pWs",
+			function()
+				local word = vim.fn.expand("<cWORD>")
+				require("telescope.builtin").grep_string({ search = word })
+			end,
+			desc = "Search project for word under cursor (space delim)",
+		},
 	},
 }
