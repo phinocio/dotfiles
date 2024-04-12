@@ -35,6 +35,8 @@ vim.keymap.set("v", "P", '"_dP') -- paste before cursor
 -- d for delete, if I want it in register, use x for cut
 vim.keymap.set({ "n", "v" }, "d", '"_d')
 
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
 vim.keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })

@@ -15,8 +15,8 @@ config.font = wezterm.font_with_fallback({
 	"Symbols Nerd Font Mono",
 })
 
-config.font_size = 13
---config.line_height = 1.2
+config.font_size = 12
+config.line_height = 1.2
 
 -- Color Scheme (auto light/dark)
 
