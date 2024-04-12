@@ -24,8 +24,8 @@ vim.opt.signcolumn = "yes:2"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
-vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
+vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 
