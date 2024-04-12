@@ -11,6 +11,10 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear highlight" })
 
+-- Quickly change buffers
+vim.keymap.set("n", "[b", "<cmd>bprev<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
+
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 -- Maintain the cursor position when yanking a visual selection.
 vim.keymap.set("v", "y", "myy`y", { desc = "Yank - keep cursor pos" })
