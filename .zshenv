@@ -2,7 +2,7 @@ export HOSTNAME=wonderland
 export VDPAU_DRIVER=nvidia
 export LIBVA_DRIVER_NAME=nvidia
 
-export TERM='xterm-kitty'
+#export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export BROWSER='firefox'
