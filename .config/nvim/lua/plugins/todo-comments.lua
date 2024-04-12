@@ -19,8 +19,8 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>tt", "<cmd>TodoTelescope keywords=TODO<CR>", desc = "[Todo] Show todos" },
-		{ "<leader>ta", ":TodoTelescope<CR>", desc = "[Todo] Show all todo comments" },
-		{ "<leader>tf", ":TodoTelescope keywords=FIX<CR>", desc = "[Todo] Show all fix comments" },
+		{ "<leader>xt", "<cmd>TodoTelescope keywords=TODO<CR>", desc = "[Todo] Show todos" },
+		{ "<leader>xa", ":TodoTelescope<CR>", desc = "[Todo] Show all todo comments" },
+		{ "<leader>xf", ":TodoTelescope keywords=FIX<CR>", desc = "[Todo] Show all fix comments" },
 	},
 }
