@@ -15,6 +15,15 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear highlight" }
 vim.keymap.set("n", "[b", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
 
+-- Make cursor stay in place when combining below line into current one.
+vim.keymap.set("n", "J", "mzJ`z", { desc = "" })
+
+-- Better window navigation
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "" })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "" })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "" })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "" })
+
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 -- Maintain the cursor position when yanking a visual selection.
 vim.keymap.set("v", "y", "myy`y", { desc = "Yank - keep cursor pos" })
