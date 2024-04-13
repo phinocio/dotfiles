@@ -9,9 +9,9 @@ local config = wezterm.config_builder()
 -- Font
 
 config.font = wezterm.font_with_fallback({
-	"Monaspace Radon",
-	"Cascadia Code PL",
-	"JetBrains Mono",
+	"Monaspace Neon",
+	--"Cascadia Code PL",
+	--"JetBrains Mono",
 	"Symbols Nerd Font Mono",
 })
 
@@ -36,7 +36,7 @@ config.window_padding = {
 	left = 12,
 	right = 12,
 	top = 12,
-	bottom = 12,
+	bottom = 4,
 }
 
 -- Hide tab bar
