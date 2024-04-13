@@ -47,4 +47,6 @@ wezterm.on("gui-startup", function()
 	window:gui_window():maximize()
 end)
 
+config.default_prog = { "tmux" }
+
 return config
