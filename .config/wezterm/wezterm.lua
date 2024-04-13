@@ -4,20 +4,21 @@ local mux = wezterm.mux
 -- Config object
 local config = wezterm.config_builder()
 
--- 00000
+config.term = "wezterm"
+
 -- Font
 config.font = wezterm.font_with_fallback({
 	{
-		family = "JetBrains Mono",
-		harfbuzz_features = { "calt", "zero", "cv12", "ss02" },
+		family = "Cascadia Code",
+		harfbuzz_features = { "ss01", "ss02", "ss03", "ss19", "ss20", "calt" },
 	},
 	{
 		family = "Monaspace Radon",
 		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
 	},
 	{
-		family = "Cascadia Code",
-		harfbuzz_features = { "ss01", "ss02", "ss03", "ss19", "ss20", "calt" },
+		family = "JetBrains Mono",
+		harfbuzz_features = { "calt", "zero", "cv12", "ss02" },
 	},
 	"Hack",
 	"Symbols Nerd Font Mono",
