@@ -9,6 +9,10 @@ config.term = "wezterm"
 -- Font
 config.font = wezterm.font_with_fallback({
 	{
+		family = "JetBrains Mono",
+		harfbuzz_features = { "calt", "zero", "cv12" },
+	},
+	{
 		family = "Cascadia Code",
 	},
 	"Hack",
@@ -16,13 +20,9 @@ config.font = wezterm.font_with_fallback({
 		family = "Monaspace Radon",
 		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
 	},
-	{
-		family = "JetBrains Mono",
-		harfbuzz_features = { "calt", "zero", "cv12" },
-	},
 	"Symbols Nerd Font Mono",
 })
-config.font_size = 13
+config.font_size = 12
 config.line_height = 1.2
 
 config.color_scheme = "Dracula"
@@ -48,6 +48,25 @@ wezterm.on("gui-startup", function()
 	window:gui_window():maximize()
 end)
 
---config.default_prog = { "tmux" }
+local tmux_keys = { { key = "m", mods = "CTRL", action = wezterm.action.SpawnTab("DefaultDomain") } }
 
+wezterm.on("user-var-changed", function(window, pane)
+	-- If we are *not* in tmux, set wezterm related multiplexer hotkeys
+	if pane:get_user_vars().WEZTERM_IN_TMUX == "0" then
+		window:set_config_overrides({
+			leader = { key = "Space", mods = "CTRL" },
+			keys = {
+				{ key = "m", mods = "LEADER", action = wezterm.action.SpawnTab("DefaultDomain") },
+			},
+		})
+
+	-- If we *are* in tmux, remove those keys (or reset default ones), to prevent conflicts
+	else
+		window:set_config_overrides({
+			keys = tmux_keys,
+		})
+	end
+end)
+
+--config.default_prog = { "tmux" }
 return config
