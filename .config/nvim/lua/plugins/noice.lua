@@ -6,6 +6,11 @@ return {
 		{ "rcarriga/nvim-notify", opts = { top_down = false } },
 	},
 	opts = {
+		cmdline = {
+			format = {
+				cmdline = { pattern = "^:", icon = "⮞", lang = "vim" },
+			},
+		},
 		lsp = {
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
