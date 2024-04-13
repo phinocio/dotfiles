@@ -34,6 +34,7 @@ config.max_fps = 144
 
 -- Hide tab bar
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = true
 config.window_decorations = "RESIZE"
 
 -- Cursor blinks too slow for me
@@ -47,6 +48,6 @@ wezterm.on("gui-startup", function()
 	window:gui_window():maximize()
 end)
 
-config.default_prog = { "tmux" }
+--config.default_prog = { "tmux" }
 
 return config
