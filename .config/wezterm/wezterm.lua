@@ -11,18 +11,18 @@ config.font = wezterm.font_with_fallback({
 	{
 		family = "Cascadia Code",
 	},
+	"Hack",
 	{
 		family = "Monaspace Radon",
 		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
 	},
 	{
 		family = "JetBrains Mono",
-		harfbuzz_features = { "calt", "zero", "cv12", "ss02" },
+		harfbuzz_features = { "calt", "zero", "cv12" },
 	},
-	"Hack",
 	"Symbols Nerd Font Mono",
 })
-config.font_size = 12
+config.font_size = 13
 config.line_height = 1.2
 
 config.color_scheme = "Dracula"
