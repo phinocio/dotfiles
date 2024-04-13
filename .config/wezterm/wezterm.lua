@@ -10,7 +10,6 @@ config.term = "wezterm"
 config.font = wezterm.font_with_fallback({
 	{
 		family = "Cascadia Code",
-		harfbuzz_features = { "ss01", "ss02", "ss03", "ss19", "ss20", "calt" },
 	},
 	{
 		family = "Monaspace Radon",
