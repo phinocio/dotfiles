@@ -3,7 +3,7 @@ return {
 	name = "catppuccin",
 	priority = 1000,
 	opts = {
-		transparent_background = true,
+		transparent_background = false,
 		custom_highlights = function(colors)
 			return {
 				LineNrAbove = { fg = colors.surface2 },

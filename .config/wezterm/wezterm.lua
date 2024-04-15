@@ -27,7 +27,7 @@ config.line_height = 1.2
 
 config.color_scheme = "Dracula"
 config.colors = { background = "#1e1e2e" }
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 
 config.underline_position = -2
 config.max_fps = 144
@@ -109,5 +109,5 @@ end)
 
 config.front_end = "OpenGL" -- Laptop was having some issues with WebGPU
 
-config.default_prog = { "tmux" }
+-- config.default_prog = { "tmux" }
 return config
