@@ -38,10 +38,10 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 config.window_decorations = "RESIZE"
 config.window_padding = {
-	left = 14,
-	right = 14,
-	top = 14,
-	bottom = 14,
+	left = 8,
+	right = 8,
+	top = 4,
+	bottom = 4,
 }
 
 -- Cursor blinks too slow for me
