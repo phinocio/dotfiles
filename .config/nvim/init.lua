@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = "plugins",
 	checker = { enabled = true, notify = false, frequency = 3600 },
-	change_detection = { enabled = true, notify = true },
+	change_detection = { enabled = true, notify = false },
 })
 
 vim.cmd("colorscheme catppuccin")
