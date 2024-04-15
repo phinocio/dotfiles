@@ -130,7 +130,7 @@ export FZF_DEFAULT_OPTS=" \
 
 
 fcd() {
-	dir="$(fd -H --type d -d 2 . ~/ $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | sort | fzf --preview 'tree -C ~/{} | head -n 50' --header 'cd to a Directory...')";
+	dir="$(fd -H --type d --max-depth 2 . $HOME $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf --preview 'eza -lagh --icons --group-directories-first --git --git-ignore --color=always $HOME/{} | head -n 50')";
 	if [[ -n $dir ]]; then
 		cd $HOME/$dir
 	fi

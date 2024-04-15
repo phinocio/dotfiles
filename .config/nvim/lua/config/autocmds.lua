@@ -33,6 +33,6 @@ autocmd("TextYankPost", {
 	desc = "Highlight when yanking text",
 	group = "YankHighlight",
 	callback = function()
-		vim.highlight.on_yank()
+		vim.highlight.on_yank({ timeout = 400 })
 	end,
 })

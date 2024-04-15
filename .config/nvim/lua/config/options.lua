@@ -1,14 +1,17 @@
 -- List of options: https://neovim.io/doc/user/quickref.html#option-list
 
--- Tabs related stuff
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = false -- Tabs > spaces (also plugin changes based on editorconfig)
+vim.g.netrw_liststyle = 3
 
+-- Tabs related stuff
+vim.opt.autoindent = true
+vim.opt.expandtab = false -- Tabs > spaces (also plugin changes based on editorconfig)
+vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
 
 vim.opt.autoread = true -- Read file when changed outside vim
+vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = true -- Keep backup file after overwriting
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.completeopt = "menuone,longest,preview" -- See https://neovim.io/doc/user/options.html#'completeopt'
@@ -23,6 +26,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes:2"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.swapfile = false
 vim.opt.termguicolors = true
 vim.opt.undodir = os.getenv("HOME") .. "/.cache/nvim/undodir"
 vim.opt.undofile = true
