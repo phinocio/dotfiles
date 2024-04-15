@@ -1,6 +1,6 @@
 -- List of options: https://neovim.io/doc/user/quickref.html#option-list
 
-vim.g.netrw_liststyle = 3
+-- vim.g.netrw_liststyle = 3
 
 -- Tabs related stuff
 vim.opt.autoindent = true
