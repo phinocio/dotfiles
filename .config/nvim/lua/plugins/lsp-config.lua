@@ -28,6 +28,17 @@ return {
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
+
+			-- Organize imports for TS
+			local function organize_imports()
+				local params = {
+					command = "_typescript.organizeImports",
+					arguments = { vim.api.nvim_buf_get_name(0) },
+					title = "",
+				}
+				vim.lsp.buf.execute_command(params)
+			end
+
 			local capabilities = vim.tbl_deep_extend(
 				"force",
 				{},
@@ -57,7 +68,12 @@ return {
 					},
 				},
 			})
-			lspconfig.tsserver.setup({})
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+				commands = {
+					OrganizeImports = { organize_imports, description = "Organize Imports" },
+				},
+			})
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
