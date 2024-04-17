@@ -82,3 +82,4 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
