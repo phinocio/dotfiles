@@ -8,17 +8,17 @@ config.term = "wezterm"
 
 -- Font
 config.font = wezterm.font_with_fallback({
-	{ family = "Fira Code" },
 	{
 		family = "JetBrains Mono",
 		harfbuzz_features = { "calt", "zero", "cv12" },
 	},
-	{
-		family = "Cascadia Code",
-	},
+	{ family = "Fira Code" },
 	{
 		family = "Monaspace Neon",
 		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
+	},
+	{
+		family = "Cascadia Code",
 	},
 	"Hack",
 	"Symbols Nerd Font Mono",
