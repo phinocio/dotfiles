@@ -29,16 +29,6 @@ return {
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
 
-			-- Organize imports for TS
-			local function organize_imports()
-				local params = {
-					command = "_typescript.organizeImports",
-					arguments = { vim.api.nvim_buf_get_name(0) },
-					title = "",
-				}
-				vim.lsp.buf.execute_command(params)
-			end
-
 			local capabilities = vim.tbl_deep_extend(
 				"force",
 				{},
@@ -69,10 +59,15 @@ return {
 				},
 			})
 			lspconfig.tsserver.setup({
+				on_attach = function(client, bufnr)
+					vim.keymap.set(
+						"n",
+						"<leader>co",
+						"<cmd>lua vim.lsp.buf.code_action({ apply = true, context = { only = { 'source.organizeImports.ts' }, diagnostics = {}, }, })<CR>",
+						{ buffer = bufnr, desc = "[TS] Organize Imports" }
+					)
+				end,
 				capabilities = capabilities,
-				commands = {
-					OrganizeImports = { organize_imports, description = "Organize Imports" },
-				},
 			})
 		end,
 		keys = {
