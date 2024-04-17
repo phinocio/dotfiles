@@ -8,23 +8,24 @@ config.term = "wezterm"
 
 -- Font
 config.font = wezterm.font_with_fallback({
+	{ family = "Fira Code" },
 	{
 		family = "JetBrains Mono",
 		harfbuzz_features = { "calt", "zero", "cv12" },
 	},
-	{ family = "Fira Code" },
-	{
-		family = "Monaspace Neon",
-		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
-	},
-	{
-		family = "Cascadia Code",
-	},
-	"Hack",
-	"Symbols Nerd Font Mono",
+	-- {
+	-- 	family = "Cascadia Code",
+	-- },
+	-- {
+	-- 	family = "Monaspace Neon",
+	-- 	harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
+	-- },
+	-- "Hack",
+	{ family = "Symbols Nerd Font Mono", scale = 1.0 },
+	{ family = "Noto Sans Symbols 2" },
 })
 config.font_size = 12
-config.line_height = 1.2
+config.line_height = 1.1
 
 config.color_scheme = "Dracula"
 config.colors = { background = "#1e1e2e" }
