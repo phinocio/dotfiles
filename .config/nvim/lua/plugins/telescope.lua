@@ -16,7 +16,7 @@ return {
 		require("telescope").setup({
 			defaults = {
 				path_display = { "truncate" },
-				prompt_prefix = "   ",
+				prompt_prefix = "   ",
 				selection_caret = "⮞ ",
 				mappings = {
 					i = {
