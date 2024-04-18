@@ -6,9 +6,21 @@ return {
 		{ "rcarriga/nvim-notify", opts = { top_down = false } },
 	},
 	opts = {
+		-- views = {
+		-- 	cmdline_popup = {
+		-- 		border = {
+		-- 			style = "none",
+		-- 			padding = { 1, 2 },
+		-- 		},
+		-- 		filter_options = {},
+		-- 		win_options = {
+		-- 			winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+		-- 		},
+		-- 	},
+		-- },
 		cmdline = {
 			format = {
-				cmdline = { pattern = "^:", icon = "⮞", lang = "vim" },
+				cmdline = { pattern = "^:", icon = " ", lang = "vim" },
 			},
 		},
 		lsp = {
