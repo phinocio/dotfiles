@@ -58,7 +58,7 @@ return {
 					},
 				},
 			})
-			lspconfig.tailwindcss.setup({})
+			lspconfig.tailwindcss.setup({ capabilities = capabilities })
 			lspconfig.tsserver.setup({
 				on_attach = function(client, bufnr)
 					vim.keymap.set(
