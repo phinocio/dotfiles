@@ -5,6 +5,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
+				"astro",
 				"jsonls",
 				"lua_ls",
 				"svelte",
@@ -70,6 +71,7 @@ return {
 				end,
 				capabilities = capabilities,
 			})
+			lspconfig.astro.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
