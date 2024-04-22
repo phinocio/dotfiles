@@ -34,6 +34,7 @@ return {
 						["<C-d>"] = "preview_scrolling_down",
 					},
 				},
+				file_ignore_patterns = { ".git/", "node_modules/" },
 			},
 			pickers = {
 				buffers = {
