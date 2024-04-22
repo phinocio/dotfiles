@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.comment",
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	dependencies = { "JoosepAlviste/nvim-ts-context-commentstring", config = true },
 	opts = {
 		-- Module mappings. Use `''` (empty string) to disable one.
 		mappings = {
