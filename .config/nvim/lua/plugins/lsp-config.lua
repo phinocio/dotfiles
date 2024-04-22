@@ -72,6 +72,7 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.astro.setup({ capabilities = capabilities })
+			lspconfig.mdx_analyzer.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
