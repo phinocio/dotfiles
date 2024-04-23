@@ -8,6 +8,10 @@ config.term = "wezterm"
 
 -- Font
 config.font = wezterm.font_with_fallback({
+	{
+		family = "Monaspace Radon",
+		harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
+	},
 	{ family = "Fira Code" },
 	{
 		family = "JetBrains Mono",
@@ -15,10 +19,6 @@ config.font = wezterm.font_with_fallback({
 	},
 	-- {
 	-- 	family = "Cascadia Code",
-	-- },
-	-- {
-	-- 	family = "Monaspace Neon",
-	-- 	harfbuzz_features = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "calt", "dlig" },
 	-- },
 	-- "Hack",
 	{ family = "Symbols Nerd Font Mono", scale = 1.0 },
