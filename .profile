@@ -34,3 +34,5 @@ if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	export MANROFFOPT="-c"
 fi
 
+# Added by Toolbox App
+export PATH="$PATH:/home/alice/.local/share/JetBrains/Toolbox/scripts"

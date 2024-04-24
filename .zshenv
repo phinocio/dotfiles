@@ -36,5 +36,3 @@ fi
 
 typeset -U path
 path=($path ~/.local/bin)
-path=($path ~/.config/composer/vendor/bin)
-path=($path ~/.local/share/go/bin)
