@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Stolen from Arch Wiki
 
 iDIR="$HOME/.config/mako/icons"
 

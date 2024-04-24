@@ -34,7 +34,3 @@ if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	export MANROFFOPT="-c"
 fi
 
-typeset -U path
-path=($path ~/.local/bin)
-path=($path ~/.config/composer/vendor/bin)
-path=($path ~/.local/share/go/bin)
