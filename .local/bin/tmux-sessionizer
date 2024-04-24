@@ -5,7 +5,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd -H --type d --max-depth 2 . $HOME $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf-tmux --preview 'eza -lagh --icons --group-directories-first --git --git-ignore --color=always $HOME/{} | head -n 50')
+    selected=$(fd -H --type d --max-depth 2 . $HOME $LEARNING_DIR $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf-tmux --preview 'eza -lagh --icons --group-directories-first --git --git-ignore --color=always $HOME/{} | head -n 50')
     # selected=$(fd -H --type d --max-depth 2 . $HOME $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf --preview 'eza -Ta --icons --group-directories-first --git-ignore --color=always $HOME/{} | head -n 50')
 fi
 

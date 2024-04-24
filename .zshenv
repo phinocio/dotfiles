@@ -22,6 +22,7 @@ export PROJECTS_DIR=$HOME/Projects
 export PROJECTS_WEB=$HOME/Projects/Websites
 export PROJECTS_API=$HOME/Projects/APIs
 export NOTES_DIR="$HOME/Documents/Notes"
+export LEARNING_DIR="$HOME/Learning"
 
 typeset -U path
 path=($path ~/.local/bin)
