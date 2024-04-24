@@ -1,5 +1,4 @@
 *.bak*
-packer_compiled.lua
 */**/plugins
 !.config/tmux/plugins/tpm
 !.config/nvim/lua/plugins
