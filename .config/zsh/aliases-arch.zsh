@@ -4,7 +4,6 @@ alias cp="rsync -av --info=progress2"						# Use rsync for cp
 alias mv="mv -i -v"											# verbose mv with confirmation
 alias rm="rm -I -v"											# verbose rm with confirmation
 alias grep="grep --color"
-alias wget="wget --hsts-file=$XDG_CACHE_HOME/.wget-hist"
 alias ip="ip -c"
 # alias ssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
 alias part="php artisan"
@@ -23,7 +22,6 @@ alias lst="eza -lghFT --icons --group-directories-first --git-ignore"
 alias ll="eza -laghF --icons --group-directories-first"
 alias llg="eza -laghF --icons --group-directories-first --git --git-ignore"
 alias llt="eza -laghFT --icons --group-directories-first --git-ignore"
-alias lf="lfpv"
 
 # Arch packages stuff
 # alias yayi="yay -S"
@@ -50,21 +48,11 @@ alias clone="git clone"
 alias lg="lazygit"
 
 # Common config files I edit
-alias ekitty="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
-alias econky="$EDITOR $XDG_CONFIG_HOME/conky/conky.conf"
 alias fixdiscord="sudo $EDITOR /opt/discord/resources/build_info.json"
 
 # zsh editing and updating
-alias zshen="$EDITOR ~/.zshenv"
+# alias zshen="$EDITOR ~/.zshenv"
 alias zshu="source $ZDOTDIR/.zshrc"
-alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
-alias zshal="$EDITOR $ZDOTDIR/aliases-arch.zsh"
-
-# Docker aliases
-alias pandock=\
-'docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'
-
-# Docker
-alias dc="docker-compose"
-alias dock="docker"
+# alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
+# alias zshal="$EDITOR $ZDOTDIR/aliases-arch.zsh"
 
