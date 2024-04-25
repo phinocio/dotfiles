@@ -1,9 +1,6 @@
 // -*- mode: jsonc -*-
 {
-	// "layer": "top", // Waybar at top layer
-	// "position": "bottom", // Waybar position (top|bottom|left|right)
 	"height": 30, // Waybar height (to be removed for auto height)
-	// "width": 1280, // Waybar width
 	"spacing": 4, // Gaps between modules (4px)
 	"output": "DP-3",
 	// Choose the order of the modules
@@ -22,7 +19,6 @@
 		"keyboard-state",
 		"tray"
 	],
-	// Modules configuration
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -68,31 +64,21 @@
 		"format": "{}% "
 	},
 	"network": {
-		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-ethernet": "{ipaddr}/{cidr} ",
-		"tooltip-format": "{ifname} via {gwaddr} ",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "Disconnected ⚠",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		// "interface": "wlp2s0",
+		"format": "{ifname}",
+		"format-ethernet": "󰈁 {ipaddr}",
+		"format-disconnected": "󰈂", //An empty format will hide the module.
+		"tooltip-format": "󰈁 {ifname} via {gwaddr}",
+		"tooltip-format-ethernet": "󰈁 {ifname}",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
 	},
 	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
-		"format": "{volume}% {icon} {format_source}",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
+		"format": "{icon} {volume}%",
+		"format-bluetooth": " {volume}%",
+		"format-muted": "",
 		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
 			"default": [
-				"",
 				"",
 				""
 			]
