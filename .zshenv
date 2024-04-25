@@ -1,4 +1,4 @@
-export HOSTNAME=wonderland
+export HOSTNAME=$(cat /etc/hostname)
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export BROWSER='firefox'
