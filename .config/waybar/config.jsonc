@@ -19,6 +19,7 @@
 		"network",
 		"cpu",
 		"memory",
+		"keyboard-state",
 		"tray"
 	],
 	// Modules configuration
@@ -36,6 +37,15 @@
 			"urgent": "",
 			"focused": "",
 			"default": ""
+		}
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
 		}
 	},
 	"tray": {
