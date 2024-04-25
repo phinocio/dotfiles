@@ -1,4 +1,4 @@
-export HOSTNAME=$(cat /etc/hostname)
+export HOSTNAME=$(uname -n)
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export BROWSER='firefox'
