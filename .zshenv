@@ -37,5 +37,5 @@ fi
 typeset -U path
 path=($path ~/.local/bin)
 
-export GTK_IM_MODULE=fcitx
+# export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
