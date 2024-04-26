@@ -33,7 +33,7 @@ output=DP-3
 
 background-color=#eff1f5cc
 text-color=#4c4f69
-border-color=#eff1f5cc
+border-color=#33ccffee
 progress-color=over #89b4fa
 
 [urgency=high]
@@ -44,7 +44,7 @@ border-color=#e64553cc
 [mode=dark]
 background-color=#1e1e2ecc
 text-color=#cdd6f4
-border-color=#1e1e2ecc
+border-color=#33ccffee
 progress-color=over #89b4fa
 
 [urgency=high]

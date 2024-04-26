@@ -29,7 +29,7 @@ export PRETTIERD_DEFAULT_CONFIG=$XDG_CONFIG_HOME/prettier/.prettierrc.json
 if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	# Bat config
 	export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
-	export BAT_THEME="Catppuccin-mocha"
+	export BAT_THEME="Catppuccin Mocha"
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 	export MANROFFOPT="-c"
 fi
@@ -39,3 +39,5 @@ path=($path ~/.local/bin)
 
 # export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
+# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
