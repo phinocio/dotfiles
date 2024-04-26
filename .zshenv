@@ -16,7 +16,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 # Custom directory envs
 export PROJECTS_DIR=$HOME/Projects
 export LEARNING_DIR="$HOME/Learning"
-export NOTES_DIR="$HOME/Documents/Notes"
+export NOTES_DIR="$HOME/Notes"
 
 # zsh
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
