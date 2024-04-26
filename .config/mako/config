@@ -7,17 +7,18 @@ on-button-left=dismiss
 on-button-middle=none
 on-button-right=dismiss-all
 on-touch=dismiss
-#on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
+#on-notify=exec mpv --no-video /usr/share/sounds/freedesktop/stereo/message.oga
 
 # STYLE OPTIONS
-font=Cascadia Code
-width=600
+font=Cantarell
+width=400
 height=200
 margin=10
 padding=15
 border-size=2
 border-radius=10
 icons=1
+icon-path=/usr/share/icons/candy-icons
 max-icon-size=48
 icon-location=left
 markup=1
@@ -31,25 +32,23 @@ layer=overlay
 anchor=top-center
 output=DP-3
 
-background-color=#1e1e2e
-text-color=#d9e0ee
-border-color=#313244
+background-color=#eff1f5cc
+text-color=#4c4f69
+border-color=#eff1f5cc
 progress-color=over #89b4fa
 
-[urgency=low]
-border-color=#313244
-default-timeout=2000
+[urgency=high]
+background-color=#e64553cc
+text-color=#eff1f5
+border-color=#e64553cc
 
-[urgency=normal]
-border-color=#313244
-default-timeout=5000
+[mode=dark]
+background-color=#1e1e2ecc
+text-color=#cdd6f4
+border-color=#1e1e2ecc
+progress-color=over #89b4fa
 
 [urgency=high]
-border-color=#f38ba8
-text-color=#f38ba8
-default-timeout=0
-
-[category=mpd]
-border-color=#f9e2af
-default-timeout=2000
-group-by=category
+background-color=#f38ba8cc
+text-color=#1e1e2e
+border-color=#f38ba8cc
