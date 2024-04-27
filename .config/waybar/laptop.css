@@ -54,8 +54,7 @@ button:hover {
 #backlight,
 #network,
 #tray,
-#power-profiles-daemon
- {
+#power-profiles-daemon {
 	padding: 0 5px;
 }
 
@@ -75,12 +74,12 @@ button:hover {
 }
 
 #clock {
-	font-size: 16px
+	font-size: 16px;
 }
 
 #battery.charging,
 #battery.plugged {
-	background-color: #00ff99;
+	color: #00ff99;
 }
 
 @keyframes blink {
