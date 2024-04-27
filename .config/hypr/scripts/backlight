@@ -5,7 +5,7 @@ iDIR="$HOME/.config/mako/icons"
 # Get brightness
 get_backlight() {
 	LIGHT=$(printf "%.0f\n" $(brightnessctl g))
-	echo "${LIGHT}"
+	python -c "print(round($LIGHT / 255 * 100))"
 }
 
 # Get icons
@@ -26,7 +26,7 @@ get_icon() {
 
 # Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" "Brightness : $(get_backlight)"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" "Brightness : $(get_backlight)%"
 }
 
 # Increase brightness
