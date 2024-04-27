@@ -1,5 +1,5 @@
-lat: 51.049999
-lng: -114.066666
+lat: 51.0
+lng: -114.0
 dbusserver: true
 portal: true
 usegeoclue: false
