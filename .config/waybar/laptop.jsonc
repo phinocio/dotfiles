@@ -13,7 +13,6 @@
 	],
 	"modules-right": [
 		"network",
-		"backlight",
 		"battery",
 		"privacy",
 		"tray"
@@ -48,27 +47,8 @@
 		// "icon-size": 21,
 		"spacing": 10
 	},
-	"cpu": {
-		"format": "{usage}% ",
-		"tooltip": false
-	},
 	"memory": {
 		"format": "{}% "
-	},
-	"backlight": {
-		// "device": "acpi_video1",
-		"format": "{percent}% {icon}",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			""
-		]
 	},
 	"battery": {
 		"states": {
@@ -78,22 +58,22 @@
 		},
 		"format": "{capacity}% {icon}",
 		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
+		"format-charging": "{capacity}% 󰂄",
 		"format-plugged": "{capacity}% ",
 		"format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+			"󰁻",
+			"󰁽",
+			"󰁿",
+			"󰂁",
+			"󰁹"
 		]
 	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-wifi": "{essid} ({signalStrength}%)  ",
 		"format-ethernet": "{ipaddr}/{cidr} ",
 		"tooltip-format": "{ifname} via {gwaddr} ",
 		"format-linked": "{ifname} (No IP) ",
