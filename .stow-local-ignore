@@ -2,6 +2,7 @@ LICENSE
 README.md
 \.git
 \.gitignore
+\.gitmodules
 \.local/state/*
 \.nix-profile
 nvim.bak
