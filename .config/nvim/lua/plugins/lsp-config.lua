@@ -16,6 +16,16 @@ return {
 		},
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"eslint_d",
+				"prettierd",
+				"stylua",
+			},
+		},
+	},
+	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = {
