@@ -6,6 +6,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"astro",
+				"gopls",
 				"jsonls",
 				"lua_ls",
 				"svelte",
@@ -73,6 +74,12 @@ return {
 			})
 			lspconfig.astro.setup({ capabilities = capabilities })
 			lspconfig.mdx_analyzer.setup({ capabilities = capabilities })
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				settings = {
+					gopls = { completeUnimported = true, analyses = { unusedParam = true } },
+				},
+			})
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
