@@ -13,7 +13,6 @@ alias hist="history -i"
 # alias tree="tree -C -F"
 alias tree="eza --icons --group-directories-first --tree"
 alias cat="bat --paging=never --plain"
-alias :q="exit"
 
 # File and folder listing
 alias ls="eza -lghF --icons --group-directories-first"
