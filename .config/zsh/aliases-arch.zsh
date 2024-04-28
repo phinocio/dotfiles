@@ -36,7 +36,7 @@ alias yeet="paru -Rns"
 alias yaysi="paru -Si"
 alias paci="sudo pacman -S"
 alias pacui="sudo pacman -Rns"
-alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
+alias pacclean="pacman -Qdtq | sudo pacman -Rns -"
 alias pacum="sudo systemctl start reflector.service"
 
 # Git commands
