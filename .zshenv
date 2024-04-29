@@ -4,7 +4,7 @@ export VISUAL=$EDITOR
 export BROWSER='firefox'
 
 # Setting XDG system directories
-export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_DATA_DIRS=/usr/local/share:/usr/share:~/.local/share/flatpak/exports/share/applications:/var/lib/flatpak/exports/share/applications
 export XDG_CONFIG_DIRS=/etc/xdg
 
 # Setting XDG user directories
