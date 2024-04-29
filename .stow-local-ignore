@@ -5,10 +5,4 @@ README.md
 \.gitmodules
 \.local/state/*
 \.nix-profile
-nvim.bak
-nvim.bak2
-nvim.bak3
-nvim.bak4
-nvim.bak5
-nvim.bak5-lazy
 setup
