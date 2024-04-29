@@ -37,7 +37,9 @@ fi
 typeset -U path
 path=($path ~/.local/bin)
 
-# export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
+# Given up on keeping home clean, but go not being a dotfile is dumb
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
