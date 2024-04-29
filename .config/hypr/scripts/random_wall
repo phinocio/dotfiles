@@ -7,4 +7,8 @@ WALL=$(fd --type f . ~/Pictures/Wallpapers/ | shuf -n 1)
 
 hyprctl hyprpaper unload all
 hyprctl hyprpaper preload $WALL
-hyprctl hyprpaper wallpaper "eDP-1,$WALL"
+
+for monitor in $(hyprctl monitors | grep "Monitor" | awk '{ print $2 }'); do
+	hyprctl hyprpaper wallpaper "$monitor,$WALL"
+done
+
