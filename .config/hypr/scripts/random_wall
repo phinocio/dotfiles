@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# A simple, if maybe hacky way, to ensure it only runs once
+pidof hyprpaper || hyprpaper &
+
+WALL=$(fd --type f . ~/Pictures/Wallpapers/ | shuf -n 1)
+
+hyprctl hyprpaper unload all
+hyprctl hyprpaper preload $WALL
+hyprctl hyprpaper wallpaper "eDP-1,$WALL"
