@@ -149,7 +149,7 @@ note() {
 	else
 		NOTE_NAME="$1";
 		TIMESTAMP="$(date +%Y-%m-%d_%H:%M)";
-		nvim -c "set autochdir" "${NOTES_DIR}/${TIMESTAMP}-${NOTE_NAME}.md";
+		nvim -c "set autochdir" "${NOTES_DIR}/00 - Inbox/${TIMESTAMP}-${NOTE_NAME}.md";
 	fi
 }
 bindkey -s "^N" "note^M"
