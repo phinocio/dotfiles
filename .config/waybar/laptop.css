@@ -1,6 +1,8 @@
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
-	font-family: Roboto;
+	font-family:
+		Symbols Nerd Font,
+		Roboto;
 	font-size: 12px;
 }
 
