@@ -54,8 +54,8 @@ button:hover {
 }
 
 #window,
-#workspaces {
-	margin: 0 4px;
+#workspaces * {
+	font-size: 18px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
