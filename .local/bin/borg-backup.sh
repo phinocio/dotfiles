@@ -24,17 +24,12 @@ borg create                         \
     --compression zstd,15           \
     --exclude-caches                \
 	--exclude '/home/*/.cache'      \
-	--exclude '/home/*/.cargo'      \
-	--exclude '/home/*/.config'     \
-	--exclude '*/Projects/vendor'   \
-	--exclude '*/Projects/AI'       \
-	--exclude '/home/*/.git'        \
-	--exclude '/home/*/.local'      \
+	--exclude '*/Projects/*/vendor'   \
+	--exclude '/home/*/Steam'       \
 	--exclude '/home/*/.mozilla'    \
-	--exclude '/home/*/.npm'        \
-	--exclude '/home/*/.rustup'     \
+	--exclude '/home/*/.ollama'     \
 	--exclude '/home/*/.var'        \
-	--exclude '/home/*/node_modules'\
+	--exclude '*/Projects/*/node_modules'\
     ::'{hostname}-{now}'            \
     /home                           \
 
