@@ -25,6 +25,9 @@ borg create                         \
     --exclude-caches                \
 	--exclude '/home/*/.cache'      \
 	--exclude '/home/*/.cargo'      \
+	--exclude '/home/*/.config'     \
+	--exclude '*/Projects/vendor'   \
+	--exclude '*/Projects/AI'       \
 	--exclude '/home/*/.git'        \
 	--exclude '/home/*/.local'      \
 	--exclude '/home/*/.mozilla'    \
