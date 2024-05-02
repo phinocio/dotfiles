@@ -38,10 +38,12 @@
 		"format": "{:%b %d %H:%M}"
 	},
 	"custom/utc-time": {
-		"exec": "TZ=\"Etc/UTC\" date +\"%H:%M %Z\""
+		"exec": "TZ=\"Etc/UTC\" date +\"%H:%M %Z\"",
+		"interval": 60
 	},
 	"custom/jst-time": {
-		"exec": "TZ=\"Asia/Tokyo\" date +\"%H:%M %Z\""
+		"exec": "TZ=\"Asia/Tokyo\" date +\"%H:%M %Z\"",
+		"interval": 60
 	},
 	"tray": {
 		// "icon-size": 21,
