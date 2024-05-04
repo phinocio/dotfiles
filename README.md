@@ -26,6 +26,10 @@ Basically just things I need/want to install on a new system in a single place I
 -   xsel
 -   zsh
 
+# Todoist Fuzzel Input
+
+Add api via `secret-tool store --label=Todoist todoist api` then enter when prompted.
+
 # References
 
 [https://laracasts.com/series/neovim-as-a-php-ide](https://laracasts.com/series/neovim-as-a-php-ide)
