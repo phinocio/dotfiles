@@ -5,7 +5,7 @@ alias mv="mv -i -v"											# verbose mv with confirmation
 alias rm="rm -I -v"											# verbose rm with confirmation
 alias grep="grep --color"
 alias ip="ip -c"
-# alias ssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
+alias kssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
 alias part="php artisan"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias vim="nvim"
