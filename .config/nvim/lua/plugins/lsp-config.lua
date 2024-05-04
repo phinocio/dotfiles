@@ -19,7 +19,11 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
+				"delve",
 				"eslint_d",
+				"gofumpt",
+				"goimports-reviser",
+				"golines",
 				"prettierd",
 				"stylua",
 			},
