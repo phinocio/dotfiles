@@ -30,6 +30,50 @@ return {
 		},
 	},
 	{
+		"mfussenegger/nvim-dap",
+		keys = {
+			{ "<leader>db", "<cmd>DapToggleBreakpoint<CR>", "Add breakpoint at line" },
+			{
+				"<leader>dus",
+				function()
+					local widgets = require("dap.ui.widgets")
+					local sidebar = widgets.sidebar(widgets.scopes)
+					sidebar.open()
+				end,
+				"Open debugging sidebar",
+			},
+		},
+	},
+	{
+		"leoluz/nvim-dap-go",
+		config = true,
+		ft = "go",
+		keys = {
+			{
+				"<leader>dgt",
+				function()
+					require("dap-go").debug_test()
+				end,
+				"Debug go test",
+			},
+			{
+				"<leader>dgl",
+				function()
+					require("dap-go").debug_last()
+				end,
+				"Debug last go test",
+			},
+		},
+	},
+	{
+		"olexsmir/gopher.nvim",
+		ft = "go",
+		keys = {
+			{ "<leader>gsj", "<cmd>GoTagAdd json<CR>", "Add json struct tags" },
+			{ "<leader>gsy", "<cmd>GoTagAdd yaml<CR>", "Add yaml struct tags" },
+		},
+	},
+	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		dependencies = {
@@ -104,7 +148,7 @@ return {
 			{ "<leader>ca", vim.lsp.buf.code_action, desc = "Select code action at cursor" },
 			{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename in project" },
 			{ "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
-			{ "<leader>d", vim.diagnostic.open_float, desc = "Open floating diagnostics" },
+			-- { "<leader>dD", vim.diagnostic.open_float, desc = "Open floating diagnostics" },
 			{ "[d", vim.diagnostic.goto_prev, desc = "Go to prev warn/error" },
 			{ "]d", vim.diagnostic.goto_next, desc = "Go to next warn/error" },
 			{ "K", vim.lsp.buf.hover, desc = "Hover definition" },
