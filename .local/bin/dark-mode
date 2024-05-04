@@ -4,3 +4,11 @@ notify-send --app-name="dark-toggle" --icon=/usr/share/icons/hicolor/scalable/st
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 makoctl set-mode dark
+
+mode=$(darkman get)
+
+if test $mode == "dark"; then
+	ddcutil -d 1 setvcp 10 30
+	ddcutil -d 2 setvcp 10 60 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+	ddcutil -d 3 setvcp 10 30
+fi
