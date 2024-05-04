@@ -7,7 +7,7 @@ makoctl set-mode light
 
 mode=$(darkman get)
 
-if test $mode == "light"; then
+if test $mode == "light" && test $HOSTNAME == "wonderland"; then
 	ddcutil -d 1 setvcp 10 50
 	ddcutil -d 2 setvcp 10 75 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
 	ddcutil -d 3 setvcp 10 50
