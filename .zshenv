@@ -37,6 +37,7 @@ fi
 typeset -U path
 path=($path ~/.local/bin)
 path=($path ~/.local/share/JetBrains/Toolbox/scripts)
+path=($path ~/.config/composer/vendor/bin)
 
 export QT_IM_MODULE=fcitx
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
