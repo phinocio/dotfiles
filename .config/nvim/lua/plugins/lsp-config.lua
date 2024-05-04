@@ -72,6 +72,9 @@ return {
 			{ "<leader>gsj", "<cmd>GoTagAdd json<CR>", "Add json struct tags" },
 			{ "<leader>gsy", "<cmd>GoTagAdd yaml<CR>", "Add yaml struct tags" },
 		},
+		build = function()
+			vim.cmd([[silent! GoInstallDeps]])
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
