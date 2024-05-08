@@ -10,6 +10,7 @@ return {
 			javascript = { "prettierd" },
 			json = { "prettierd" },
 			lua = { "stylua" },
+			markdown = { "prettierd" },
 			svelte = { "prettierd" },
 			typescript = { "prettierd" },
 			yaml = { "prettierd" },
