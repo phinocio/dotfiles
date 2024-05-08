@@ -135,6 +135,7 @@ return {
 			})
 			lspconfig.astro.setup({ capabilities = capabilities })
 			lspconfig.mdx_analyzer.setup({ capabilities = capabilities })
+			lspconfig.marksman.setup({ capabilities = capabilities })
 			lspconfig.gopls.setup({
 				capabilities = capabilities,
 				settings = {
