@@ -6,3 +6,4 @@ lazy-lock.json
 .config/lazygit/state.yml
 .local/bin/FreeFileSync
 .local/bin/freefilesync
+.config/zsh/.zcompcache/composer-pkgs
