@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
 notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Changing to Dark Mode"
-gsettings set org.gnome.desktop.interface gtk-theme "Breeze-Dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
+gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
 
 if test $(pidof mako) > 0; then
 	makoctl set-mode dark
-fi
-
-if test $DESKTOP_SESSION == "plasma"; then
-	lookandfeeltool --apply "org.kde.breezedark.desktop"
 fi
 
 mode=$(darkman get)
