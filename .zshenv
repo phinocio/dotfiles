@@ -39,7 +39,7 @@ path=($path ~/.local/bin)
 path=($path ~/.local/share/JetBrains/Toolbox/scripts)
 path=($path ~/.config/composer/vendor/bin)
 
-export QT_IM_MODULE=fcitx
+# export QT_IM_MODULE=fcitx # Not needed on KDE
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 # Given up on keeping home clean, but go not being a dotfile is dumb
