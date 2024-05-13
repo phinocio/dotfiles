@@ -169,7 +169,7 @@ chpwd() {
 
 		if [ ! -f /tmp/$name ]; then
 			git fetch
-			notify-send "Ran git fetch in $(pwd)"
+			notify-send "Ran git fetch in $(pwd)" --icon=$HOME/.local/share/icons/git-diff.svg
 			touch /tmp/$name
 		fi
 	fi
