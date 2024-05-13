@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg "Changing to Light Mode"
-gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
 gsettings set org.gnome.desktop.interface gtk-theme "Breeze"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
 gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
 
 if test $(pidof mako) > 0; then

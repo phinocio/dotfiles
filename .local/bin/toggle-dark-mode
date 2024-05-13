@@ -2,8 +2,15 @@
 
 MODE=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'" )
 
-if  [ "$MODE" = "prefer-light" ]; then
+case $MODE in
+"prefer-light")
 	dark-mode
-else
+	;;
+"default")
+	dark-mode
+	;;
+*)
 	light-mode
-fi
+	;;
+esac
+
