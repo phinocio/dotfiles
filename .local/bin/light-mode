@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-notify-send --app-name="dark-toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg "Changing to Light Mode"
+notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg "Changing to Light Mode"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-makoctl set-mode light
+gsettings set org.gnome.desktop.interface gtk-theme "Breeze"
+
+if test $(pidof mako) > 0; then
+	makoctl set-mode light
+	notiy-send 'aaaa'
+fi
+
+if test $DESKTOP_SESSION == "plasma"; then
+	lookandfeeltool --apply "org.kde.breeze.desktop"
+fi
 
 mode=$(darkman get)
 
