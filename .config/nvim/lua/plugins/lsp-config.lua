@@ -6,6 +6,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"astro",
+				"eslint",
 				"gopls",
 				"jsonls",
 				"lua_ls",
@@ -20,7 +21,6 @@ return {
 		opts = {
 			ensure_installed = {
 				"delve",
-				"eslint_d",
 				"gofumpt",
 				"goimports-reviser",
 				"golines",
