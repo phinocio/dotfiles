@@ -15,12 +15,13 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 # Custom directory envs
 export PROJECTS_DIR=$HOME/Projects
-export LEARNING_DIR="$HOME/Learning"
-export NOTES_DIR="$HOME/Notes"
+export LEARNING_DIR=$HOME/Learning
+export NOTES_DIR=$HOME/Notes
 
 # zsh
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Prettier default config for prettierd
 export PRETTIERD_DEFAULT_CONFIG=$XDG_CONFIG_HOME/prettier/.prettierrc.json
@@ -39,7 +40,6 @@ path=($path ~/.local/bin)
 path=($path ~/.local/share/JetBrains/Toolbox/scripts)
 path=($path ~/.config/composer/vendor/bin)
 
-# export QT_IM_MODULE=fcitx # Not needed on KDE
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
 # Given up on keeping home clean, but go not being a dotfile is dumb
