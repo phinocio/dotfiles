@@ -1,6 +1,3 @@
-# Check if the distro is Arch Linux for importing arch specific aliases.
-distro=$($(uname -r | grep -Eq "arch") && echo "arch" || echo "n")
-
 source $ZDOTDIR/functions.zsh
 
 ####################################
@@ -51,13 +48,13 @@ zinit light zsh-users/zsh-autosuggestions
 # Specifically, remove underline
 zle_highlight=('paste:none')
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-# ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
 ZSH_HIGHLIGHT_STYLES[path]=none
 # ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 ####################################
 #
-# COMPLETIONS CONFIG
+# COMPLETTIONS CONFIG
 #
 ####################################
 
@@ -66,6 +63,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a --color=always $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a --color=always $realpath'
 
 zinit cdreplay -q
 
@@ -96,10 +94,13 @@ key[Control-Right]="${terminfo[kRIT5]}"
 #
 ####################################
 
+# Check if the distro is Arch Linux for importing arch specific aliases.
+distro=$($(uname -r | grep -Eq "arch") && echo "arch" || echo "n")
+
 if [[ "$distro" == "arch" ]]; then
-    source $ZDOTDIR/aliases-arch.zsh
+    source $ZDOTDIR/aliases/arch.zsh
 else
-    source $ZDOTDIR/aliases-debian.zsh
+    source $ZDOTDIR/aliases/debian.zsh
 fi
 
 ####################################
@@ -109,6 +110,7 @@ fi
 ####################################
 
 ############### fzf ################
+
 eval "$(fzf --zsh)"
 
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
@@ -128,11 +130,13 @@ fcd() {
 }
 bindkey -s "^o" "fcd^M"
 
-# Make use of tmux-sessionizer
 bindkey -s "^F" "tmux-sessionizer^M"
 
+############# zoxide ###############
 
-##################################
+eval "$(zoxide init --cmd cd zsh)"
+
+####################################
 
 # Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
 repo-elephant | lolcat
