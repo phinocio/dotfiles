@@ -1,5 +1,5 @@
 [username]
-show_always = true
+# show_always = true
 style_user = "bold blue"
 
 [hostname]
