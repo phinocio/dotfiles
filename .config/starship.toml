@@ -1,6 +1,6 @@
 [username]
 show_always = true
-style_user = "bold cyan"
+style_user = "bold blue"
 
 [hostname]
 ssh_only = true
