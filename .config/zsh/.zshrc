@@ -36,7 +36,12 @@ setopt hist_find_no_dups
 # Install zinit if it doesn't already exist, then source it.
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+
+declare -A ZINIT
+export ZINIT[NO_ALIASES]='1'
 source "${ZINIT_HOME}/zinit.zsh"
+
+setopt noaliases
 
 # Plugins
 zinit light Aloxaf/fzf-tab
@@ -134,7 +139,7 @@ bindkey -s "^F" "tmux-sessionizer^M"
 
 ############# zoxide ###############
 
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 
 ####################################
 
