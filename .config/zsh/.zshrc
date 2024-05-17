@@ -87,6 +87,9 @@ bindkey '^[[3;5~' kill-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# Accept zsh-autosuggestion with ctrl+y
+bindkey '^y' forward-char
+
 # Move to beginning or end of words
 key[Control-Left]="${terminfo[kLFT5]}"
 key[Control-Right]="${terminfo[kRIT5]}"
