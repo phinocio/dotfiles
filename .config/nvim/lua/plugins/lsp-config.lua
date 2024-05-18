@@ -13,6 +13,7 @@ return {
 				"svelte",
 				"tailwindcss",
 				"tsserver", -- Also handles JavaScript
+				"volar",
 			},
 		},
 	},
@@ -142,6 +143,7 @@ return {
 					gopls = { completeUnimported = true, analyses = { unusedParam = true } },
 				},
 			})
+			lspconfig.volar.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
