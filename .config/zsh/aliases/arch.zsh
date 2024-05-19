@@ -2,7 +2,8 @@
 # alias cp="cp -i -v"											# verbose cp with confirmation
 alias cp="rsync -av --info=progress2"						# Use rsync for cp
 alias mv="mv -i -v"											# verbose mv with confirmation
-alias rm="rm -I -v"											# verbose rm with confirmation
+# alias rm="rm -I -v"											# verbose rm with confirmation
+alias rm="trash -v"
 alias grep="grep --color"
 alias ip="ip -c"
 alias kssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
