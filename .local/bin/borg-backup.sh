@@ -3,6 +3,11 @@
 # Setting this, so the repo does not need to be given on the commandline:
 export BORG_REPO=/run/media/backup/Linux/backup-$HOSTNAME-$USER
 
+# Create the repo if it doesn't exist
+if [ ! -d $BORG_REPO ]; then
+	borg init --encryption=none $BORG_REPO
+fi
+
 # See the section "Passphrase notes" for more infos.
 # export BORG_PASSPHRASE=''
 
@@ -22,16 +27,8 @@ borg create                         \
     --stats                         \
     --show-rc                       \
     --compression zstd,15           \
-    --exclude-caches                \
-	--exclude '/home/*/.cache'      \
-	--exclude '*/Projects/*/vendor'   \
-	--exclude '/home/*/Steam'       \
-	--exclude '/home/*/.mozilla'    \
-	--exclude '/home/*/.ollama'     \
-	--exclude '/home/*/.var'        \
-	--exclude '*/Projects/*/node_modules'\
     ::'{hostname}-{now}'            \
-    /home                           \
+    /.snapshots                     \
 
 backup_exit=$?
 
