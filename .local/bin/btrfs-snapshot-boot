@@ -5,10 +5,10 @@ home_boot_path="/.snapshots/home/$date-boot"
 root_boot_path="/.snapshots/root/$date-boot"
 
 if [ ! -d $home_boot_path ]; then
-	btrfs subvolume snapshot -r /home $home_boot_path
+	touch /home && btrfs subvolume snapshot -r /home $home_boot_path
 fi
 
 if [ ! -d $root_boot_path ]; then
-	btrfs subvolume snapshot -r / $root_boot_path
+	touch / && btrfs subvolume snapshot -r / $root_boot_path
 fi
 
