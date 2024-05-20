@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+date=$(date +"%Y-%m-%d")
+home_shutdown_path="/.snapshots/home/$date-shutdown"
+root_shutdown_path="/.snapshots/root/$date-shutdown"
+
+if [ ! -d $home_shutdown_path ]; then
+	btrfs subvolume snapshot -r /home $home_shutdown_path
+fi
+
+if [ ! -d $root_shutdown_path ]; then
+	btrfs subvolume snapshot -r / $root_shutdown_path
+fi
+
