@@ -1,0 +1,10 @@
+[Unit]
+Description=BTRFS Snapshot on shutdown
+
+[Service]
+Type=oneshot
+ExecStart=/bin/true
+ExecStop=sudo /home/alice/.local/bin/btrfs-snapshot-shutdown
+
+[Install]
+WantedBy=default.target
