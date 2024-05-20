@@ -1,0 +1,9 @@
+[Unit]
+Description=BTRFS Snapshot on login
+
+[Service]
+Type=oneshot
+ExecStart=sudo /home/alice/.local/bin/btrfs-snapshot-boot
+
+[Install]
+WantedBy=default.target
