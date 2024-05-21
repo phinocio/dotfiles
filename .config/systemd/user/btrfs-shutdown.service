@@ -1,10 +1,12 @@
 [Unit]
 Description=BTRFS Snapshot on shutdown
-After=final.target
+DefaultDependencies=no
+After=syslog.target network.target
 
 [Service]
 Type=oneshot
-ExecStart=sudo /home/alice/.local/bin/btrfs-snapshot-shutdown
+RemainAfterExit=yes
+ExecStop=sudo /home/alice/.local/bin/btrfs-snapshot-shutdown
 
 [Install]
-WantedBy=final.target
+WantedBy=default.target
