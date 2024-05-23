@@ -39,6 +39,7 @@ setopt hist_find_no_dups
 
 declare -A ZINIT
 export ZINIT[NO_ALIASES]='1'
+export ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME/.zcompdump-$ZSH_VERSION"
 source "${ZINIT_HOME}/zinit.zsh"
 
 setopt noaliases
