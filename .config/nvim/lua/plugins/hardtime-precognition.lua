@@ -6,6 +6,7 @@ return {
 		opts = {},
 	},
 	{
+		enabled = false,
 		"tris203/precognition.nvim",
 		event = "VeryLazy",
 		config = {
