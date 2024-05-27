@@ -1,19 +1,25 @@
 #!/usr/bin/env bash
 
-notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg "Changing to Light Mode"
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
-gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
-gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
-gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
+mako_mode=$(makoctl mode)
 
-if test $(pidof mako) > 0; then
-	makoctl set-mode light
-fi
+if test $mako_mode == "dark"; then
+	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg "Changing to Light Mode"
+	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+	gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+	gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
+	gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
 
-mode=$(darkman get)
+	if test $(pidof mako) > 0; then
+		makoctl set-mode light
+	fi
 
-if test $mode == "light" && test $HOSTNAME == "wonderland"; then
-	ddcutil -d 1 setvcp 10 50
-	ddcutil -d 2 setvcp 10 75 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
-	ddcutil -d 3 setvcp 10 50
+	mode=$(darkman get)
+
+	if test $mode == "light" && test $HOSTNAME == "wonderland"; then
+		ddcutil -d 1 setvcp 10 50
+		ddcutil -d 2 setvcp 10 75 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+		ddcutil -d 3 setvcp 10 50
+	fi
+else
+	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Already Light Mode"
 fi
