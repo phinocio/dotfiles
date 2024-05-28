@@ -5,6 +5,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
+				"ansiblels",
 				"astro",
 				"eslint",
 				"gopls",
@@ -144,6 +145,7 @@ return {
 				},
 			})
 			lspconfig.volar.setup({ capabilities = capabilities })
+			lspconfig.ansiblels.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
