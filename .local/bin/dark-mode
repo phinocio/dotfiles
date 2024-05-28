@@ -2,7 +2,7 @@
 
 mako_mode=$(makoctl mode)
 
-if test $mako_mode == "light"; then
+if test $mako_mode == "light" || test $mako_mode == "default"; then
 	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Changing to Dark Mode"
 	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 	gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
