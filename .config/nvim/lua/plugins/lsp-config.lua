@@ -22,7 +22,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
-				"ansible",
+				"ansible-lint",
 				"delve",
 				"gofumpt",
 				"goimports-reviser",
