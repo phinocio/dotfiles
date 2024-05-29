@@ -6,9 +6,9 @@ return {
 		transparent_background = false,
 		custom_highlights = function(colors)
 			return {
-				LineNrAbove = { fg = colors.surface2 },
+				LineNrAbove = { fg = colors.overlay1 },
 				LineNr = { fg = colors.lavender },
-				LineNrBelow = { fg = colors.surface2 },
+				LineNrBelow = { fg = colors.overlay1 },
 			}
 		end,
 		integrations = {
