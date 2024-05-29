@@ -3,7 +3,11 @@ return {
 		"m4xshen/hardtime.nvim",
 		event = "VeryLazy",
 		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-		opts = {},
+		opts = {
+			disable_mouse = false,
+			max_count = 4,
+			allow_different_key = true,
+		},
 	},
 	{
 		enabled = false,
