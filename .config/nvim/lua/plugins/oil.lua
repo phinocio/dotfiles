@@ -4,6 +4,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	lazy = false,
 	opts = {
+		delete_to_trash = true,
 		columns = {
 			"icon",
 			-- "permissions",
