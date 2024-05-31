@@ -17,6 +17,7 @@ vim.opt.backup = true -- Keep backup file after overwriting
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard
 vim.opt.completeopt = "menuone,longest,preview" -- See https://neovim.io/doc/user/options.html#'completeopt'
 vim.opt.confirm = true -- Ask for confirmation instead of erroring on ex: :q
+vim.opt.cursorline = true
 vim.opt.hlsearch = true -- Following cursor is easy enough
 vim.opt.ignorecase = true -- Ignore case in searches
 vim.opt.incsearch = true -- Incremental highlight when searching
