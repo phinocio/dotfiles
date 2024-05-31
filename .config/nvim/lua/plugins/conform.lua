@@ -3,6 +3,7 @@ return {
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	opts = {
+		-- log_level = vim.log.levels.DEBUG,
 		formatters_by_ft = {
 			css = { "prettierd" },
 			go = { "gofumpt", "goimports-reviser", "golines" },
@@ -13,6 +14,7 @@ return {
 			markdown = { "prettierd" },
 			svelte = { "prettierd" },
 			typescript = { "prettierd" },
+			vue = { "prettierd" },
 			yaml = { "prettierd" },
 		},
 		format_on_save = {
