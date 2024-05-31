@@ -125,7 +125,29 @@ return {
 				},
 			})
 			lspconfig.tailwindcss.setup({ capabilities = capabilities })
+
+			local vue_typescript_plugin = require("mason-registry")
+				.get_package("vue-language-server")
+				:get_install_path() .. "/node_modules/@vue/language-server" .. "/node_modules/@vue/typescript-plugin"
 			lspconfig.tsserver.setup({
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vue_typescript_plugin,
+							languages = { "javascript", "typescript", "vue" },
+						},
+					},
+				},
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+				},
 				on_attach = function(client, bufnr)
 					vim.keymap.set(
 						"n",
@@ -145,7 +167,15 @@ return {
 					gopls = { completeUnimported = true, analyses = { unusedParam = true } },
 				},
 			})
-			lspconfig.volar.setup({ capabilities = capabilities })
+			local tslib = require("mason-registry").get_package("typescript-language-server"):get_install_path()
+				.. "/node_modules/typescript/lib"
+			lspconfig.volar.setup({
+				init_options = {
+					typescript = {
+						tsdk = tslib,
+					},
+				},
+			})
 			lspconfig.ansiblels.setup({ capabilities = capabilities })
 		end,
 		keys = {
