@@ -143,15 +143,15 @@ bindkey -s "^O" "fcd^M"
 bindkey -s "^F" "tmux-sessionizer^M"
 
 # CTRL+I - Paste the selected entry from locate output into the command line
-fzf-locate-widget() {
-  local selected
-  if selected=$(locate / | fzf -q "$LBUFFER"); then
-    LBUFFER=$selected
-  fi
-  zle redisplay
-}
-zle -N fzf-locate-widget
-bindkey "^I" fzf-locate-widget
+# fzf-locate-widget() {
+#   local selected
+#   if selected=$(locate / | fzf -q "$LBUFFER"); then
+#     LBUFFER=$selected
+#   fi
+#   zle redisplay
+# }
+# zle -N fzf-locate-widget
+# bindkey "^I" fzf-locate-widget
 
 ############# zoxide ###############
 
