@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-task=$(rofi -dmenu --lines=0 --width=50 --prompt="Task: ")
+task=$(rofi -dmenu)
 token=$(secret-tool lookup todoist api)
 
 curl "https://api.todoist.com/rest/v2/tasks" \
