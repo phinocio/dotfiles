@@ -9,6 +9,7 @@ return {
 				"astro",
 				"eslint",
 				"gopls",
+				"intelephense",
 				"jsonls",
 				"lua_ls",
 				"svelte",
@@ -177,6 +178,7 @@ return {
 				},
 			})
 			lspconfig.ansiblels.setup({ capabilities = capabilities })
+			lspconfig.intelephense.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
