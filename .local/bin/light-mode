@@ -16,9 +16,9 @@ if test $mako_mode == "dark"; then
 	mode=$(darkman get)
 
 	if test $mode == "light" && test $HOSTNAME == "wonderland"; then
-		ddcutil -d 1 setvcp 10 50
-		ddcutil -d 2 setvcp 10 75 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
-		ddcutil -d 3 setvcp 10 50
+		ddcutil -d 1 setvcp 10 75
+		# ddcutil -d 2 setvcp 10 75 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+		ddcutil -d 2 setvcp 10 75
 	fi
 else
 	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Already Light Mode"
