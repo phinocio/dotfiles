@@ -28,6 +28,8 @@ return {
 				"gofumpt",
 				"goimports-reviser",
 				"golines",
+				"phpstan",
+				"pint",
 				"prettierd",
 				"stylua",
 			},
