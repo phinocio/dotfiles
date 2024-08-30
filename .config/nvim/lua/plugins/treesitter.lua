@@ -13,6 +13,13 @@ return {
 			},
 			filetype = "blade",
 		}
+
+		vim.filetype.add({
+			pattern = {
+				[".*%.blade%.php"] = "blade",
+			},
+		})
+
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"bash",
@@ -27,6 +34,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"php",
+				"php_only",
 				"query",
 				"regex",
 				"svelte",
