@@ -7,7 +7,6 @@ return {
 			ensure_installed = {
 				"ansiblels",
 				"astro",
-				"eslint",
 				"gopls",
 				"intelephense",
 				"jsonls",
@@ -25,6 +24,7 @@ return {
 			ensure_installed = {
 				"ansible-lint",
 				"delve",
+				"eslint_d",
 				"gofumpt",
 				"goimports-reviser",
 				"golines",

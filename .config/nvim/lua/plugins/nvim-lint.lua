@@ -5,9 +5,9 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			typescript = { "eslint" },
-			javascript = { "eslint" },
-			svelte = { "eslint" },
+			typescript = { "eslint_d" },
+			javascript = { "eslint_d" },
+			svelte = { "eslint_d" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
@@ -22,7 +22,7 @@ return {
 		{
 			"<leader>ln",
 			function()
-				require("lint").try_lint()
+				require("lint").try_lint(nil, { ignore_errors = true })
 			end,
 			desc = "[Lint] Lint current file",
 		},

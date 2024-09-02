@@ -23,9 +23,7 @@ return {
 			delay = 1000,
 			ignore_whitespace = false,
 		},
-		current_line_blame_formatter_opts = {
-			relative_time = true,
-		},
+		current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
 	},
 	keys = {
 		{
