@@ -13,7 +13,7 @@ return {
 				"lua_ls",
 				"svelte",
 				"tailwindcss",
-				"tsserver", -- Also handles JavaScript
+				"ts_ls", -- Also handles JavaScript
 				"volar",
 			},
 		},
