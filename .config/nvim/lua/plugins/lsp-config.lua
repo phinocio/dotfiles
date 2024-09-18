@@ -9,6 +9,7 @@ return {
 				"astro",
 				"gopls",
 				"intelephense",
+				"phpactor",
 				"jsonls",
 				"lua_ls",
 				"svelte",
@@ -180,10 +181,13 @@ return {
 				},
 			})
 			lspconfig.ansiblels.setup({ capabilities = capabilities })
+
+			-- PHP LSP CONFIGS --
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 				init_options = { licenceKey = os.getenv("HOME") .. "/.config/intelephense/license.txt" },
 			})
+			-- lspconfig.phpactor.setup({ capabilities = capabilities })
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
