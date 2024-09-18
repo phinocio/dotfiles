@@ -1,0 +1,48 @@
+" Settings from `options` in neovim settings.
+" Other settings
+set backspace=indent,eol,start
+set clipboard=unnamedplus " Use system clipboard
+set completeopt=menuone,longest,preview
+set confirm " Ask for confirmation instead of erroring on ex: :q
+set cursorline
+set hlsearch " Enable search highlighting
+set ignorecase " Ignore case in searches
+set incsearch " Incremental highlight when searching
+set number " Show line numbers
+set mouse=n " Disable mouse
+set relativenumber " Show relative line numbers
+set scrolloff=16
+set sidescrolloff=8
+set signcolumn=yes:2
+set splitbelow
+set splitright
+
+" Settings from `keymaps` in neovim settings
+" Leader key settings
+let mapleader = " "
+let maplocalleader = " "
+
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+
+nmap Q <nop>
+
+nmap <Esc> :nohlsearch<CR>
+
+" Quickly change buffers
+nmap [b :bprev<CR>
+nmap ]b :bnext<CR>
+
+" Alternative visual paste method
+vmap p pgvy
+vmap P Pgvy
+
+" d for delete, use x for cut to place in register
+nmap d "_d
+vmap d "_d
+
+" Splits and tabs
+nmap <leader>sv <C-w>v
+nmap <leader>sh <C-w>s
+nmap <leader>se <C-w>=
+nmap <leader>sx :close<CR>
