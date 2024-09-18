@@ -180,7 +180,10 @@ return {
 				},
 			})
 			lspconfig.ansiblels.setup({ capabilities = capabilities })
-			lspconfig.intelephense.setup({ capabilities = capabilities })
+			lspconfig.intelephense.setup({
+				capabilities = capabilities,
+				init_options = { licenceKey = os.getenv("HOME") .. "/.config/intelephense/license.txt" },
+			})
 		end,
 		keys = {
 			{ "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show references" },
