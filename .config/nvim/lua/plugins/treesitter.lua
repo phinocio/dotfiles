@@ -8,7 +8,6 @@ return {
 	-- Change config of existing LazyVim treesitter plugins
 	-- #########################################
 	{
-		-- Add a Treesitter parser for Laravel Blade to provide Blade syntax highlighting.
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
