@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.list = false
+vim.g.lazyvim_php_lsp = "intelephense"
