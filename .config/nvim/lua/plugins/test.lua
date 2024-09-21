@@ -15,5 +15,5 @@ return {
 	-- #########################################
 	-- Add new test plugins
 	-- #########################################
-	{ "nvim-neotest/neotest-phpunit" },
+	{ "olimorris/neotest-phpunit" },
 }
