@@ -8,23 +8,23 @@ Biggest thing here is my neovim config, which the prettier config is in part use
 
 Basically just things I need/want to install on a new system in a single place I can reference.
 
--   bat
--   direnv (for use with nix flakes)
--   eza
--   fd
--   ffmpegthumbnailer
--   fzf
--   git-delta
--   kitty/alacritty
--   lazygit
--   neovim
--   pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
--   ripgrep
--   trash-cli
--   tree
--   ueberzug
--   xsel
--   zsh
+- bat
+- direnv (for use with nix flakes)
+- eza
+- fd
+- ffmpegthumbnailer
+- fzf
+- git-delta
+- kitty/alacritty
+- lazygit
+- neovim
+- pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
+- ripgrep
+- trash-cli
+- tree
+- ueberzug
+- xsel
+- zsh
 
 # Todoist Fuzzel Input
 
