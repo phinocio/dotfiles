@@ -48,6 +48,7 @@ alias gst="git status"
 alias gsw="git switch"
 alias clone="git clone"
 alias lg="lazygit"
+alias lzd="lazydocker"
 
 # Common config files I edit
 alias fixdiscord="sudo $EDITOR /opt/discord/resources/build_info.json"
