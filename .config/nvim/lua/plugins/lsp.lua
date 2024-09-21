@@ -2,25 +2,20 @@ return {
 	-- #########################################
 	-- Disable colorscheme related plugins
 	-- #########################################
-	{ "folke/tokyonight.nvim", enabled = false },
 
 	-- #########################################
-	-- Add new colorscheme plugins
+	-- Chane config of existing LazyVim LSP plugins
 	-- #########################################
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		lazy = false,
-		priority = 1000,
-	},
-
-	-- #########################################
-	-- Make it default in LazyVim
-	-- #########################################
-	{
-		"LazyVim/LazyVim",
+		"neovim/nvim-lspconfig",
 		opts = {
-			colorscheme = "catppuccin",
+			document_highlight = {
+				enabled = false,
+			},
 		},
 	},
+
+	-- #########################################
+	-- Add new LSP plugins
+	-- #########################################
 }
