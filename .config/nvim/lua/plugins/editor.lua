@@ -68,4 +68,14 @@ return {
 			{ "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<CR>" },
 		},
 	},
+	{
+		"m4xshen/hardtime.nvim",
+		event = "VeryLazy",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {
+			disable_mouse = false,
+			max_count = 6,
+			allow_different_key = true,
+		},
+	},
 }
