@@ -46,7 +46,9 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>e", "<cmd>Oil<CR>", desc = "Open oil file explorer" },
+			{ "<leader>ee", "<cmd>Oil<CR>", desc = "Open Oil" },
+			{ "<leader>ev", "<cmd>vsplit | Oil<CR>", desc = "Open Oil in vertical split" },
+			{ "<leader>es", "<cmd>split | Oil<CR>", desc = "Open Oil in horizontal split" },
 		},
 	},
 	{
