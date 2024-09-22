@@ -14,6 +14,13 @@ return {
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 				["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 			})
+			opts.experimental = {
+				ghost_text = false,
+			}
+			opts.window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			}
 		end,
 	},
 
