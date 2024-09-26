@@ -10,6 +10,7 @@ alias kssh="kitty +kitten ssh --kitten color_scheme=\"Adventure Time\""
 alias part="php artisan"
 alias sart="sail artisan"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias sail-fresh="sail up --build -d && sail composer install && sail npm install && sail down && sail up -d && sail artisan migrate"
 alias vim="nvim"
 alias hist="history -i"
 # alias tree="tree -C -F"
