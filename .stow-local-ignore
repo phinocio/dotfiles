@@ -3,6 +3,6 @@ README.md
 \.git
 \.gitignore
 \.gitmodules
-\.local/state/*
+\dot-local/state/*
 \.nix-profile
 setup
