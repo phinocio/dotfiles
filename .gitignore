@@ -1,10 +1,6 @@
-*.bak*
-*/**/plugins
 !dot-config/tmux/plugins/tpm
 !dot-config/nvim/lua/plugins
 !dot-config/nvim-custom/lua/plugins
 lazy-lock.json
 dot-config/lazygit/state.yml
-dot-local/bin/FreeFileSync
-dot-local/bin/freefilesync
 dot-config/zsh/.zcompcache/composer-pkgs
