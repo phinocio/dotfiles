@@ -78,4 +78,5 @@ return {
 			allow_different_key = true,
 		},
 	},
+	{ "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
 }
