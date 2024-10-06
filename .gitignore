@@ -1,3 +1,4 @@
+dot-config/tmux/plugins
 !dot-config/tmux/plugins/tpm
 !dot-config/nvim/lua/plugins
 !dot-config/nvim-custom/lua/plugins
