@@ -7,6 +7,6 @@ source /usr/share/nvm/init-nvm.sh
 # Update latest nodejs version
 previous_nvm_version=$(nvm current)
 nvm install node --latest-npm
-nvm reinstall-packages $previous_nvm_version
-nvm uninstall $previous_nvm_version
+nvm reinstall-packages "$previous_nvm_version"
+nvm uninstall "$previous_nvm_version"
 nvm cache clear
