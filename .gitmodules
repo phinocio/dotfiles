@@ -1,4 +1,4 @@
 [submodule "dot-config/tmux/plugins/tpm"]
 	path = dot-config/tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm
 	branch = master
