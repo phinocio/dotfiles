@@ -90,6 +90,7 @@ bindkey '^n' history-search-forward
 
 # Accept zsh-autosuggestion with ctrl+y
 bindkey '^y' autosuggest-accept
+bindkey '^[y' autosuggest-accept
 
 # Move to beginning or end of words
 key[Control-Left]="${terminfo[kLFT5]}"
