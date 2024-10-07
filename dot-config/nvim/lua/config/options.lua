@@ -5,6 +5,7 @@
 vim.opt.list = false
 vim.g.lazyvim_php_lsp = "intelephense"
 vim.opt.mouse = "n" -- Disable mouse except in normal mode
+vim.opt.scrolloff = 999
 vim.diagnostic.config({
 	float = {
 		border = "rounded",
