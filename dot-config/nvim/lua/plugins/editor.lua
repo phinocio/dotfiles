@@ -76,6 +76,7 @@ return {
 			disable_mouse = false,
 			max_count = 6,
 			allow_different_key = true,
+			disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "dbui" },
 		},
 	},
 	{ "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
