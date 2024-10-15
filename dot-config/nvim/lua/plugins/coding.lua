@@ -37,6 +37,7 @@ return {
 			"nvim-telescope/telescope.nvim",
 			"tpope/vim-dotenv",
 			"MunifTanjim/nui.nvim",
+			"kevinhwang91/promise-async",
 		},
 		cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
 		keys = {
