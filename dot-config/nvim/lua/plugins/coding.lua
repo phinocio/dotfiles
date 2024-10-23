@@ -64,7 +64,6 @@ return {
 	},
 	{
 		"monkoose/neocodeium",
-		disabled = true,
 		event = "VeryLazy",
 		config = function()
 			local neocodeium = require("neocodeium")
@@ -90,6 +89,10 @@ return {
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
+		enabled = function()
+			local user = os.getenv("USER")
+			return user ~= "alice"
+		end,
 		lazy = false,
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
