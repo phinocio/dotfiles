@@ -35,6 +35,11 @@ if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	export MANROFFOPT="-c"
 fi
 
+# Source Anthropic API Key if present
+if [ -f $XDG_CONFIG_HOME/anthropic/api-key.txt ]; then
+	export ANTHROPIC_API_KEY=$(cat $XDG_CONFIG_HOME/anthropic/api-key.txt)
+fi
+
 typeset -U path
 path=($path ~/.local/bin)
 path=($path ~/.local/share/JetBrains/Toolbox/scripts)
