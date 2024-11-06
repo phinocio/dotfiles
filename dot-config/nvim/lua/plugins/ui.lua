@@ -61,7 +61,19 @@ return {
 	},
 	{
 		"folke/noice.nvim",
-		opts = { presets = { command_palette = false } },
+		-- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
+		opts = {
+			presets = { command_palette = false },
+			routes = {
+				{
+					filter = {
+						event = "notify",
+						find = "Request textDocument/inlayHint failed",
+					},
+					opts = { skip = true },
+				},
+			},
+		},
 	},
 
 	-- #########################################
