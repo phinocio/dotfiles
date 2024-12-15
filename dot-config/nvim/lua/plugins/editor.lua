@@ -9,7 +9,7 @@ return {
 	-- #########################################
 	{
 		"folke/which-key.nvim",
-		opts = { delay = 750 },
+		opts = { preset = { "classic" }, delay = 750 },
 	},
 	{
 		"nvim-telescope/telescope.nvim",
