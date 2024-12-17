@@ -2,25 +2,34 @@
 
 mako_mode=$(makoctl mode)
 
-if test $mako_mode == "light" || test $mako_mode == "default"; then
-	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Changing to Dark Mode"
+# Get the current hour in 24-hour format
+current_hour=$(date +%H)
+
+if [ "$mako_mode" = "light" ] || [ "$mako_mode" = "default" ]; then
+	notify-send --app-name="Dark Mode Toggle" \
+		--icon="/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg" \
+		"Changing to Dark Mode"
+
+	# Apply dark mode settings
 	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 	gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 	gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
 	gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
 
-	if test $(pidof mako) > 0; then
+	# Change mako mode if mako is running
+	if pidof mako >/dev/null; then
 		makoctl set-mode dark
 	fi
 
+	# Adjust monitor brightness for specific setup
 	mode=$(darkman get)
-
-	if test $mode == "dark" && test $HOSTNAME == "wonderland"; then
+	if [ "$mode" = "dark" ] && [ "$HOSTNAME" = "wonderland" ] && [ "$current_hour" -ge 20 ]; then
 		ddcutil -d 1 setvcp 10 30
-		# ddcutil -d 2 setvcp 10 60 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+		# ddcutil -d 2 setvcp 10 60 # Uncomment for different monitors if needed
 		ddcutil -d 2 setvcp 10 30
 	fi
-
 else
-	notify-send --app-name="Dark Mode Toggle" --icon=/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg "Already Dark Mode"
+	notify-send --app-name="Dark Mode Toggle" \
+		--icon="/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg" \
+		"Already in Dark Mode"
 fi
