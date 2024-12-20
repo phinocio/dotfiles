@@ -11,19 +11,6 @@ return {
 		"folke/which-key.nvim",
 		opts = { preset = { "classic" }, delay = 750 },
 	},
-	{
-		"nvim-telescope/telescope.nvim",
-		opts = {
-			defaults = {
-				mappings = {
-					i = {
-						["<C-j>"] = "move_selection_next",
-						["<C-k>"] = "move_selection_previous",
-					},
-				},
-			},
-		},
-	},
 
 	-- #########################################
 	-- Add new editor plugins
@@ -66,17 +53,6 @@ return {
 			{ "<C-k>", "<cmd><C-U>TmuxNavigateUp<CR>" },
 			{ "<C-l>", "<cmd><C-U>TmuxNavigateRight<CR>" },
 			{ "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<CR>" },
-		},
-	},
-	{
-		"m4xshen/hardtime.nvim",
-		event = "VeryLazy",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-		opts = {
-			disable_mouse = false,
-			max_count = 6,
-			allow_different_key = true,
-			disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "dbui" },
 		},
 	},
 	{ "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
