@@ -20,9 +20,7 @@ return {
 		},
 		cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
 		keys = {
-			{ "<leader>aa", ":Laravel artisan<cr>" },
 			{ "<leader>ar", ":Laravel routes<cr>" },
-			{ "<leader>am", ":Laravel related<cr>" },
 		},
 		event = { "VeryLazy" },
 		opts = {
