@@ -13,7 +13,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent_background = false,
+			transparent_background = true,
 			custom_highlights = function(colors)
 				return {
 					CursorLine = { bg = colors.surface0 },

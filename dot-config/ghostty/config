@@ -1,0 +1,15 @@
+font-family = Cascadia Code
+font-style = Regular
+font-size = 12
+
+adjust-cell-height = 20%
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+gtk-titlebar = false
+
+theme = Dracula
+background = 1e1e2e
+background-opacity = 0.95
