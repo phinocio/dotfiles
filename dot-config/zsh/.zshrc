@@ -198,4 +198,5 @@ esac
 ####################################
 
 # Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
-repo-elephant | lolcat
+# repo-elephant | lolcat
+pokemon-colorscripts-go --no-title
