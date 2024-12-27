@@ -12,3 +12,4 @@ vim.diagnostic.config({
 		focusable = true,
 	},
 })
+vim.opt.laststatus = 3
