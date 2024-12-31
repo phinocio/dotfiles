@@ -197,7 +197,11 @@ esac
 
 ############ Homebrew ##############
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew_path="/home/linuxbrew/.linuxbrew/bin/brew"
+
+if [ -f "$brew_path" ]; then
+    eval "$($brew_path shellenv)"
+fi
 
 ####################################
 
