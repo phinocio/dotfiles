@@ -53,7 +53,7 @@ export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 
 # Android Studio
 if [ "$USER" != 'alice' ]; then
-    export ANDROID_HOME="$HOME/Android/sdk"
+    export ANDROID_HOME="$HOME/Android/Sdk"
 
     # Add directories to PATH if not already present
     [[ ":$PATH:" != *":$ANDROID_HOME/emulator:"* ]] && export PATH="$PATH:$ANDROID_HOME/emulator"
