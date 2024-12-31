@@ -195,6 +195,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+############ Homebrew ##############
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 ####################################
 
 # Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
