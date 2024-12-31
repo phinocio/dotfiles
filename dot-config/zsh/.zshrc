@@ -197,10 +197,12 @@ esac
 
 ############ Homebrew ##############
 
-brew_path="/home/linuxbrew/.linuxbrew/bin/brew"
+if [ "$USER" != "alice" ]; then
+    brew_path="/home/linuxbrew/.linuxbrew/bin/brew"
 
-if [ -f "$brew_path" ]; then
-    eval "$($brew_path shellenv)"
+    if [ -f "$brew_path" ]; then
+        eval "$($brew_path shellenv)"
+    fi
 fi
 
 ####################################
