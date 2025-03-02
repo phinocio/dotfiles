@@ -29,7 +29,7 @@ ignore-timeout=0
 max-visible=5
 layer=overlay
 anchor=top-center
-output=DP-2
+output=DP-3
 
 background-color=#eff1f5cc
 text-color=#4c4f69
