@@ -89,5 +89,5 @@ return {
 			{ "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<CR>" },
 		},
 	},
-	{ "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
+	{ "HiPhish/rainbow-delimiters.nvim" },
 }
