@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MODE=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'" )
+MODE=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 
 case $MODE in
 "prefer-light")
@@ -13,4 +13,3 @@ case $MODE in
 	light-mode
 	;;
 esac
-

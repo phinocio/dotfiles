@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# Persistent storage for mode status
+MODE_FILE="$HOME/.config/dark_mode_status"
+
+# Default to light mode if file doesn't exist
+if [ ! -f "$MODE_FILE" ]; then
+	echo "light" >"$MODE_FILE"
+fi
+
+# Read the current mode
+current_mode=$(cat "$MODE_FILE")
+
+# Get the current hour in 24-hour format
+current_hour=$(date +%H)
+
+# Determine new mode
+if [ "$current_mode" = "light" ]; then
+	new_mode="dark"
+
+	# Set mako to dark mode
+	makoctl mode -s dark
+
+	notify_icon="/usr/share/icons/hicolor/scalable/status/weather-clear-night-large.svg"
+	notify_text="Changing to Dark Mode"
+
+	# Apply dark mode settings
+	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+	gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+	gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
+	gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
+
+	# Adjust monitor brightness if conditions are met
+	if [ "$(darkman get)" = "dark" ] && [ "$HOSTNAME" = "wonderland" ] && [ "$current_hour" -ge 20 ]; then
+		ddcutil -d 1 setvcp 10 30
+		ddcutil -d 2 setvcp 10 30
+	fi
+else
+	new_mode="light"
+
+	# Set mako to light mode
+	makoctl mode -s light
+
+	notify_icon="/usr/share/icons/hicolor/scalable/status/weather-clear-large.svg"
+	notify_text="Changing to Light Mode"
+
+	# Apply light mode settings
+	gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
+	gsettings set org.gnome.desktop.interface color-scheme "prefer-light"
+	gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Dark"
+	gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
+
+	# Adjust monitor brightness if conditions are met
+	if [ "$(darkman get)" = "light" ] && [ "$HOSTNAME" = "wonderland" ] && [ "$current_hour" -lt 20 ]; then
+		ddcutil -d 1 setvcp 10 75
+		ddcutil -d 2 setvcp 10 75
+	fi
+fi
+
+# Update the stored mode
+echo "$new_mode" >"$MODE_FILE"
+
+# Send a notification
+notify-send --app-name="Dark Mode Toggle" --icon="$notify_icon" "$notify_text"
