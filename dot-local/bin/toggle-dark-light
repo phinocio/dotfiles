@@ -33,7 +33,8 @@ if [ "$current_mode" = "light" ]; then
 	# Adjust monitor brightness if conditions are met
 	if [ "$(darkman get)" = "dark" ] && [ "$HOSTNAME" = "wonderland" ] && [ "$current_hour" -ge 20 ]; then
 		ddcutil -d 1 setvcp 10 30
-		ddcutil -d 2 setvcp 10 30
+		ddcutil -d 2 setvcp 10 45 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+		ddcutil -d 3 setvcp 10 30
 	fi
 else
 	new_mode="light"
@@ -53,7 +54,8 @@ else
 	# Adjust monitor brightness if conditions are met
 	if [ "$(darkman get)" = "light" ] && [ "$HOSTNAME" = "wonderland" ] && [ "$current_hour" -lt 20 ]; then
 		ddcutil -d 1 setvcp 10 75
-		ddcutil -d 2 setvcp 10 75
+		ddcutil -d 2 setvcp 10 95 # The ASUS monitor is overall darker than LG ones, so a higher setting is needed to match.
+		ddcutil -d 3 setvcp 10 75
 	fi
 fi
 
