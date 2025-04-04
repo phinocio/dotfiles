@@ -3,7 +3,7 @@ export EDITOR='nvim'
 export VISUAL=$EDITOR
 export BROWSER='firefox'
 
-# Setting XDG system directories
+# Setting XDG system direccompitories
 export XDG_DATA_DIRS=/usr/local/share:/usr/share:~/.local/share/flatpak/exports/share/applications:/var/lib/flatpak/exports/share/applications
 export XDG_CONFIG_DIRS=/etc/xdg
 
