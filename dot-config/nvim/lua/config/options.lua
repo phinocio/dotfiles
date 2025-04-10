@@ -5,6 +5,7 @@
 -- LaztVim options
 vim.g.snacks_animate = false
 vim.g.lazyvim_php_lsp = "intelephense"
+vim.g.lazyvim_prettier_needs_config = true
 
 vim.opt.list = false
 vim.opt.mouse = "n"
