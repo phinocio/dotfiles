@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-
-# TODO: Move this into ansible probably
-mkdir -p $HOME/.config/tmux/plugins
-if [[ ! -d $HOME/.config/tmux/plugins/tpm ]]; then
-	git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
-fi

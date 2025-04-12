@@ -1,36 +1,49 @@
 # Dotfiles
 
-My dotfiles for various programs. Some aren't in use atm (alacritty, newsboat, phpactor).
+My dotfiles.
 
-Biggest thing here is my neovim config, which the prettier config is in part used with (via `PRETTIERD_DEFAULT_CONFIG` env var and `prettierd`)
-
-# Depenencies
+## Dependencies
 
 Basically just things I need/want to install on a new system in a single place I can reference.
 
 - bat
-- direnv (for use with nix flakes)
+- candy-icons
+- brightnessctl
+- darkman
 - eza
 - fd
-- ffmpegthumbnailer
+- firefox
 - fzf
+- ghostty
 - git-delta
-- kitty/alacritty
+- hypridle
+- hyprland
+- hyprlock
+- hyprpaper
 - lazygit
+- mako
 - neovim
-- pistol (I used nix-env -iA `nixpkgs.pistol` to install it)
+- noto-fonts-{cjk,emoji}
+- nvm
+- nwg-look
+- paru
+- pokemon-colorscripts-go
+- qt5-wayland
+- qt5-wayland
 - ripgrep
+- rofi-wayland
+- starship
+- tmux
 - trash-cli
-- tree
-- ueberzug
+- ttf-cascadia-code
+- udiskie
+- waybar-git
+- wlsunset
 - xsel
+- zoxide
 - zsh
 
-# Todoist Fuzzel Input
-
-Add api via `secret-tool store --label=Todoist todoist api` then enter when prompted.
-
-# References
+## References
 
 [https://laracasts.com/series/neovim-as-a-php-ide](https://laracasts.com/series/neovim-as-a-php-ide)
 
