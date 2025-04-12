@@ -7,8 +7,7 @@ My dotfiles.
 Basically just things I need/want to install on a new system in a single place I can reference.
 
 - bat
-- plocate
-- snapper
+- blueman
 - brightnessctl
 - candy-icons
 - darkman
@@ -31,11 +30,13 @@ Basically just things I need/want to install on a new system in a single place I
 - nwg-look
 - pamixer (for sound)
 - paru
+- plocate
 - pokemon-colorscripts-go
 - qt5-wayland
 - qt5-wayland
 - ripgrep
 - rofi-wayland
+- snapper
 - starship
 - tmux
 - trash-cli
