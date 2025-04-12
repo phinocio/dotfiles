@@ -7,8 +7,8 @@ My dotfiles.
 Basically just things I need/want to install on a new system in a single place I can reference.
 
 - bat
-- candy-icons
 - brightnessctl
+- candy-icons
 - darkman
 - eza
 - fd
@@ -38,8 +38,8 @@ Basically just things I need/want to install on a new system in a single place I
 - ttf-cascadia-code
 - udiskie
 - waybar-git
+- wl-clipboard
 - wlsunset
-- xsel
 - zoxide
 - zsh
 
