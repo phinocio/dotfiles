@@ -26,6 +26,7 @@ Basically just things I need/want to install on a new system in a single place I
 - noto-fonts-{cjk,emoji}
 - nvm
 - nwg-look
+- pamixer (for sound)
 - paru
 - pokemon-colorscripts-go
 - qt5-wayland
