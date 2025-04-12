@@ -6,4 +6,4 @@ README.md
 \dot-local/state/*
 \.nix-profile
 setup
-*.bak
+\*.bak
