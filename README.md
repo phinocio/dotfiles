@@ -22,6 +22,7 @@ Basically just things I need/want to install on a new system in a single place I
 - hyprpaper
 - lazygit
 - mako
+- mpv
 - neovim
 - noto-fonts-{cjk,emoji}
 - nvm
