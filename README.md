@@ -2,6 +2,10 @@
 
 My dotfiles.
 
+## Misc Notes
+
+For ssh keys to prompt for passphrase via GUI, ensure `systemctl --user enable --now gcr-ssh-agent.socket` has been run
+
 ## Dependencies
 
 Basically just things I need/want to install on a new system in a single place I can reference.
