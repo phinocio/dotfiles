@@ -5,3 +5,4 @@ dot-config/tmux/plugins
 lazy-lock.json
 dot-config/lazygit/state.yml
 dot-config/zsh/.zcompcache/composer-pkgs
+dot-config/nvim-old
