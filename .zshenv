@@ -44,6 +44,7 @@ typeset -U path
 path=($path ~/.local/bin)
 path=($path ~/.local/share/JetBrains/Toolbox/scripts)
 path=($path ~/.config/composer/vendor/bin)
+path=($path ~/.cargo/bin)
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 
