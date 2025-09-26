@@ -25,6 +25,8 @@ Basically just things I need/want to install on a new system in a single place I
 - hyprland
 - hyprlock
 - hyprpaper
+- hyprpicker
+- hyprshot
 - lazygit
 - mako
 - mpv
@@ -39,7 +41,8 @@ Basically just things I need/want to install on a new system in a single place I
 - qt5-wayland
 - qt5-wayland
 - ripgrep
-- rofi-wayland
+- rofi
+- satty
 - snapper
 - starship
 - tmux

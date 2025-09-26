@@ -1,0 +1,22 @@
+[general]
+# Start Satty in fullscreen mode
+fullscreen = false
+# Exit directly after copy/save action
+early-exit = true
+# Select the tool on startup [possible values: pointer, crop, line, arrow, rectangle, text, marker, blur, brush]
+initial-tool = "brush"
+# Configure the command to be called on copy, for example `wl-copy`
+copy-command = "wl-copy"
+# After copying the screenshot, save it to a file as well
+save-after-copy = false
+# Hide toolbars by default
+default-hide-toolbars = false
+# Actions to trigger on Enter key (order is important)
+# [possible values: save-to-clipboard, save-to-file, exit]
+actions-on-enter = ["save-to-clipboard"]
+# Actions to trigger on Escape key (order is important)
+# [possible values: save-to-clipboard, save-to-file, exit]
+actions-on-escape = ["exit"]
+# Action to perform when the Enter key is pressed [possible values: save-to-clipboard, save-to-file]
+# Deprecated: use actions-on-enter instead
+action-on-enter = "save-to-clipboard"
