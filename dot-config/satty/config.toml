@@ -10,7 +10,7 @@ copy-command = "wl-copy"
 # After copying the screenshot, save it to a file as well
 save-after-copy = false
 # Hide toolbars by default
-default-hide-toolbars = false
+default-hide-toolbars = true
 # Actions to trigger on Enter key (order is important)
 # [possible values: save-to-clipboard, save-to-file, exit]
 actions-on-enter = ["save-to-clipboard"]
