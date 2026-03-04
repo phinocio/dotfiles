@@ -6,4 +6,3 @@ debug
 foo.*
 *.log
 data
-dot-config/nvim-old

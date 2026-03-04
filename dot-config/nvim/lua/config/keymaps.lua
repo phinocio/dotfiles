@@ -8,4 +8,4 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- disable leader e because for some fucking stupid reason I can't just disable the lazyvim snacks explorer bullshit
-vim.keymap.set("", "<leader>e", "<Nop>", { noremap = true, silent = true })
+-- vim.keymap.set("", "<leader>e", "<Nop>", { noremap = true, silent = true })
