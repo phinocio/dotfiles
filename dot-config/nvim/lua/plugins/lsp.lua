@@ -12,14 +12,14 @@ return {
 			document_highlight = {
 				enabled = false,
 			},
-			setup = {
-				intelephense = function(_, opts)
-					require("lspconfig").intelephense.setup({
-						server = opts,
-						init_options = { licenceKey = os.getenv("HOME") .. "/.config/intelephense/license.txt" },
-					})
-					return true
-				end,
+			servers = {
+				intelephense = {
+					init_options = {
+						licenceKey = vim.fn.trim(
+							table.concat(vim.fn.readfile(vim.fn.expand("~/.config/intelephense/license.txt")), "\n")
+						),
+					},
+				},
 			},
 		},
 	},
