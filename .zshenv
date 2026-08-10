@@ -46,7 +46,9 @@ path=($path ~/.local/share/JetBrains/Toolbox/scripts)
 path=($path ~/.config/composer/vendor/bin)
 path=($path ~/.cargo/bin)
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
 
 # Given up on keeping home clean, but go not being a dotfile is dumb
 export GOPATH="$XDG_DATA_HOME"/go
