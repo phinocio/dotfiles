@@ -18,3 +18,5 @@ background-opacity = 1.00
 window-padding-x = 5
 window-padding-y = 5,2
 window-padding-balance = true
+
+command=/usr/bin/tmux
