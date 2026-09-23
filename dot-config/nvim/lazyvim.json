@@ -3,8 +3,10 @@
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.lang.typescript.biome",
     "lazyvim.plugins.extras.lang.vue",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
