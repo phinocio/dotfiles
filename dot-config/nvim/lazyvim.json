@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.php",
     "lazyvim.plugins.extras.lang.sql",
