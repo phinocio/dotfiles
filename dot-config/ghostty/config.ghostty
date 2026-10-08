@@ -14,12 +14,12 @@ shell-integration-features = no-cursor
 theme = Dracula
 background = 1e1e2e
 background-opacity = 0.96
-background-blur = 20
+# background-blur = 20
 minimum-contrast = 1.1
 
 # --- Window & tab bar ---
 window-theme = ghostty
-window-decoration = server
+window-decoration = none
 gtk-toolbar-style = flat
 gtk-wide-tabs = true
 window-show-tab-bar = auto
