@@ -1,28 +1,50 @@
+# --- Font ---
 font-family = Cascadia Code
 font-style = Regular
 font-size = 12
+adjust-cell-height = 10%
 
-adjust-cell-height = 20%
-
-adjust-cursor-height = 4
+# -- Cursor ---
 cursor-style = block
 cursor-style-blink = false
+# adjust-cursor-height = 4
 shell-integration-features = no-cursor
 
-gtk-titlebar = false
-
+# --- Theme & colours ---
 theme = Dracula
 background = 1e1e2e
 background-opacity = 0.96
+background-blur = 20
+minimum-contrast = 1.1
 
-scrollback-limit = 10000000
+# --- Window & tab bar ---
+window-theme = ghostty
+window-decoration = server
+gtk-toolbar-style = flat
+gtk-wide-tabs = true
+window-show-tab-bar = auto
 
+# --- Padding ---
 window-padding-x = 5
 window-padding-y = 5,2
 window-padding-balance = true
 
-copy-on-select = clipboard
+# --- Splits ---
+unfocused-split-opacity = 0.85
+unfocused-split-fill = 1e1e2e
+split-divider-color = 6c7086
 
+# --- Scrollback ---
+scrollback-limit = 512000000
+
+# --- Behaviour ---
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+window-save-state = always
+
+# --- Keybindings ---
 keybind = ctrl+shift+enter=new_split:right
 keybind = ctrl+shift+r=reload_config
 keybind = ctrl+h=goto_split:left
