@@ -49,6 +49,12 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
+# For postponing loading `fzf`
+zinit ice lucid wait
+zinit snippet OMZP::fzf
 
 # zsh-syntax-highlighting settings
 # Specifically, remove underline
