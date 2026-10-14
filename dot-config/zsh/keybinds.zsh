@@ -20,7 +20,7 @@ _zkbd[Ctrl-Right]="${terminfo[kRIT5]}"
 [[ -n ${_zkbd[Home]}      ]] && bindkey -- "${_zkbd[Home]}"      beginning-of-line
 [[ -n ${_zkbd[End]}       ]] && bindkey -- "${_zkbd[End]}"       end-of-line
 [[ -n ${_zkbd[Insert]}    ]] && bindkey -- "${_zkbd[Insert]}"    overwrite-mode
-[[ -n ${_zkbd[Backspace]} ]] && bindkey -- "${_zkbd[Backspace]}" backward-kill-word
+[[ -n ${_zkbd[Backspace]} ]] && bindkey -- "${_zkbd[Backspace]}" backward-delete-char
 [[ -n ${_zkbd[Delete]}    ]] && bindkey -- "${_zkbd[Delete]}"    delete-char
 [[ -n ${_zkbd[Left]}      ]] && bindkey -- "${_zkbd[Left]}"      backward-char
 [[ -n ${_zkbd[Right]}     ]] && bindkey -- "${_zkbd[Right]}"     forward-char
@@ -51,3 +51,16 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-init   zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
+
+function _cursor_shape() {
+  case ${KEYMAP} in
+    vicmd) print -n -- '\e[2 q' ;;   # normal mode → steady block
+    *)     print -n -- '\e[6 q' ;;   # insert/main → steady bar
+  esac
+}
+zle -N zle-keymap-select _cursor_shape
+
+function _cursor_shape_init() { print -n -- '\e[6 q' }
+zle -N zle-line-init _cursor_shape_init
+
+zle -N zle-line-finish _cursor_shape_init
