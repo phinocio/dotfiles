@@ -1,204 +1,148 @@
-source $ZDOTDIR/functions.zsh
+####################################
+#
+# Sourced helpers
+#
+####################################
+[[ -r "$ZDOTDIR/functions.zsh" ]] && source "$ZDOTDIR/functions.zsh"
 
 ####################################
 #
-# PROMPT CONFIG
+# History
 #
 ####################################
-
-eval "$(starship init zsh)"
-
-####################################
-#
-# HISTORY CONFIG
-#
-####################################
-
-HISTSIZE=100_000
-HISTFILE="$ZSH_CACHE_DIR/history.zsh"
+mkdir -p "$XDG_STATE_HOME/zsh"
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 HISTTIMEFORMAT="%F %T: "
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
+
+setopt append_history
+setopt share_history
 setopt extended_history
+setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_find_no_dups
+setopt hist_verify
 
 ####################################
 #
-# PLUGINS CONFIG
+# zinit
 #
 ####################################
-
-# Install zinit if it doesn't already exist, then source it.
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+if [[ ! -d "$ZINIT_HOME/.git" ]]; then
+  mkdir -p "$(dirname "$ZINIT_HOME")"
+  git clone --depth 1 https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
 declare -A ZINIT
-export ZINIT[NO_ALIASES]='1'
-export ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME/.zcompdump-$ZSH_VERSION"
-source "${ZINIT_HOME}/zinit.zsh"
+ZINIT[NO_ALIASES]='1'
+ZINIT[ZCOMPDUMP_PATH]="$ZSH_CACHE_DIR/.zcompdump-$ZSH_VERSION"
+source "$ZINIT_HOME/zinit.zsh"
 
-setopt noaliases
-
-# Plugins
-zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-syntax-highlighting
+####################################
+#
+# Completion
+#
+####################################
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
 
-# For postponing loading `fzf`
-zinit ice lucid wait
-zinit snippet OMZP::fzf
+autoload -Uz compinit
 
-# zsh-syntax-highlighting settings
-# Specifically, remove underline
-zle_highlight=('paste:none')
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
-ZSH_HIGHLIGHT_STYLES[path]=none
-# ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+if [[ -n "$ZINIT[ZCOMPDUMP_PATH]"(#qN.mh+24) ]]; then
+  compinit -C -d "$ZINIT[ZCOMPDUMP_PATH]"   # skip security check
+else
+  compinit -d "$ZINIT[ZCOMPDUMP_PATH]"
+fi
 
-####################################
-#
-# COMPLETTIONS CONFIG
-#
-####################################
-
-autoload -Uz compinit && compinit -d $XDG_CACHE_HOME/.zcompdump-$ZSH_VERSION
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a --color=always $realpath'
 
-zinit cdreplay -q
+####################################
+#
+# Plugins
+#
+####################################
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+
+zle_highlight+=('paste:none')
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+ZSH_HIGHLIGHT_STYLES[path]=none
 
 ####################################
 #
-# KEYBINDS CONFIG
+# Keybinds
 #
 ####################################
-
-# Source some defaults from Arch Wiki
-source $ZDOTDIR/keybinds.zsh
+source "$ZDOTDIR/keybinds.zsh"
 
 ####################################
 #
-# ALIASES CONFIG
+# Aliases
 #
 ####################################
-
-# Check if the distro is Arch Linux for importing arch specific aliases.
-distro=$($(uname -r | grep -Eq "arch") && echo "arch" || echo "n")
-
-if [[ "$distro" == "arch" ]]; then
-    source $ZDOTDIR/aliases/arch.zsh
-else
-    source $ZDOTDIR/aliases/debian.zsh
-fi
+source "$ZDOTDIR/aliases/arch.zsh"
 
 ####################################
 #
-# SHELL INTEGRATIONS CONFIG
+# Shell integrations
 #
 ####################################
-
-############### fzf ################
-
+# --- fzf ---
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
-
-# Dracula theme
 export FZF_DEFAULT_OPTS=" \
     --color=fg:#f8f8f2,hl:#bd93f9 \
     --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 \
     --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 \
     --color=marker:#ff79c6,spinner:#ffb86c,header:#ff79c6"
+eval "$(fzf --zsh)"          # official integration (replaces OMZ::fzf snippet)
 
-fcd() {
-	dir="$(fd -H --type d --max-depth 2 . $HOME $LEARNING_DIR $NOTES_DIR $PROJECTS_DIR | cut -d / -f 4- | uniq | fzf --preview 'eza -lagh --icons --group-directories-first --git --git-ignore --color=always $HOME/{} | head -n 50')";
-	if [[ -n $dir ]]; then
-		cd $HOME/$dir
-	fi
-}
+# --- zoxide ---
+eval "$(zoxide init zsh)"
 
-# CTRL+I - Paste the selected entry from locate output into the command line
-# fzf-locate-widget() {
-#   local selected
-#   if selected=$(locate / | fzf -q "$LBUFFER"); then
-#     LBUFFER=$selected
-#   fi
-#   zle redisplay
-# }
-# zle -N fzf-locate-widget
-# bindkey "^I" fzf-locate-widget
-
-############### nvm ################
-
+# --- nvm ---
 source /usr/share/nvm/init-nvm.sh
-
-# place this after nvm initialization!
 autoload -U add-zsh-hook
-
 load-nvmrc() {
-  local nvmrc_path
+  local nvmrc_path nvmrc_node_version
   nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
+  if [[ -n $nvmrc_path ]]; then
+    nvmrc_node_version=$(nvm version "$(<"$nvmrc_path")")
+    if [[ $nvmrc_node_version == N/A ]]; then
       nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+    elif [[ $nvmrc_node_version != "$(nvm version)" ]]; then
       nvm use
     fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+  elif [[ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ]] && [[ "$(nvm version)" != "$(nvm version default)" ]]; then
     echo "Reverting to nvm default version"
     nvm use default
   fi
 }
-
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# pnpm
+# --- pnpm ---
 export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+typeset -U path
+path=("$PNPM_HOME" $path)
 
 ####################################
+#
+# Prompt — LAST
+#
+####################################
+eval "$(starship init zsh)"
 
-function zvm_after_init() {
-  # Re-apply bindings zsh-vi-mode would otherwise wipe
-  bindkey '^H' backward-kill-word
-  bindkey '^[[3;5~' kill-word
-  bindkey '^p' history-search-backward
-  bindkey '^n' history-search-forward
-
-  # Accept zsh-autosuggestion with ctrl+y
-  bindkey '^y' autosuggest-accept
-  bindkey '^[y' autosuggest-accept
-
-  # Move by word
-  bindkey -- "${terminfo[kLFT5]}"  backward-word
-  bindkey -- "${terminfo[kRIT5]}" forward-word
-
-  # fzf + zoxide also need to load after vi-mode
-  eval "$(fzf --zsh)"
-  eval "$(zoxide init zsh)"
-  bindkey -s "^O" "fcd^M"
-  bindkey -s "^F" "tmux-sessionizer^M"
-}
-
-# Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
-# repo-elephant | lolcat
+####################################
+#
+# Misc
+#
+####################################
 pokemon-colorscripts-go --no-title
