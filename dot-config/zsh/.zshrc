@@ -88,22 +88,6 @@ zinit cdreplay -q
 # Source some defaults from Arch Wiki
 source $ZDOTDIR/keybinds.zsh
 
-bindkey '^H' backward-kill-word
-bindkey '^[[3;5~' kill-word
-
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-# Accept zsh-autosuggestion with ctrl+y
-bindkey '^y' autosuggest-accept
-bindkey '^[y' autosuggest-accept
-
-# Move to beginning or end of words
-key[Control-Left]="${terminfo[kLFT5]}"
-key[Control-Right]="${terminfo[kRIT5]}"
-[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
-[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
-
 ####################################
 #
 # ALIASES CONFIG
@@ -127,8 +111,6 @@ fi
 
 ############### fzf ################
 
-eval "$(fzf --zsh)"
-
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 
 # Dracula theme
@@ -145,10 +127,6 @@ fcd() {
 	fi
 }
 
-bindkey -s "^O" "fcd^M"
-
-bindkey -s "^F" "tmux-sessionizer^M"
-
 # CTRL+I - Paste the selected entry from locate output into the command line
 # fzf-locate-widget() {
 #   local selected
@@ -159,10 +137,6 @@ bindkey -s "^F" "tmux-sessionizer^M"
 # }
 # zle -N fzf-locate-widget
 # bindkey "^I" fzf-locate-widget
-
-############# zoxide ###############
-
-eval "$(zoxide init zsh)"
 
 ############### nvm ################
 
@@ -202,6 +176,28 @@ esac
 # pnpm end
 
 ####################################
+
+function zvm_after_init() {
+  # Re-apply bindings zsh-vi-mode would otherwise wipe
+  bindkey '^H' backward-kill-word
+  bindkey '^[[3;5~' kill-word
+  bindkey '^p' history-search-backward
+  bindkey '^n' history-search-forward
+
+  # Accept zsh-autosuggestion with ctrl+y
+  bindkey '^y' autosuggest-accept
+  bindkey '^[y' autosuggest-accept
+
+  # Move by word
+  bindkey -- "${terminfo[kLFT5]}"  backward-word
+  bindkey -- "${terminfo[kRIT5]}" forward-word
+
+  # fzf + zoxide also need to load after vi-mode
+  eval "$(fzf --zsh)"
+  eval "$(zoxide init zsh)"
+  bindkey -s "^O" "fcd^M"
+  bindkey -s "^F" "tmux-sessionizer^M"
+}
 
 # Display AN ELEPHANT on open so I don't lose terminal placement because of transparency
 # repo-elephant | lolcat
