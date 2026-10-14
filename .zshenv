@@ -23,6 +23,10 @@ export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
+# ssh
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
+
 # Only set if bat is installed
 if (( $+commands[bat] )); then
 	# Bat config
