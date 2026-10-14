@@ -1,11 +1,11 @@
-export HOSTNAME=$(uname -n)
+export HOSTNAME=${HOST}
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export BROWSER='firefox'
 
 # Setting XDG system directories
-export XDG_DATA_DIRS=/usr/local/share:/usr/share:~/.local/share/flatpak/exports/share/applications:/var/lib/flatpak/exports/share/applications
-export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:-/etc/xdg}"
 
 # Setting XDG user directories
 export XDG_CONFIG_HOME=$HOME/.config
@@ -23,11 +23,8 @@ export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Prettier default config for prettierd
-export PRETTIERD_DEFAULT_CONFIG=$XDG_CONFIG_HOME/prettier/.prettierrc.json
-
 # Only set if bat is installed
-if command -v bat >/dev/null || command -v batcat >/dev/null; then
+if (( $+commands[bat] )); then
 	# Bat config
 	export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 	export BAT_THEME="Catppuccin Mocha"
@@ -35,22 +32,5 @@ if command -v bat >/dev/null || command -v batcat >/dev/null; then
 	export MANROFFOPT="-c"
 fi
 
-# Source Anthropic API Key if present
-if [ -f $XDG_CONFIG_HOME/anthropic/api-key.txt ]; then
-	export ANTHROPIC_API_KEY=$(cat $XDG_CONFIG_HOME/anthropic/api-key.txt)
-fi
-
 typeset -U path
-path=($path ~/.local/bin)
-path=($path ~/.local/share/JetBrains/Toolbox/scripts)
-path=($path ~/.config/composer/vendor/bin)
-path=($path ~/.cargo/bin)
-
-# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_ASKPASS_REQUIRE=prefer
-
-# Given up on keeping home clean, but go not being a dotfile is dumb
-export GOPATH="$XDG_DATA_HOME"/go
-export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
-
+path=(~/.local/bin $path)
